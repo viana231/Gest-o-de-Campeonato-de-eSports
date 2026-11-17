@@ -31,26 +31,26 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlXML = new System.Windows.Forms.Panel();
-            this.pnlJSON = new System.Windows.Forms.Panel();
             this.grpXML = new System.Windows.Forms.GroupBox();
-            this.grpJSON = new System.Windows.Forms.GroupBox();
-            this.btnImportarXML = new System.Windows.Forms.Button();
-            this.btnExportarXML = new System.Windows.Forms.Button();
             this.btnConverterXMLParaJSON = new System.Windows.Forms.Button();
+            this.btnExportarXML = new System.Windows.Forms.Button();
+            this.btnImportarXML = new System.Windows.Forms.Button();
+            this.pnlJSON = new System.Windows.Forms.Panel();
+            this.grpJSON = new System.Windows.Forms.GroupBox();
             this.btnConverterJSONParaXML = new System.Windows.Forms.Button();
-            this.btnExportarJSON = new System.Windows.Forms.Button();
             this.btnImportarJSON = new System.Windows.Forms.Button();
+            this.btnExportarJSON = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grpModulos = new System.Windows.Forms.GroupBox();
+            this.btnAbrirLinq = new System.Windows.Forms.Button();
+            this.btnAbrirTorneio = new System.Windows.Forms.Button();
+            this.btnAbrirEquipas = new System.Windows.Forms.Button();
             this.ofdFicheiro = new System.Windows.Forms.OpenFileDialog();
             this.sfdFicheiro = new System.Windows.Forms.SaveFileDialog();
-            this.btnAbrirEquipas = new System.Windows.Forms.Button();
-            this.btnAbrirTorneio = new System.Windows.Forms.Button();
-            this.btnAbrirLinq = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.pnlXML.SuspendLayout();
-            this.pnlJSON.SuspendLayout();
             this.grpXML.SuspendLayout();
+            this.pnlJSON.SuspendLayout();
             this.grpJSON.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grpModulos.SuspendLayout();
@@ -82,14 +82,6 @@
             this.pnlXML.Size = new System.Drawing.Size(324, 154);
             this.pnlXML.TabIndex = 1;
             // 
-            // pnlJSON
-            // 
-            this.pnlJSON.Controls.Add(this.grpJSON);
-            this.pnlJSON.Location = new System.Drawing.Point(343, 51);
-            this.pnlJSON.Name = "pnlJSON";
-            this.pnlJSON.Size = new System.Drawing.Size(327, 154);
-            this.pnlJSON.TabIndex = 2;
-            // 
             // grpXML
             // 
             this.grpXML.Controls.Add(this.btnConverterXMLParaJSON);
@@ -102,6 +94,44 @@
             this.grpXML.TabIndex = 0;
             this.grpXML.TabStop = false;
             this.grpXML.Text = "Ficheiros XML";
+            // 
+            // btnConverterXMLParaJSON
+            // 
+            this.btnConverterXMLParaJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnConverterXMLParaJSON.Location = new System.Drawing.Point(7, 92);
+            this.btnConverterXMLParaJSON.Name = "btnConverterXMLParaJSON";
+            this.btnConverterXMLParaJSON.Size = new System.Drawing.Size(75, 23);
+            this.btnConverterXMLParaJSON.TabIndex = 2;
+            this.btnConverterXMLParaJSON.Text = "Converter";
+            this.btnConverterXMLParaJSON.UseVisualStyleBackColor = true;
+            // 
+            // btnExportarXML
+            // 
+            this.btnExportarXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnExportarXML.Location = new System.Drawing.Point(7, 62);
+            this.btnExportarXML.Name = "btnExportarXML";
+            this.btnExportarXML.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarXML.TabIndex = 1;
+            this.btnExportarXML.Text = "Exportar";
+            this.btnExportarXML.UseVisualStyleBackColor = true;
+            // 
+            // btnImportarXML
+            // 
+            this.btnImportarXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnImportarXML.Location = new System.Drawing.Point(7, 32);
+            this.btnImportarXML.Name = "btnImportarXML";
+            this.btnImportarXML.Size = new System.Drawing.Size(75, 23);
+            this.btnImportarXML.TabIndex = 0;
+            this.btnImportarXML.Text = "Importar";
+            this.btnImportarXML.UseVisualStyleBackColor = true;
+            // 
+            // pnlJSON
+            // 
+            this.pnlJSON.Controls.Add(this.grpJSON);
+            this.pnlJSON.Location = new System.Drawing.Point(343, 51);
+            this.pnlJSON.Name = "pnlJSON";
+            this.pnlJSON.Size = new System.Drawing.Size(327, 154);
+            this.pnlJSON.TabIndex = 2;
             // 
             // grpJSON
             // 
@@ -116,36 +146,6 @@
             this.grpJSON.TabStop = false;
             this.grpJSON.Text = "Ficheiros JSON";
             // 
-            // btnImportarXML
-            // 
-            this.btnImportarXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnImportarXML.Location = new System.Drawing.Point(7, 32);
-            this.btnImportarXML.Name = "btnImportarXML";
-            this.btnImportarXML.Size = new System.Drawing.Size(75, 23);
-            this.btnImportarXML.TabIndex = 0;
-            this.btnImportarXML.Text = "Importar";
-            this.btnImportarXML.UseVisualStyleBackColor = true;
-            // 
-            // btnExportarXML
-            // 
-            this.btnExportarXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnExportarXML.Location = new System.Drawing.Point(7, 62);
-            this.btnExportarXML.Name = "btnExportarXML";
-            this.btnExportarXML.Size = new System.Drawing.Size(75, 23);
-            this.btnExportarXML.TabIndex = 1;
-            this.btnExportarXML.Text = "Exportar";
-            this.btnExportarXML.UseVisualStyleBackColor = true;
-            // 
-            // btnConverterXMLParaJSON
-            // 
-            this.btnConverterXMLParaJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnConverterXMLParaJSON.Location = new System.Drawing.Point(7, 92);
-            this.btnConverterXMLParaJSON.Name = "btnConverterXMLParaJSON";
-            this.btnConverterXMLParaJSON.Size = new System.Drawing.Size(75, 23);
-            this.btnConverterXMLParaJSON.TabIndex = 2;
-            this.btnConverterXMLParaJSON.Text = "Converter";
-            this.btnConverterXMLParaJSON.UseVisualStyleBackColor = true;
-            // 
             // btnConverterJSONParaXML
             // 
             this.btnConverterJSONParaXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
@@ -155,16 +155,7 @@
             this.btnConverterJSONParaXML.TabIndex = 5;
             this.btnConverterJSONParaXML.Text = "Converter";
             this.btnConverterJSONParaXML.UseVisualStyleBackColor = true;
-            // 
-            // btnExportarJSON
-            // 
-            this.btnExportarJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnExportarJSON.Location = new System.Drawing.Point(6, 59);
-            this.btnExportarJSON.Name = "btnExportarJSON";
-            this.btnExportarJSON.Size = new System.Drawing.Size(75, 23);
-            this.btnExportarJSON.TabIndex = 4;
-            this.btnExportarJSON.Text = "Exportar";
-            this.btnExportarJSON.UseVisualStyleBackColor = true;
+            this.btnConverterJSONParaXML.Click += new System.EventHandler(this.btnConverterJSON_Click);
             // 
             // btnImportarJSON
             // 
@@ -175,6 +166,18 @@
             this.btnImportarJSON.TabIndex = 3;
             this.btnImportarJSON.Text = "Importar";
             this.btnImportarJSON.UseVisualStyleBackColor = true;
+            this.btnImportarJSON.Click += new System.EventHandler(this.btnImportarJSON_Click);
+            // 
+            // btnExportarJSON
+            // 
+            this.btnExportarJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnExportarJSON.Location = new System.Drawing.Point(6, 59);
+            this.btnExportarJSON.Name = "btnExportarJSON";
+            this.btnExportarJSON.Size = new System.Drawing.Size(75, 23);
+            this.btnExportarJSON.TabIndex = 4;
+            this.btnExportarJSON.Text = "Exportar";
+            this.btnExportarJSON.UseVisualStyleBackColor = true;
+            this.btnExportarJSON.Click += new System.EventHandler(this.btnExportarJSON_Click);
             // 
             // panel1
             // 
@@ -197,23 +200,15 @@
             this.grpModulos.TabStop = false;
             this.grpModulos.Text = "Módulos de Gestão e Análise";
             // 
-            // ofdFicheiro
+            // btnAbrirLinq
             // 
-            this.ofdFicheiro.FileName = "OpenFileDialog";
-            // 
-            // sfdFicheiro
-            // 
-            this.sfdFicheiro.FileName = "SaveFileDialog";
-            // 
-            // btnAbrirEquipas
-            // 
-            this.btnAbrirEquipas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAbrirEquipas.Location = new System.Drawing.Point(5, 25);
-            this.btnAbrirEquipas.Name = "btnAbrirEquipas";
-            this.btnAbrirEquipas.Size = new System.Drawing.Size(100, 30);
-            this.btnAbrirEquipas.TabIndex = 0;
-            this.btnAbrirEquipas.Text = "Abrir Equipa";
-            this.btnAbrirEquipas.UseVisualStyleBackColor = true;
+            this.btnAbrirLinq.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnAbrirLinq.Location = new System.Drawing.Point(299, 25);
+            this.btnAbrirLinq.Name = "btnAbrirLinq";
+            this.btnAbrirLinq.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirLinq.TabIndex = 4;
+            this.btnAbrirLinq.Text = "Abrir Linq";
+            this.btnAbrirLinq.UseVisualStyleBackColor = true;
             // 
             // btnAbrirTorneio
             // 
@@ -225,15 +220,23 @@
             this.btnAbrirTorneio.Text = "Abrir Torneio";
             this.btnAbrirTorneio.UseVisualStyleBackColor = true;
             // 
-            // btnAbrirLinq
+            // btnAbrirEquipas
             // 
-            this.btnAbrirLinq.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAbrirLinq.Location = new System.Drawing.Point(299, 25);
-            this.btnAbrirLinq.Name = "btnAbrirLinq";
-            this.btnAbrirLinq.Size = new System.Drawing.Size(100, 30);
-            this.btnAbrirLinq.TabIndex = 4;
-            this.btnAbrirLinq.Text = "Abrir Linq";
-            this.btnAbrirLinq.UseVisualStyleBackColor = true;
+            this.btnAbrirEquipas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnAbrirEquipas.Location = new System.Drawing.Point(5, 25);
+            this.btnAbrirEquipas.Name = "btnAbrirEquipas";
+            this.btnAbrirEquipas.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirEquipas.TabIndex = 0;
+            this.btnAbrirEquipas.Text = "Abrir Equipa";
+            this.btnAbrirEquipas.UseVisualStyleBackColor = true;
+            // 
+            // ofdFicheiro
+            // 
+            this.ofdFicheiro.FileName = "OpenFileDialog";
+            // 
+            // sfdFicheiro
+            // 
+            this.sfdFicheiro.FileName = "SaveFileDialog";
             // 
             // FormPrincipal
             // 
@@ -250,8 +253,8 @@
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.pnlXML.ResumeLayout(false);
-            this.pnlJSON.ResumeLayout(false);
             this.grpXML.ResumeLayout(false);
+            this.pnlJSON.ResumeLayout(false);
             this.grpJSON.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.grpModulos.ResumeLayout(false);
