@@ -58,6 +58,13 @@
     <Compile Include="Forms\FormEquipasJogadores.Designer.cs">
       <DependentUpon>FormEquipasJogadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\GestorJson.cs" />
+    <Compile Include="Classes\Mock.cs" />
+    <Compile Include="Modelo\Campeonato.cs" />
+    <Compile Include="Modelo\Equipa.cs" />
+    <Compile Include="Modelo\Jogador.cs" />
+    <Compile Include="Modelo\Partida.cs" />
+    <Compile Include="Modelo\Torneio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
