@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Gestão_de_Campeonato_de_eSports
 {
-    public partial class Form1 : Form
+    public partial class FormEquipasJogadores : Form
     {
-        public Form1()
+        public FormEquipasJogadores()
         {
             InitializeComponent();
         }

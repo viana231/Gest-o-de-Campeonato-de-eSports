@@ -1,6 +1,6 @@
 ﻿namespace Gestão_de_Campeonato_de_eSports
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -44,12 +44,16 @@
             this.grpModulos = new System.Windows.Forms.GroupBox();
             this.ofdFicheiro = new System.Windows.Forms.OpenFileDialog();
             this.sfdFicheiro = new System.Windows.Forms.SaveFileDialog();
+            this.btnAbrirEquipas = new System.Windows.Forms.Button();
+            this.btnAbrirTorneio = new System.Windows.Forms.Button();
+            this.btnAbrirLinq = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.pnlXML.SuspendLayout();
             this.pnlJSON.SuspendLayout();
             this.grpXML.SuspendLayout();
             this.grpJSON.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.grpModulos.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -177,15 +181,18 @@
             this.panel1.Controls.Add(this.grpModulos);
             this.panel1.Location = new System.Drawing.Point(13, 212);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(654, 100);
+            this.panel1.Size = new System.Drawing.Size(654, 74);
             this.panel1.TabIndex = 3;
             // 
             // grpModulos
             // 
+            this.grpModulos.Controls.Add(this.btnAbrirLinq);
+            this.grpModulos.Controls.Add(this.btnAbrirTorneio);
+            this.grpModulos.Controls.Add(this.btnAbrirEquipas);
             this.grpModulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grpModulos.Location = new System.Drawing.Point(4, 4);
             this.grpModulos.Name = "grpModulos";
-            this.grpModulos.Size = new System.Drawing.Size(647, 93);
+            this.grpModulos.Size = new System.Drawing.Size(647, 65);
             this.grpModulos.TabIndex = 0;
             this.grpModulos.TabStop = false;
             this.grpModulos.Text = "Módulos de Gestão e Análise";
@@ -198,17 +205,48 @@
             // 
             this.sfdFicheiro.FileName = "SaveFileDialog";
             // 
-            // Form1
+            // btnAbrirEquipas
+            // 
+            this.btnAbrirEquipas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnAbrirEquipas.Location = new System.Drawing.Point(5, 25);
+            this.btnAbrirEquipas.Name = "btnAbrirEquipas";
+            this.btnAbrirEquipas.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirEquipas.TabIndex = 0;
+            this.btnAbrirEquipas.Text = "Abrir Equipa";
+            this.btnAbrirEquipas.UseVisualStyleBackColor = true;
+            // 
+            // btnAbrirTorneio
+            // 
+            this.btnAbrirTorneio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnAbrirTorneio.Location = new System.Drawing.Point(156, 25);
+            this.btnAbrirTorneio.Name = "btnAbrirTorneio";
+            this.btnAbrirTorneio.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirTorneio.TabIndex = 3;
+            this.btnAbrirTorneio.Text = "Abrir Torneio";
+            this.btnAbrirTorneio.UseVisualStyleBackColor = true;
+            // 
+            // btnAbrirLinq
+            // 
+            this.btnAbrirLinq.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnAbrirLinq.Location = new System.Drawing.Point(299, 25);
+            this.btnAbrirLinq.Name = "btnAbrirLinq";
+            this.btnAbrirLinq.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirLinq.TabIndex = 4;
+            this.btnAbrirLinq.Text = "Abrir Linq";
+            this.btnAbrirLinq.UseVisualStyleBackColor = true;
+            // 
+            // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 453);
+            this.ClientSize = new System.Drawing.Size(682, 328);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlJSON);
             this.Controls.Add(this.pnlXML);
             this.Controls.Add(this.pnlTitulo);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormPrincipal";
+            this.Text = "Ficheiros e Navegação";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.pnlXML.ResumeLayout(false);
@@ -216,6 +254,7 @@
             this.grpXML.ResumeLayout(false);
             this.grpJSON.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.grpModulos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -238,6 +277,9 @@
         private System.Windows.Forms.GroupBox grpModulos;
         private System.Windows.Forms.OpenFileDialog ofdFicheiro;
         private System.Windows.Forms.SaveFileDialog sfdFicheiro;
+        private System.Windows.Forms.Button btnAbrirEquipas;
+        private System.Windows.Forms.Button btnAbrirLinq;
+        private System.Windows.Forms.Button btnAbrirTorneio;
     }
 }
 
