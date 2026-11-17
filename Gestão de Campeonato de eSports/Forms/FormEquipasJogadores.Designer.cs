@@ -47,17 +47,23 @@
             this.lblIdEquipa = new System.Windows.Forms.Label();
             this.pnlGestaoJogadores = new System.Windows.Forms.Panel();
             this.grpJogador = new System.Windows.Forms.GroupBox();
-            this.btnDelJogador = new System.Windows.Forms.Button();
-            this.btnEditJogador = new System.Windows.Forms.Button();
-            this.btnAddJogador = new System.Windows.Forms.Button();
+            this.numIdade = new System.Windows.Forms.NumericUpDown();
+            this.lblIdadeJogador = new System.Windows.Forms.Label();
+            this.txtNickNameJogador = new System.Windows.Forms.TextBox();
+            this.lblNickNameJogador = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblNomeJogador = new System.Windows.Forms.Label();
             this.lblIdJogador = new System.Windows.Forms.Label();
-            this.lblNickNameJogador = new System.Windows.Forms.Label();
-            this.txtNickNameJogador = new System.Windows.Forms.TextBox();
-            this.numIdade = new System.Windows.Forms.NumericUpDown();
-            this.lblIdadeJogador = new System.Windows.Forms.Label();
+            this.btnDelJogador = new System.Windows.Forms.Button();
+            this.btnAddJogador = new System.Windows.Forms.Button();
+            this.btnEditJogador = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NumPontuacao = new System.Windows.Forms.NumericUpDown();
+            this.btnAddPontos = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlCampeonato.SuspendLayout();
             this.pnlTorneio.SuspendLayout();
             this.pnlGestaoEquipas.SuspendLayout();
@@ -65,6 +71,7 @@
             this.pnlGestaoJogadores.SuspendLayout();
             this.grpJogador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numIdade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumPontuacao)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCampeonato
@@ -236,11 +243,16 @@
             this.pnlGestaoJogadores.Controls.Add(this.grpJogador);
             this.pnlGestaoJogadores.Location = new System.Drawing.Point(394, 57);
             this.pnlGestaoJogadores.Name = "pnlGestaoJogadores";
-            this.pnlGestaoJogadores.Size = new System.Drawing.Size(376, 292);
+            this.pnlGestaoJogadores.Size = new System.Drawing.Size(376, 345);
             this.pnlGestaoJogadores.TabIndex = 4;
             // 
             // grpJogador
             // 
+            this.grpJogador.Controls.Add(this.listView1);
+            this.grpJogador.Controls.Add(this.label2);
+            this.grpJogador.Controls.Add(this.btnAddPontos);
+            this.grpJogador.Controls.Add(this.NumPontuacao);
+            this.grpJogador.Controls.Add(this.label1);
             this.grpJogador.Controls.Add(this.numIdade);
             this.grpJogador.Controls.Add(this.lblIdadeJogador);
             this.grpJogador.Controls.Add(this.txtNickNameJogador);
@@ -255,40 +267,60 @@
             this.grpJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grpJogador.Location = new System.Drawing.Point(4, 4);
             this.grpJogador.Name = "grpJogador";
-            this.grpJogador.Size = new System.Drawing.Size(369, 285);
+            this.grpJogador.Size = new System.Drawing.Size(369, 338);
             this.grpJogador.TabIndex = 0;
             this.grpJogador.TabStop = false;
             this.grpJogador.Text = "Gestão de Jogadores";
             // 
-            // btnDelJogador
+            // numIdade
             // 
-            this.btnDelJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnDelJogador.Location = new System.Drawing.Point(233, 107);
-            this.btnDelJogador.Name = "btnDelJogador";
-            this.btnDelJogador.Size = new System.Drawing.Size(130, 30);
-            this.btnDelJogador.TabIndex = 10;
-            this.btnDelJogador.Text = "Deletar Jogador";
-            this.btnDelJogador.UseVisualStyleBackColor = true;
+            this.numIdade.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.numIdade.Location = new System.Drawing.Point(58, 105);
+            this.numIdade.Maximum = new decimal(new int[] {
+            45,
+            0,
+            0,
+            0});
+            this.numIdade.Minimum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.numIdade.Name = "numIdade";
+            this.numIdade.Size = new System.Drawing.Size(78, 22);
+            this.numIdade.TabIndex = 5;
+            this.numIdade.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             // 
-            // btnEditJogador
+            // lblIdadeJogador
             // 
-            this.btnEditJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnEditJogador.Location = new System.Drawing.Point(233, 69);
-            this.btnEditJogador.Name = "btnEditJogador";
-            this.btnEditJogador.Size = new System.Drawing.Size(130, 30);
-            this.btnEditJogador.TabIndex = 9;
-            this.btnEditJogador.Text = "Editar Jogador";
-            this.btnEditJogador.UseVisualStyleBackColor = true;
+            this.lblIdadeJogador.AutoSize = true;
+            this.lblIdadeJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.lblIdadeJogador.Location = new System.Drawing.Point(7, 107);
+            this.lblIdadeJogador.Name = "lblIdadeJogador";
+            this.lblIdadeJogador.Size = new System.Drawing.Size(45, 16);
+            this.lblIdadeJogador.TabIndex = 17;
+            this.lblIdadeJogador.Text = "Idade:";
             // 
-            // btnAddJogador
+            // txtNickNameJogador
             // 
-            this.btnAddJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAddJogador.Location = new System.Drawing.Point(233, 25);
-            this.btnAddJogador.Name = "btnAddJogador";
-            this.btnAddJogador.Size = new System.Drawing.Size(130, 30);
-            this.btnAddJogador.TabIndex = 8;
-            this.btnAddJogador.Text = "Adicionar Jogador";
-            this.btnAddJogador.UseVisualStyleBackColor = true;
+            this.txtNickNameJogador.Location = new System.Drawing.Point(87, 135);
+            this.txtNickNameJogador.Name = "txtNickNameJogador";
+            this.txtNickNameJogador.Size = new System.Drawing.Size(100, 26);
+            this.txtNickNameJogador.TabIndex = 16;
+            // 
+            // lblNickNameJogador
+            // 
+            this.lblNickNameJogador.AutoSize = true;
+            this.lblNickNameJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.lblNickNameJogador.Location = new System.Drawing.Point(7, 141);
+            this.lblNickNameJogador.Name = "lblNickNameJogador";
+            this.lblNickNameJogador.Size = new System.Drawing.Size(74, 16);
+            this.lblNickNameJogador.TabIndex = 15;
+            this.lblNickNameJogador.Text = "NickName:";
             // 
             // textBox1
             // 
@@ -324,60 +356,97 @@
             this.lblIdJogador.TabIndex = 11;
             this.lblIdJogador.Text = "ID:";
             // 
-            // lblNickNameJogador
+            // btnDelJogador
             // 
-            this.lblNickNameJogador.AutoSize = true;
-            this.lblNickNameJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.lblNickNameJogador.Location = new System.Drawing.Point(7, 148);
-            this.lblNickNameJogador.Name = "lblNickNameJogador";
-            this.lblNickNameJogador.Size = new System.Drawing.Size(74, 16);
-            this.lblNickNameJogador.TabIndex = 15;
-            this.lblNickNameJogador.Text = "NickName:";
+            this.btnDelJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnDelJogador.Location = new System.Drawing.Point(233, 107);
+            this.btnDelJogador.Name = "btnDelJogador";
+            this.btnDelJogador.Size = new System.Drawing.Size(130, 30);
+            this.btnDelJogador.TabIndex = 10;
+            this.btnDelJogador.Text = "Deletar Jogador";
+            this.btnDelJogador.UseVisualStyleBackColor = true;
             // 
-            // txtNickNameJogador
+            // btnAddJogador
             // 
-            this.txtNickNameJogador.Location = new System.Drawing.Point(87, 142);
-            this.txtNickNameJogador.Name = "txtNickNameJogador";
-            this.txtNickNameJogador.Size = new System.Drawing.Size(100, 26);
-            this.txtNickNameJogador.TabIndex = 16;
+            this.btnAddJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnAddJogador.Location = new System.Drawing.Point(233, 25);
+            this.btnAddJogador.Name = "btnAddJogador";
+            this.btnAddJogador.Size = new System.Drawing.Size(130, 30);
+            this.btnAddJogador.TabIndex = 8;
+            this.btnAddJogador.Text = "Adicionar Jogador";
+            this.btnAddJogador.UseVisualStyleBackColor = true;
             // 
-            // numIdade
+            // btnEditJogador
             // 
-            this.numIdade.Location = new System.Drawing.Point(58, 105);
-            this.numIdade.Maximum = new decimal(new int[] {
-            45,
-            0,
-            0,
-            0});
-            this.numIdade.Minimum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.numIdade.Name = "numIdade";
-            this.numIdade.Size = new System.Drawing.Size(78, 26);
-            this.numIdade.TabIndex = 5;
-            this.numIdade.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
+            this.btnEditJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnEditJogador.Location = new System.Drawing.Point(233, 69);
+            this.btnEditJogador.Name = "btnEditJogador";
+            this.btnEditJogador.Size = new System.Drawing.Size(130, 30);
+            this.btnEditJogador.TabIndex = 9;
+            this.btnEditJogador.Text = "Editar Jogador";
+            this.btnEditJogador.UseVisualStyleBackColor = true;
             // 
-            // lblIdadeJogador
+            // label1
             // 
-            this.lblIdadeJogador.AutoSize = true;
-            this.lblIdadeJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.lblIdadeJogador.Location = new System.Drawing.Point(7, 107);
-            this.lblIdadeJogador.Name = "lblIdadeJogador";
-            this.lblIdadeJogador.Size = new System.Drawing.Size(45, 16);
-            this.lblIdadeJogador.TabIndex = 17;
-            this.lblIdadeJogador.Text = "Idade:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.label1.Location = new System.Drawing.Point(7, 173);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(151, 16);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Nova Pontuação(0-100):";
+            // 
+            // NumPontuacao
+            // 
+            this.NumPontuacao.Location = new System.Drawing.Point(10, 193);
+            this.NumPontuacao.Name = "NumPontuacao";
+            this.NumPontuacao.Size = new System.Drawing.Size(120, 26);
+            this.NumPontuacao.TabIndex = 19;
+            // 
+            // btnAddPontos
+            // 
+            this.btnAddPontos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnAddPontos.Location = new System.Drawing.Point(233, 143);
+            this.btnAddPontos.Name = "btnAddPontos";
+            this.btnAddPontos.Size = new System.Drawing.Size(130, 30);
+            this.btnAddPontos.TabIndex = 20;
+            this.btnAddPontos.Text = "Adicionar Pontos";
+            this.btnAddPontos.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.label2.Location = new System.Drawing.Point(7, 222);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 16);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Pontuações:";
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(6, 241);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(357, 88);
+            this.listView1.TabIndex = 22;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(648, 418);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormEquipasJogadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 453);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pnlGestaoJogadores);
             this.Controls.Add(this.pnlGestaoEquipas);
             this.Controls.Add(this.pnlTorneio);
@@ -395,6 +464,7 @@
             this.grpJogador.ResumeLayout(false);
             this.grpJogador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numIdade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumPontuacao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -431,5 +501,11 @@
         private System.Windows.Forms.Label lblIdJogador;
         private System.Windows.Forms.NumericUpDown numIdade;
         private System.Windows.Forms.Label lblIdadeJogador;
+        private System.Windows.Forms.NumericUpDown NumPontuacao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAddPontos;
+        private System.Windows.Forms.Button button1;
     }
 }
