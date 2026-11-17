@@ -236,7 +236,7 @@
             this.pnlGestaoJogadores.Controls.Add(this.grpJogador);
             this.pnlGestaoJogadores.Location = new System.Drawing.Point(394, 57);
             this.pnlGestaoJogadores.Name = "pnlGestaoJogadores";
-            this.pnlGestaoJogadores.Size = new System.Drawing.Size(376, 193);
+            this.pnlGestaoJogadores.Size = new System.Drawing.Size(376, 292);
             this.pnlGestaoJogadores.TabIndex = 4;
             // 
             // grpJogador
@@ -255,7 +255,7 @@
             this.grpJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grpJogador.Location = new System.Drawing.Point(4, 4);
             this.grpJogador.Name = "grpJogador";
-            this.grpJogador.Size = new System.Drawing.Size(369, 186);
+            this.grpJogador.Size = new System.Drawing.Size(369, 285);
             this.grpJogador.TabIndex = 0;
             this.grpJogador.TabStop = false;
             this.grpJogador.Text = "Gestão de Jogadores";
