@@ -1,16 +1,13 @@
 ﻿using System.Collections.Generic;
-using System.Text.Json.Serialization;
-public class JogadorMock
-{
-    public int Id { get; set; }
-    public string Nome { get; set; }
-}
+using Gestão_de_Campeonato_de_eSports.Modelo;
 
-public class EquipaMock
+namespace Gestão_de_Campeonato_de_eSports
 {
-    [JsonPropertyName("nome_equipa")]
-    public string NomeEquipa { get; set; }
-
-    [JsonPropertyName("jogadores_lista")]
-    public List<JogadorMock> Jogadores { get; set; } = new List<JogadorMock>();
+    public class EquipaMock
+    {
+        public int Id { get; set; }
+        public string Nome { get; set; } = "";
+        public string Pais { get; set; } = "";
+        public List<Jogador> Jogadores { get; set; } = new List<Jogador>();
+    }
 }
