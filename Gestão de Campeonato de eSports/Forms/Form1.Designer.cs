@@ -47,6 +47,7 @@
             this.btnAbrirEquipas = new System.Windows.Forms.Button();
             this.ofdFicheiro = new System.Windows.Forms.OpenFileDialog();
             this.sfdFicheiro = new System.Windows.Forms.SaveFileDialog();
+            this.btnSair = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.pnlXML.SuspendLayout();
             this.grpXML.SuspendLayout();
@@ -238,11 +239,23 @@
             // 
             this.sfdFicheiro.FileName = "SaveFileDialog";
             // 
+            // btnSair
+            // 
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnSair.Location = new System.Drawing.Point(12, 293);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(75, 23);
+            this.btnSair.TabIndex = 3;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 328);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlJSON);
             this.Controls.Add(this.pnlXML);
@@ -283,6 +296,7 @@
         private System.Windows.Forms.Button btnAbrirEquipas;
         private System.Windows.Forms.Button btnAbrirLinq;
         private System.Windows.Forms.Button btnAbrirTorneio;
+        private System.Windows.Forms.Button btnSair;
     }
 }
 
