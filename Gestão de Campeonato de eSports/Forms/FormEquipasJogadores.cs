@@ -18,6 +18,7 @@ namespace Gestão_de_Campeonato_de_eSports
             InitializeComponent();
         }
 
+
         private void btnAddJogador_Click(object sender, EventArgs e)
         {
             Jogador novo = new Jogador
