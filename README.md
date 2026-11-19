@@ -2,7 +2,6 @@ Trabalho PSI1- Divisão de Trabalhos
 Utilizem este README.md para colocar informações ou algo do género, não se esqueçam de irem atualizando enquanto fazem o trabalho para os outros terem o trabalho atualizado, Tambem têm de utilizar o trello para confirmar o que já fizeram!!!
 
 !!! Utilizem inteligencia artificial para fazer o trabalho mas nao para fazer por voces, com isso quero dizer que peçam codigo a ele e copiem nao insiram o trabalho lá e peçam para ele fazer por voces !!!
-[Trabalho PSI1- Divisão de Trabalhos aaa.txt](https://github.com/user-attachments/files/34980284/Trabalho.PSI1-.Divisao.de.Trabalhos.aaa.txt)
 
 Membro 1: Gurkirat Singh
  - Modelação de Dados e Estrutura de ClassesResponsável por garantir que a base do projeto (o modelo orientado a objetos) está corretamente estruturada.Análise inicial: Analisar exaustivamente os ficheiros XML e JSON de exemplo fornecidos pelo docente para mapear todos os campos necessários.
