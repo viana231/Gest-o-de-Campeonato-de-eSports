@@ -21,75 +21,61 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             btnExportarXML.Enabled = false;
             btnExportarJSON.Enabled = false;
+            DadosGlobais.CarregarDadosIniciaisJson();
+        
         }
         private void btnImportarJSON_Click(object sender, EventArgs e)
         {
-            
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Ficheiros JSON (*.json)|*.json|Todos os ficheiros (*.*)|*.*";
-            openFileDialog.Title = "Selecionar Ficheiro JSON para Importar";
+            openFileDialog.Filter = "Ficheiros JSON (*.json)|*.json";
+            openFileDialog.Title = "Importar e Sincronizar Jogadores (JSON)";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    string caminhoFicheiro = openFileDialog.FileName;
-                    var dadosImportados = GestorJson.ImportarDeJson<List<EquipaMock>>(caminhoFicheiro);
+                    int novos = GestorJson.SincronizarJogadores(DadosGlobais.Jogadores, openFileDialog.FileName);
 
-                    if (dadosImportados != null)
-                    {
-                        MessageBox.Show($"Sucesso! Foram importadas {dadosImportados.Count} equipas do ficheiro JSON.",
-                                        "Importação JSON", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GestorJson.ExportarJogadores(DadosGlobais.Jogadores);
 
-                    }
+                    MessageBox.Show($"Sincronização concluída!\nForam validados e adicionados {novos} novos jogadores.\nTotal em memória: {DadosGlobais.Jogadores.Count}",
+                                    "Sincronização JSON", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ocorreu um erro ao importar:\n{ex.Message}",
-                                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Erro ao Importar JSON", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
         private void btnExportarJSON_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Ficheiro JSON (*.json)|*.json";
-            saveFileDialog.Title = "Guardar Dados em JSON";
-            saveFileDialog.FileName = "meus_dados_esports.json"; 
+            saveFileDialog.Filter = "Ficheiros JSON (*.json)|*.json";
+            saveFileDialog.Title = "Exportar Jogadores para JSON";
+            saveFileDialog.FileName = "jogadores_exportados.json";
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    
-                    var listaParaGuardar = new List<EquipaMock>
-            {
-                new EquipaMock { NomeEquipa = "Equipa A" },
-                new EquipaMock { NomeEquipa = "Equipa B" }
-            };
+                    // Se a memória estiver vazia, tenta primeiro carregar do ficheiro local
+                    if (DadosGlobais.Jogadores.Count == 0)
+                    {
+                        DadosGlobais.Jogadores = GestorJson.ImportarJogadores();
+                    }
 
-                    string caminhoFicheiro = saveFileDialog.FileName;
-                    GestorJson.ExportarParaJson(listaParaGuardar, caminhoFicheiro);
-
-                    MessageBox.Show("Ficheiro JSON guardado e exportado com sucesso!",
-                                    "Exportação JSON", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GestorJson.ExportarParaJson(DadosGlobais.Jogadores, saveFileDialog.FileName);
+                    MessageBox.Show("Dados exportados com sucesso para JSON!", "Exportação JSON", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ocorreu um erro ao exportar:\n{ex.Message}",
-                                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Erro ao Exportar JSON", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
         private void btnConverterJSON_Click(object sender, EventArgs e)
         {
-            string mensagem = "Para converter dados:\n\n" +
-                              "1. A Victoria precisa de importar o ficheiro XML primeiro.\n" +
-                              "2. Quando os dados do XML estiverem na memória do programa, " +
-                              "o teu módulo JSON só tem de pegar nesses dados e usar a função 'Exportar'.\n\n" +
-                              "Fica a aguardar a sincronização com o Membro 2!";
-
-            MessageBox.Show(mensagem, "Módulo de Conversão", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnSair_Click(object sender, EventArgs e)

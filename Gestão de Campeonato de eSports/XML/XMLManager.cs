@@ -87,6 +87,21 @@ namespace Gestão_de_Campeonato_de_eSports.XML
             {
                 jogador.Element("Nome").Value = novoNome;
             }
+        
+        }
+
+
+
+        // Alterar o nickname de um jogador
+        public void AlterarNicknameJogador(XDocument documento, int id, string novoNickname)
+        {
+            XElement jogador = documento.Descendants("Jogador")
+                .FirstOrDefault(j => (int)j.Element("Id") == id);
+
+            if (jogador != null)
+            {
+                jogador.Element("Nickname").Value = novoNickname;
+            }
         }
 
         // Eliminar uma equipa
