@@ -90,6 +90,8 @@ namespace Gestão_de_Campeonato_de_eSports.XML
         
         }
 
+
+
         // Alterar o nickname de um jogador
         public void AlterarNicknameJogador(XDocument documento, int id, string novoNickname)
         {
