@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Gestão_de_Campeonato_de_eSports.Modelo
 {
-    internal class Equipa
+    public class Equipa
     {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public List<Jogador> Jogadores { get; set; }
+
+        public Equipa(int id, string nome)
+        {
+            Jogadores = new List<Jogador>();
+        }
     }
 }

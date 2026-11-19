@@ -141,7 +141,7 @@
             this.grpJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grpJSON.Location = new System.Drawing.Point(7, 7);
             this.grpJSON.Name = "grpJSON";
-            this.grpJSON.Size = new System.Drawing.Size(317, 147);
+            this.grpJSON.Size = new System.Drawing.Size(317, 144);
             this.grpJSON.TabIndex = 1;
             this.grpJSON.TabStop = false;
             this.grpJSON.Text = "Ficheiros JSON";
@@ -203,21 +203,21 @@
             // btnAbrirLinq
             // 
             this.btnAbrirLinq.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAbrirLinq.Location = new System.Drawing.Point(299, 25);
+            this.btnAbrirLinq.Location = new System.Drawing.Point(366, 25);
             this.btnAbrirLinq.Name = "btnAbrirLinq";
-            this.btnAbrirLinq.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirLinq.Size = new System.Drawing.Size(260, 30);
             this.btnAbrirLinq.TabIndex = 4;
-            this.btnAbrirLinq.Text = "Abrir Linq";
+            this.btnAbrirLinq.Text = "Classificações, Rankings e Estatísticas";
             this.btnAbrirLinq.UseVisualStyleBackColor = true;
             // 
             // btnAbrirTorneio
             // 
             this.btnAbrirTorneio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAbrirTorneio.Location = new System.Drawing.Point(156, 25);
+            this.btnAbrirTorneio.Location = new System.Drawing.Point(181, 25);
             this.btnAbrirTorneio.Name = "btnAbrirTorneio";
-            this.btnAbrirTorneio.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirTorneio.Size = new System.Drawing.Size(150, 30);
             this.btnAbrirTorneio.TabIndex = 3;
-            this.btnAbrirTorneio.Text = "Abrir Torneio";
+            this.btnAbrirTorneio.Text = "Torneios e Partidas";
             this.btnAbrirTorneio.UseVisualStyleBackColor = true;
             // 
             // btnAbrirEquipas
@@ -225,9 +225,9 @@
             this.btnAbrirEquipas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.btnAbrirEquipas.Location = new System.Drawing.Point(5, 25);
             this.btnAbrirEquipas.Name = "btnAbrirEquipas";
-            this.btnAbrirEquipas.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirEquipas.Size = new System.Drawing.Size(150, 30);
             this.btnAbrirEquipas.TabIndex = 0;
-            this.btnAbrirEquipas.Text = "Abrir Equipa";
+            this.btnAbrirEquipas.Text = "Equipas e Jogadores";
             this.btnAbrirEquipas.UseVisualStyleBackColor = true;
             // 
             // ofdFicheiro
