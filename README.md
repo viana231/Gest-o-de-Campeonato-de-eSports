@@ -6,7 +6,8 @@
 
 ## Sobre o Projeto
 
-Este projeto tem como objetivo desenvolver uma aplicação em C# para a gestão de campeonatos, torneios, equipas e jogadores, permitindo manipular, importar, exportar, editar e consultar informações através de ficheiros XML e JSON.
+Este projeto tem como objetivo desenvolver uma aplicação em C# para a gestão de campeonatos, torneios, equipas e jogadores, permitindo manipular, importar, exportar, editar e consultar informações através de ficheiros XML e JSON. [INETE_Projeto_Grupo_XML_JSONaa.pdf](https://github.com/user-attachments/files/35094242/INETE_Projeto_Grupo_XML_JSONaa.pdf)
+
 
 ---
 
