@@ -1,5 +1,4 @@
-﻿using Gestão_de_Campeonato_de_eSports.Classes;
-using Gestão_de_Campeonato_de_eSports.Modelo;
+﻿using Gestão_de_Campeonato_de_eSports.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
