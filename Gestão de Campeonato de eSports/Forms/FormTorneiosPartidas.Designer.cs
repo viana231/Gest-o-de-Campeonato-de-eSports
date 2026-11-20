@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 553);
             this.Name = "FormTorneiosPartidas";
-            this.Text = "FormTorneiosPartidas";
+            this.Text = "Torneios e Partidas";
             this.ResumeLayout(false);
 
         }
