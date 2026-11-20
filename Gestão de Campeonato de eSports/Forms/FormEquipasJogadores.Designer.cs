@@ -176,7 +176,6 @@
             this.btnDelEquipa.TabIndex = 7;
             this.btnDelEquipa.Text = "Deletar Equipa";
             this.btnDelEquipa.UseVisualStyleBackColor = true;
-            this.btnDelEquipa.Click += new System.EventHandler(this.btnDelEquipa_Click);
             // 
             // btnEditEquipa
             // 
@@ -187,7 +186,6 @@
             this.btnEditEquipa.TabIndex = 6;
             this.btnEditEquipa.Text = "Editar Equipa";
             this.btnEditEquipa.UseVisualStyleBackColor = true;
-            this.btnEditEquipa.Click += new System.EventHandler(this.btnEditEquipa_Click);
             // 
             // btnAddEquipa
             // 
@@ -198,7 +196,6 @@
             this.btnAddEquipa.TabIndex = 5;
             this.btnAddEquipa.Text = "Adicionar Equipa";
             this.btnAddEquipa.UseVisualStyleBackColor = true;
-            this.btnAddEquipa.Click += new System.EventHandler(this.btnAddEquipa_Click);
             // 
             // txtPaisEquipa
             // 
@@ -356,12 +353,6 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(648, 418);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // txtNickNameJogador
             // 
@@ -423,7 +414,6 @@
             this.btnDelJogador.TabIndex = 10;
             this.btnDelJogador.Text = "Deletar Jogador";
             this.btnDelJogador.UseVisualStyleBackColor = true;
-            this.btnDelJogador.Click += new System.EventHandler(this.btnDelJogador_Click);
             // 
             // btnAddJogador
             // 
@@ -434,7 +424,6 @@
             this.btnAddJogador.TabIndex = 8;
             this.btnAddJogador.Text = "Adicionar Jogador";
             this.btnAddJogador.UseVisualStyleBackColor = true;
-            this.btnAddJogador.Click += new System.EventHandler(this.btnAddJogador_Click);
             // 
             // btnEditJogador
             // 
@@ -445,7 +434,6 @@
             this.btnEditJogador.TabIndex = 9;
             this.btnEditJogador.Text = "Editar Jogador";
             this.btnEditJogador.UseVisualStyleBackColor = true;
-            this.btnEditJogador.Click += new System.EventHandler(this.btnEditJogador_Click);
             // 
             // btnVoltar
             // 
@@ -456,7 +444,6 @@
             this.btnVoltar.TabIndex = 20;
             this.btnVoltar.Text = "Voltar Menu";
             this.btnVoltar.UseVisualStyleBackColor = true;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // dgvEquipas
             // 
