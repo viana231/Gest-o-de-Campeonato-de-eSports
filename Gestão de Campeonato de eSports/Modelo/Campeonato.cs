@@ -10,11 +10,20 @@ namespace Gestão_de_Campeonato_de_eSports.Modelo
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public List<Torneio> torneios  { get; set; }
+        public string Ano { get; set; }
+        public List<Torneio> Torneios  { get; set; }
 
-        public Campeonato(int id, string nome)
+        // construtor vazio (o JSON precisa dele)
+        public Campeonato()
         {
-            torneios = new List<Torneio>();
+            Torneios = new List<Torneio>();
+        }
+        public Campeonato(int id, string nome, string ano)
+        {
+            Id = id;
+            Nome = nome;
+            Ano = ano;
+            Torneios = new List<Torneio>();
         }
     }
 }
