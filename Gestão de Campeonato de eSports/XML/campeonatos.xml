@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Campeonatos>
+  <Campeonato>
+    <Id>1</Id>
+    <Nome>Liga Nacional eSports</Nome>
+    <Ano>2026</Ano>
+
+    <Torneios>
+      <Torneio>
+        <Id>101</Id>
+        <Nome>CS2 Masters</Nome>
+        <Jogo>Counter-Strike 2</Jogo>
+
+        <Equipas>
+          <Equipa>
+            <Id>1</Id>
+            <Nome>Dragons</Nome>
+            <Pais>Portugal</Pais>
+
+            <Jogadores>
+              <Jogador>
+                <Id>10</Id>
+                <Nome>Joao Silva</Nome>
+                <Nickname>Fire</Nickname>
+                <Idade>18</Idade>
+
+                <Pontuacoes>
+                  <Ponto>90</Ponto>
+                  <Ponto>85</Ponto>
+                  <Ponto>95</Ponto>
+                </Pontuacoes>
+              </Jogador>
+            </Jogadores>
+          </Equipa>
+        </Equipas>
+
+        <Partidas />
+      </Torneio>
+    </Torneios>
+  </Campeonato>
+</Campeonatos>
