@@ -98,6 +98,12 @@
     </Compile>
     <Compile Include="Classes\GestorJson.cs" />
     <Compile Include="Classes\Mock.cs" />
+    <Compile Include="Forms\FormTorneiosPartidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTorneiosPartidas.Designer.cs">
+      <DependentUpon>FormTorneiosPartidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Campeonato.cs" />
     <Compile Include="Modelo\Equipa.cs" />
     <Compile Include="Modelo\Jogador.cs" />
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEquipasJogadores.resx">
       <DependentUpon>FormEquipasJogadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTorneiosPartidas.resx">
+      <DependentUpon>FormTorneiosPartidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
