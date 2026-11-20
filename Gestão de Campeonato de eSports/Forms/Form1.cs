@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Gestão_de_Campeonato_de_eSports
 {
+
     public partial class FormPrincipal : Form
     {
         public FormPrincipal()

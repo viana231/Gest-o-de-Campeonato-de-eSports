@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace Gestão_de_Campeonato_de_eSports.Modelo
 {
-    internal class Campeonato
+    public class Campeonato
     {
+        public int Id { get; set; }
+        public string Nome { get; set; }
+        public string Ano { get; set; }
+        public List<Torneio> Torneios  { get; set; }
+
+        // construtor vazio (o JSON precisa dele)
+        public Campeonato()
+        {
+            Torneios = new List<Torneio>();
+        }
+        public Campeonato(int id, string nome, string ano)
+        {
+            Id = id;
+            Nome = nome;
+            Ano = ano;
+            Torneios = new List<Torneio>();
+        }
     }
 }
