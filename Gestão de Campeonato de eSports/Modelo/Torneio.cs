@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gestão_de_Campeonato_de_eSports.Modelo
 {
-    internal class Torneio
+    public class Torneio
     {
         public int Id { get; set; }
         public string Nome { get; set; }

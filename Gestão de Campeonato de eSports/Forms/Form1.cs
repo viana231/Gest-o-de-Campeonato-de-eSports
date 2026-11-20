@@ -92,5 +92,9 @@ namespace Gestão_de_Campeonato_de_eSports
 
             MessageBox.Show(mensagem, "Módulo de Conversão", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        private void BtnHelpLogs_Click(object sender, EventArgs e)
+        {
+            GestorLogs.AbrirBotaoLogs();
+        }
     }
 }

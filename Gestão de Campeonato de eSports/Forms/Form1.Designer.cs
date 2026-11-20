@@ -47,6 +47,7 @@
             this.btnAbrirEquipas = new System.Windows.Forms.Button();
             this.ofdFicheiro = new System.Windows.Forms.OpenFileDialog();
             this.sfdFicheiro = new System.Windows.Forms.SaveFileDialog();
+            this.BtnHelpLogs = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.pnlXML.SuspendLayout();
             this.grpXML.SuspendLayout();
@@ -238,11 +239,23 @@
             // 
             this.sfdFicheiro.FileName = "SaveFileDialog";
             // 
+            // BtnHelpLogs
+            // 
+            this.BtnHelpLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnHelpLogs.Location = new System.Drawing.Point(13, 292);
+            this.BtnHelpLogs.Name = "BtnHelpLogs";
+            this.BtnHelpLogs.Size = new System.Drawing.Size(37, 33);
+            this.BtnHelpLogs.TabIndex = 4;
+            this.BtnHelpLogs.Text = "?";
+            this.BtnHelpLogs.UseVisualStyleBackColor = true;
+            this.BtnHelpLogs.Click += new System.EventHandler(this.BtnHelpLogs_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 328);
+            this.Controls.Add(this.BtnHelpLogs);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlJSON);
             this.Controls.Add(this.pnlXML);
@@ -283,6 +296,7 @@
         private System.Windows.Forms.Button btnAbrirEquipas;
         private System.Windows.Forms.Button btnAbrirLinq;
         private System.Windows.Forms.Button btnAbrirTorneio;
+        private System.Windows.Forms.Button BtnHelpLogs;
     }
 }
 
