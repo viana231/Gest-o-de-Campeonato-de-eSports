@@ -35,9 +35,14 @@ Responsável pela estruturação do modelo orientado a objetos e pela criação 
 - Modelação de Campeonatos, Torneios, Equipas e Jogadores.
 - Definição das propriedades e relações entre objetos.
 - Estruturação das coleções de dados.
+- Registo de eventos e erros (Log): criação da classe `Log`, que guarda no ficheiro `log.txt` as ações do programa (importações e exportações) e os erros capturados nos `try/catch`, com data e hora.
+
+**Como usar o Log:**
+- Evento normal: `Log.Escrever("Importou JSON: " + caminho);`
+- Erro (dentro do `catch`): `Log.EscreverErro("nomeDoBotao", ex);`
+- O ficheiro `log.txt` fica na pasta `bin\Debug`, junto do `.exe`.
 
 ---
-
 ### Membro 2 — Victoria Cholby
 
 **Responsabilidade: Manipulação e Persistência XML**
