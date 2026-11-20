@@ -72,6 +72,7 @@
             this.nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.media = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnHelpLogs = new System.Windows.Forms.Button();
             this.pnlCampeonato.SuspendLayout();
             this.pnlTorneio.SuspendLayout();
             this.pnlGestaoEquipas.SuspendLayout();
@@ -176,7 +177,6 @@
             this.btnDelEquipa.TabIndex = 7;
             this.btnDelEquipa.Text = "Deletar Equipa";
             this.btnDelEquipa.UseVisualStyleBackColor = true;
-            this.btnDelEquipa.Click += new System.EventHandler(this.btnDelEquipa_Click);
             // 
             // btnEditEquipa
             // 
@@ -187,7 +187,6 @@
             this.btnEditEquipa.TabIndex = 6;
             this.btnEditEquipa.Text = "Editar Equipa";
             this.btnEditEquipa.UseVisualStyleBackColor = true;
-            this.btnEditEquipa.Click += new System.EventHandler(this.btnEditEquipa_Click);
             // 
             // btnAddEquipa
             // 
@@ -198,7 +197,6 @@
             this.btnAddEquipa.TabIndex = 5;
             this.btnAddEquipa.Text = "Adicionar Equipa";
             this.btnAddEquipa.UseVisualStyleBackColor = true;
-            this.btnAddEquipa.Click += new System.EventHandler(this.btnAddEquipa_Click);
             // 
             // txtPaisEquipa
             // 
@@ -356,13 +354,10 @@
             // 
             // lblIdadeJogador
             // 
-            this.lblIdadeJogador.AutoSize = true;
-            this.lblIdadeJogador.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.lblIdadeJogador.Location = new System.Drawing.Point(7, 107);
+            this.lblIdadeJogador.Location = new System.Drawing.Point(0, 0);
             this.lblIdadeJogador.Name = "lblIdadeJogador";
-            this.lblIdadeJogador.Size = new System.Drawing.Size(45, 16);
-            this.lblIdadeJogador.TabIndex = 17;
-            this.lblIdadeJogador.Text = "Idade:";
+            this.lblIdadeJogador.Size = new System.Drawing.Size(100, 23);
+            this.lblIdadeJogador.TabIndex = 22;
             // 
             // txtNickNameJogador
             // 
@@ -424,7 +419,6 @@
             this.btnDelJogador.TabIndex = 10;
             this.btnDelJogador.Text = "Deletar Jogador";
             this.btnDelJogador.UseVisualStyleBackColor = true;
-            this.btnDelJogador.Click += new System.EventHandler(this.btnDelJogador_Click);
             // 
             // btnAddJogador
             // 
@@ -435,7 +429,6 @@
             this.btnAddJogador.TabIndex = 8;
             this.btnAddJogador.Text = "Adicionar Jogador";
             this.btnAddJogador.UseVisualStyleBackColor = true;
-            this.btnAddJogador.Click += new System.EventHandler(this.btnAddJogador_Click);
             // 
             // btnEditJogador
             // 
@@ -446,18 +439,16 @@
             this.btnEditJogador.TabIndex = 9;
             this.btnEditJogador.Text = "Editar Jogador";
             this.btnEditJogador.UseVisualStyleBackColor = true;
-            this.btnEditJogador.Click += new System.EventHandler(this.btnEditJogador_Click);
             // 
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnVoltar.Location = new System.Drawing.Point(13, 511);
+            this.btnVoltar.Location = new System.Drawing.Point(56, 513);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 30);
             this.btnVoltar.TabIndex = 20;
             this.btnVoltar.Text = "Voltar Menu";
             this.btnVoltar.UseVisualStyleBackColor = true;
-            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // dgvEquipas
             // 
@@ -545,11 +536,23 @@
             this.media.MinimumWidth = 6;
             this.media.Name = "media";
             // 
+            // BtnHelpLogs
+            // 
+            this.BtnHelpLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnHelpLogs.Location = new System.Drawing.Point(13, 510);
+            this.BtnHelpLogs.Name = "BtnHelpLogs";
+            this.BtnHelpLogs.Size = new System.Drawing.Size(37, 33);
+            this.BtnHelpLogs.TabIndex = 23;
+            this.BtnHelpLogs.Text = "?";
+            this.BtnHelpLogs.UseVisualStyleBackColor = true;
+            this.BtnHelpLogs.Click += new System.EventHandler(this.BtnHelpLogs_Click);
+            // 
             // FormEquipasJogadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.BtnHelpLogs);
             this.Controls.Add(this.dgvJogadores);
             this.Controls.Add(this.dgvEquipas);
             this.Controls.Add(this.btnVoltar);
@@ -623,5 +626,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nickname;
         private System.Windows.Forms.DataGridViewTextBoxColumn idade;
         private System.Windows.Forms.DataGridViewTextBoxColumn media;
+        private System.Windows.Forms.Button BtnHelpLogs;
     }
 }

@@ -37,6 +37,79 @@ namespace Gestão_de_Campeonato_de_eSports.XML
             }
         }
 
+        // Validar a estrutura do ficheiro XML
+        public bool ValidarXML(XDocument documento)
+        {
+            if (documento == null)
+            {
+                return false;
+            }
+
+            if (documento.Root == null ||
+                documento.Root.Name != "Campeonatos")
+            {
+                return false;
+            }
+
+            if (!documento.Root.Elements("Campeonato").Any())
+            {
+                return false;
+            }
+
+            foreach (XElement campeonato in documento.Root.Elements("Campeonato"))
+            {
+                if (campeonato.Element("Id") == null ||
+                    campeonato.Element("Nome") == null ||
+                    campeonato.Element("Ano") == null ||
+                    campeonato.Element("Torneios") == null)
+                {
+                    return false;
+                }
+            }
+
+            foreach (XElement torneio in documento.Descendants("Torneio"))
+            {
+                if (torneio.Element("Id") == null ||
+                    torneio.Element("Nome") == null ||
+                    torneio.Element("Jogo") == null ||
+                    torneio.Element("Equipas") == null ||
+                    torneio.Element("Partidas") == null)
+                {
+                    return false;
+                }
+            }
+
+            foreach (XElement equipa in documento.Descendants("Equipa"))
+            {
+                if (equipa.Element("Id") == null ||
+                    equipa.Element("Nome") == null ||
+                    equipa.Element("Pais") == null ||
+                    equipa.Element("Jogadores") == null)
+                {
+                    return false;
+                }
+            }
+
+            foreach (XElement jogador in documento.Descendants("Jogador"))
+            {
+                if (jogador.Element("Id") == null ||
+                    jogador.Element("Nome") == null ||
+                    jogador.Element("Nickname") == null ||
+                    jogador.Element("Idade") == null ||
+                    jogador.Element("Pontuacoes") == null)
+                {
+                    return false;
+                }
+
+                if (!jogador.Element("Pontuacoes").Elements("Ponto").Any())
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         // Adicionar uma equipa
         public void AdicionarEquipa(XDocument documento, XElement novaEquipa)
         {
@@ -101,6 +174,31 @@ namespace Gestão_de_Campeonato_de_eSports.XML
             if (jogador != null)
             {
                 jogador.Element("Nickname").Value = novoNickname;
+            }
+        }
+
+        // Alterar a idade de um jogador
+        public void AlterarIdadeJogador(XDocument documento, int id, int novaIdade)
+        {
+            XElement jogador = documento.Descendants("Jogador")
+                .FirstOrDefault(j => (int)j.Element("Id") == id);
+
+            if (jogador != null)
+            {
+                jogador.Element("Idade").Value = novaIdade.ToString();
+            }
+        }
+
+        // Adicionar uma pontuação a um jogador
+        public void AdicionarPontuacaoJogador(XDocument documento, int id, int pontuacao)
+        {
+            XElement jogador = documento.Descendants("Jogador")
+                .FirstOrDefault(j => (int)j.Element("Id") == id);
+
+            if (jogador != null)
+            {
+                jogador.Element("Pontuacoes").Add(
+                    new XElement("Ponto", pontuacao));
             }
         }
 
