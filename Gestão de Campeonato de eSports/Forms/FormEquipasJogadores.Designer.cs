@@ -62,7 +62,7 @@
             this.btnDelJogador = new System.Windows.Forms.Button();
             this.btnAddJogador = new System.Windows.Forms.Button();
             this.btnEditJogador = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.dgvEquipas = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -448,15 +448,16 @@
             this.btnEditJogador.UseVisualStyleBackColor = true;
             this.btnEditJogador.Click += new System.EventHandler(this.btnEditJogador_Click);
             // 
-            // button2
+            // btnVoltar
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.button2.Location = new System.Drawing.Point(13, 511);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 30);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Voltar Menu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnVoltar.Location = new System.Drawing.Point(13, 511);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(95, 30);
+            this.btnVoltar.TabIndex = 20;
+            this.btnVoltar.Text = "Voltar Menu";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // dgvEquipas
             // 
@@ -551,7 +552,7 @@
             this.ClientSize = new System.Drawing.Size(782, 553);
             this.Controls.Add(this.dgvJogadores);
             this.Controls.Add(this.dgvEquipas);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.pnlGestaoJogadores);
             this.Controls.Add(this.pnlGestaoEquipas);
             this.Controls.Add(this.pnlTorneio);
@@ -610,7 +611,7 @@
         private System.Windows.Forms.Label lblIdadeJogador;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.DataGridView dgvEquipas;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;

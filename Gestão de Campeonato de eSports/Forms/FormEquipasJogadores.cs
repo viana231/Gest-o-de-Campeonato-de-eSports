@@ -92,5 +92,11 @@ namespace Gestão_de_Campeonato_de_eSports
             DadosGlobais.Equipas = GestorJson.ImportarEquipas();
             MessageBox.Show("Equipa removida do JSON!");
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new FormPrincipal().ShowDialog();
+        }
     }
 }
