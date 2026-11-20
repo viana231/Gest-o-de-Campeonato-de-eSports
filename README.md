@@ -9,7 +9,7 @@ Para garantir uma boa organização e comunicação entre todos os elementos, de
 - **Trello:** Todas as tarefas devem ser organizadas e acompanhadas através do Trello. Cada membro deve atualizar o estado das suas tarefas.
 - **GitHub:** Atualizar regularmente o repositório com as alterações realizadas.
 - **Inteligência Artificial:** Utilizar a IA como ferramenta de apoio à aprendizagem e desenvolvimento. Pode ser utilizada para obter exemplos de código, esclarecer dúvidas e resolver problemas, mas não para realizar o trabalho integralmente por nós. É importante compreender e testar todo o código utilizado.
-- - **Word:** Utilizar o Word para atualizar as informações do progresso que fizeram durante as aulas com Data do dia que o fizeram caso a pessoa não atualizar o word é contado como não ter feito nada.
+- **Word:** Utilizar o Word para atualizar as informações do progresso que fizeram durante as aulas com Data do dia que o fizeram caso a pessoa não atualizar o word é contado como não ter feito nada.
 
 ---
 
