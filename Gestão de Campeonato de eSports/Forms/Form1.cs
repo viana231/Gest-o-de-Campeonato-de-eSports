@@ -59,7 +59,6 @@ namespace Gestão_de_Campeonato_de_eSports
             {
                 try
                 {
-                    // Se a memória estiver vazia, tenta primeiro carregar do ficheiro local
                     if (DadosGlobais.Jogadores.Count == 0)
                     {
                         DadosGlobais.Jogadores = GestorJson.ImportarJogadores();
@@ -76,6 +75,12 @@ namespace Gestão_de_Campeonato_de_eSports
         }
         private void btnConverterJSON_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnAbrirEquipas_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new FormEquipasJogadores().ShowDialog();
         }
     }
 }

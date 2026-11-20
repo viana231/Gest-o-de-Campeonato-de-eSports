@@ -229,6 +229,7 @@
             this.btnAbrirEquipas.TabIndex = 0;
             this.btnAbrirEquipas.Text = "Equipas e Jogadores";
             this.btnAbrirEquipas.UseVisualStyleBackColor = true;
+            this.btnAbrirEquipas.Click += new System.EventHandler(this.btnAbrirEquipas_Click);
             // 
             // ofdFicheiro
             // 
