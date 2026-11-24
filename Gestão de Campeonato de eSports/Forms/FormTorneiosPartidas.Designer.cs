@@ -386,6 +386,7 @@
             // 
             // dgvPartidas
             // 
+            this.dgvPartidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPartidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPartidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -407,21 +408,18 @@
             this.id.HeaderText = "ID";
             this.id.MinimumWidth = 6;
             this.id.Name = "id";
-            this.id.Width = 80;
             // 
             // data
             // 
             this.data.HeaderText = "Data";
             this.data.MinimumWidth = 6;
             this.data.Name = "data";
-            this.data.Width = 110;
             // 
             // equipaA
             // 
             this.equipaA.HeaderText = "Equipa A";
             this.equipaA.MinimumWidth = 6;
             this.equipaA.Name = "equipaA";
-            this.equipaA.Width = 125;
             // 
             // resultA
             // 
@@ -434,14 +432,12 @@
             this.equipaB.HeaderText = "Equipa B";
             this.equipaB.MinimumWidth = 6;
             this.equipaB.Name = "equipaB";
-            this.equipaB.Width = 125;
             // 
             // vencedor
             // 
             this.vencedor.HeaderText = "Vencedor";
             this.vencedor.MinimumWidth = 6;
             this.vencedor.Name = "vencedor";
-            this.vencedor.Width = 125;
             // 
             // FormTorneiosPartidas
             // 
