@@ -31,7 +31,7 @@
             this.lblCampeonato = new System.Windows.Forms.Label();
             this.cmbCampeonatos = new System.Windows.Forms.ComboBox();
             this.grpCriarTorneio = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCriarTorneio = new System.Windows.Forms.Button();
             this.txtJogo = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -41,23 +41,37 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.grpInscricoes = new System.Windows.Forms.GroupBox();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnInscreverEquipa = new System.Windows.Forms.Button();
             this.cmbEquipasDisp = new System.Windows.Forms.ComboBox();
             this.lblEquipa = new System.Windows.Forms.Label();
             this.cmbTorneio = new System.Windows.Forms.ComboBox();
             this.lblTorneio = new System.Windows.Forms.Label();
             this.grpPartidas = new System.Windows.Forms.GroupBox();
-            this.cmbEquipa = new System.Windows.Forms.ComboBox();
+            this.lblVS = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblData = new System.Windows.Forms.Label();
+            this.cmbEquipaA = new System.Windows.Forms.ComboBox();
             this.txtIdPartida = new System.Windows.Forms.TextBox();
             this.lblResultadoA = new System.Windows.Forms.Label();
             this.lblEquipaA = new System.Windows.Forms.Label();
             this.lblIdPartida = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lblVS = new System.Windows.Forms.Label();
+            this.cmbEquipaB = new System.Windows.Forms.ComboBox();
+            this.lblResultB = new System.Windows.Forms.Label();
+            this.lblEquipaB = new System.Windows.Forms.Label();
+            this.txtResultadoA = new System.Windows.Forms.TextBox();
+            this.txtResultadoB = new System.Windows.Forms.TextBox();
+            this.btnGuardarPartida = new System.Windows.Forms.Button();
+            this.dgvPartidas = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipaA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resultA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipaB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vencedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpCriarTorneio.SuspendLayout();
             this.grpInscricoes.SuspendLayout();
             this.grpPartidas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCampeonato
@@ -80,7 +94,7 @@
             // 
             // grpCriarTorneio
             // 
-            this.grpCriarTorneio.Controls.Add(this.button1);
+            this.grpCriarTorneio.Controls.Add(this.btnCriarTorneio);
             this.grpCriarTorneio.Controls.Add(this.txtJogo);
             this.grpCriarTorneio.Controls.Add(this.txtNome);
             this.grpCriarTorneio.Controls.Add(this.txtId);
@@ -94,14 +108,14 @@
             this.grpCriarTorneio.TabStop = false;
             this.grpCriarTorneio.Text = "Criar Torneio";
             // 
-            // button1
+            // btnCriarTorneio
             // 
-            this.button1.Location = new System.Drawing.Point(9, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 30);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Criar Torneio";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCriarTorneio.Location = new System.Drawing.Point(9, 106);
+            this.btnCriarTorneio.Name = "btnCriarTorneio";
+            this.btnCriarTorneio.Size = new System.Drawing.Size(130, 30);
+            this.btnCriarTorneio.TabIndex = 3;
+            this.btnCriarTorneio.Text = "Criar Torneio";
+            this.btnCriarTorneio.UseVisualStyleBackColor = true;
             // 
             // txtJogo
             // 
@@ -154,7 +168,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnVoltar.Location = new System.Drawing.Point(12, 408);
+            this.btnVoltar.Location = new System.Drawing.Point(12, 511);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 30);
             this.btnVoltar.TabIndex = 21;
@@ -164,14 +178,14 @@
             // grpInscricoes
             // 
             this.grpInscricoes.Controls.Add(this.lblEstado);
-            this.grpInscricoes.Controls.Add(this.button2);
+            this.grpInscricoes.Controls.Add(this.btnInscreverEquipa);
             this.grpInscricoes.Controls.Add(this.cmbEquipasDisp);
             this.grpInscricoes.Controls.Add(this.lblEquipa);
             this.grpInscricoes.Controls.Add(this.cmbTorneio);
             this.grpInscricoes.Controls.Add(this.lblTorneio);
             this.grpInscricoes.Location = new System.Drawing.Point(328, 37);
             this.grpInscricoes.Name = "grpInscricoes";
-            this.grpInscricoes.Size = new System.Drawing.Size(460, 142);
+            this.grpInscricoes.Size = new System.Drawing.Size(392, 142);
             this.grpInscricoes.TabIndex = 22;
             this.grpInscricoes.TabStop = false;
             this.grpInscricoes.Text = "Inscrições";
@@ -185,14 +199,14 @@
             this.lblEstado.TabIndex = 7;
             this.lblEstado.Text = "Estado: x/x () Min.4";
             // 
-            // button2
+            // btnInscreverEquipa
             // 
-            this.button2.Location = new System.Drawing.Point(10, 106);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 30);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Inscrever Equipa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnInscreverEquipa.Location = new System.Drawing.Point(10, 106);
+            this.btnInscreverEquipa.Name = "btnInscreverEquipa";
+            this.btnInscreverEquipa.Size = new System.Drawing.Size(130, 30);
+            this.btnInscreverEquipa.TabIndex = 6;
+            this.btnInscreverEquipa.Text = "Inscrever Equipa";
+            this.btnInscreverEquipa.UseVisualStyleBackColor = true;
             // 
             // cmbEquipasDisp
             // 
@@ -230,28 +244,61 @@
             // 
             // grpPartidas
             // 
+            this.grpPartidas.Controls.Add(this.btnGuardarPartida);
+            this.grpPartidas.Controls.Add(this.txtResultadoB);
+            this.grpPartidas.Controls.Add(this.txtResultadoA);
+            this.grpPartidas.Controls.Add(this.cmbEquipaB);
+            this.grpPartidas.Controls.Add(this.lblResultB);
+            this.grpPartidas.Controls.Add(this.lblEquipaB);
             this.grpPartidas.Controls.Add(this.lblVS);
             this.grpPartidas.Controls.Add(this.dateTimePicker1);
             this.grpPartidas.Controls.Add(this.lblData);
-            this.grpPartidas.Controls.Add(this.cmbEquipa);
+            this.grpPartidas.Controls.Add(this.cmbEquipaA);
             this.grpPartidas.Controls.Add(this.txtIdPartida);
             this.grpPartidas.Controls.Add(this.lblResultadoA);
             this.grpPartidas.Controls.Add(this.lblEquipaA);
             this.grpPartidas.Controls.Add(this.lblIdPartida);
             this.grpPartidas.Location = new System.Drawing.Point(13, 180);
             this.grpPartidas.Name = "grpPartidas";
-            this.grpPartidas.Size = new System.Drawing.Size(775, 101);
+            this.grpPartidas.Size = new System.Drawing.Size(707, 155);
             this.grpPartidas.TabIndex = 23;
             this.grpPartidas.TabStop = false;
             this.grpPartidas.Text = "Agendar Partidas e Registar Resultados";
             // 
-            // cmbEquipa
+            // lblVS
             // 
-            this.cmbEquipa.FormattingEnabled = true;
-            this.cmbEquipa.Location = new System.Drawing.Point(75, 46);
-            this.cmbEquipa.Name = "cmbEquipa";
-            this.cmbEquipa.Size = new System.Drawing.Size(121, 24);
-            this.cmbEquipa.TabIndex = 9;
+            this.lblVS.AutoSize = true;
+            this.lblVS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblVS.Location = new System.Drawing.Point(297, 66);
+            this.lblVS.Name = "lblVS";
+            this.lblVS.Size = new System.Drawing.Size(31, 20);
+            this.lblVS.TabIndex = 12;
+            this.lblVS.Text = "VS";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(265, 41);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(110, 22);
+            this.dateTimePicker1.TabIndex = 11;
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(298, 18);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(39, 16);
+            this.lblData.TabIndex = 10;
+            this.lblData.Text = "Data:";
+            // 
+            // cmbEquipaA
+            // 
+            this.cmbEquipaA.FormattingEnabled = true;
+            this.cmbEquipaA.Location = new System.Drawing.Point(75, 46);
+            this.cmbEquipaA.Name = "cmbEquipaA";
+            this.cmbEquipaA.Size = new System.Drawing.Size(121, 24);
+            this.cmbEquipaA.TabIndex = 9;
             // 
             // txtIdPartida
             // 
@@ -287,38 +334,123 @@
             this.lblIdPartida.TabIndex = 0;
             this.lblIdPartida.Text = "ID Partida:";
             // 
-            // lblData
+            // cmbEquipaB
             // 
-            this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(298, 18);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(39, 16);
-            this.lblData.TabIndex = 10;
-            this.lblData.Text = "Data:";
+            this.cmbEquipaB.FormattingEnabled = true;
+            this.cmbEquipaB.Location = new System.Drawing.Point(474, 46);
+            this.cmbEquipaB.Name = "cmbEquipaB";
+            this.cmbEquipaB.Size = new System.Drawing.Size(121, 24);
+            this.cmbEquipaB.TabIndex = 15;
             // 
-            // dateTimePicker1
+            // lblResultB
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(265, 41);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(110, 22);
-            this.dateTimePicker1.TabIndex = 11;
+            this.lblResultB.AutoSize = true;
+            this.lblResultB.Location = new System.Drawing.Point(405, 82);
+            this.lblResultB.Name = "lblResultB";
+            this.lblResultB.Size = new System.Drawing.Size(84, 16);
+            this.lblResultB.TabIndex = 14;
+            this.lblResultB.Text = "Resultado B:";
             // 
-            // lblVS
+            // lblEquipaB
             // 
-            this.lblVS.AutoSize = true;
-            this.lblVS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblVS.Location = new System.Drawing.Point(297, 66);
-            this.lblVS.Name = "lblVS";
-            this.lblVS.Size = new System.Drawing.Size(31, 20);
-            this.lblVS.TabIndex = 12;
-            this.lblVS.Text = "VS";
+            this.lblEquipaB.AutoSize = true;
+            this.lblEquipaB.Location = new System.Drawing.Point(403, 49);
+            this.lblEquipaB.Name = "lblEquipaB";
+            this.lblEquipaB.Size = new System.Drawing.Size(65, 16);
+            this.lblEquipaB.TabIndex = 13;
+            this.lblEquipaB.Text = "Equipa B:";
+            // 
+            // txtResultadoA
+            // 
+            this.txtResultadoA.Location = new System.Drawing.Point(97, 82);
+            this.txtResultadoA.Name = "txtResultadoA";
+            this.txtResultadoA.Size = new System.Drawing.Size(100, 22);
+            this.txtResultadoA.TabIndex = 16;
+            // 
+            // txtResultadoB
+            // 
+            this.txtResultadoB.Location = new System.Drawing.Point(496, 81);
+            this.txtResultadoB.Name = "txtResultadoB";
+            this.txtResultadoB.Size = new System.Drawing.Size(100, 22);
+            this.txtResultadoB.TabIndex = 17;
+            // 
+            // btnGuardarPartida
+            // 
+            this.btnGuardarPartida.Location = new System.Drawing.Point(9, 119);
+            this.btnGuardarPartida.Name = "btnGuardarPartida";
+            this.btnGuardarPartida.Size = new System.Drawing.Size(130, 30);
+            this.btnGuardarPartida.TabIndex = 6;
+            this.btnGuardarPartida.Text = "Guardar Partida";
+            this.btnGuardarPartida.UseVisualStyleBackColor = true;
+            // 
+            // dgvPartidas
+            // 
+            this.dgvPartidas.AllowUserToAddRows = false;
+            this.dgvPartidas.AllowUserToDeleteRows = false;
+            this.dgvPartidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPartidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.data,
+            this.equipaA,
+            this.resultA,
+            this.equipaB,
+            this.vencedor});
+            this.dgvPartidas.Location = new System.Drawing.Point(17, 336);
+            this.dgvPartidas.Name = "dgvPartidas";
+            this.dgvPartidas.RowHeadersVisible = false;
+            this.dgvPartidas.RowHeadersWidth = 51;
+            this.dgvPartidas.RowTemplate.Height = 24;
+            this.dgvPartidas.Size = new System.Drawing.Size(703, 169);
+            this.dgvPartidas.TabIndex = 24;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 75;
+            // 
+            // data
+            // 
+            this.data.HeaderText = "Data";
+            this.data.MinimumWidth = 6;
+            this.data.Name = "data";
+            this.data.Width = 125;
+            // 
+            // equipaA
+            // 
+            this.equipaA.HeaderText = "Equipa A";
+            this.equipaA.MinimumWidth = 6;
+            this.equipaA.Name = "equipaA";
+            this.equipaA.Width = 125;
+            // 
+            // resultA
+            // 
+            this.resultA.HeaderText = "Resultado A";
+            this.resultA.MinimumWidth = 6;
+            this.resultA.Name = "resultA";
+            this.resultA.Width = 125;
+            // 
+            // equipaB
+            // 
+            this.equipaB.HeaderText = "Equipa B";
+            this.equipaB.MinimumWidth = 6;
+            this.equipaB.Name = "equipaB";
+            this.equipaB.Width = 125;
+            // 
+            // vencedor
+            // 
+            this.vencedor.HeaderText = "Vencedor";
+            this.vencedor.MinimumWidth = 6;
+            this.vencedor.Name = "vencedor";
+            this.vencedor.Width = 125;
             // 
             // FormTorneiosPartidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(732, 553);
+            this.Controls.Add(this.dgvPartidas);
             this.Controls.Add(this.grpPartidas);
             this.Controls.Add(this.grpInscricoes);
             this.Controls.Add(this.btnVoltar);
@@ -333,6 +465,7 @@
             this.grpInscricoes.PerformLayout();
             this.grpPartidas.ResumeLayout(false);
             this.grpPartidas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,14 +479,14 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblJogo;
         private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCriarTorneio;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.TextBox txtJogo;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.GroupBox grpInscricoes;
         private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnInscreverEquipa;
         private System.Windows.Forms.ComboBox cmbEquipasDisp;
         private System.Windows.Forms.Label lblEquipa;
         private System.Windows.Forms.ComboBox cmbTorneio;
@@ -362,10 +495,23 @@
         private System.Windows.Forms.Label lblResultadoA;
         private System.Windows.Forms.Label lblEquipaA;
         private System.Windows.Forms.Label lblIdPartida;
-        private System.Windows.Forms.ComboBox cmbEquipa;
+        private System.Windows.Forms.ComboBox cmbEquipaA;
         private System.Windows.Forms.TextBox txtIdPartida;
         private System.Windows.Forms.Label lblVS;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.ComboBox cmbEquipaB;
+        private System.Windows.Forms.Label lblResultB;
+        private System.Windows.Forms.Label lblEquipaB;
+        private System.Windows.Forms.Button btnGuardarPartida;
+        private System.Windows.Forms.TextBox txtResultadoB;
+        private System.Windows.Forms.TextBox txtResultadoA;
+        private System.Windows.Forms.DataGridView dgvPartidas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipaA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resultA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipaB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vencedor;
     }
 }
