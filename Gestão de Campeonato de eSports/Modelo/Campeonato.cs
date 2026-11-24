@@ -10,7 +10,7 @@ namespace Gestão_de_Campeonato_de_eSports.Modelo
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string Ano { get; set; }
+        public int Ano { get; set; }
         public List<Torneio> Torneios  { get; set; }
 
         // construtor vazio (o JSON precisa dele)
@@ -18,7 +18,7 @@ namespace Gestão_de_Campeonato_de_eSports.Modelo
         {
             Torneios = new List<Torneio>();
         }
-        public Campeonato(int id, string nome, string ano)
+        public Campeonato(int id, string nome, int ano)
         {
             Id = id;
             Nome = nome;

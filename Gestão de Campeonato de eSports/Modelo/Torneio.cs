@@ -20,8 +20,10 @@ namespace Gestão_de_Campeonato_de_eSports.Modelo
             Equipas = new List<Equipa>();
             Partidas = new List<Partida>();
         }
+  
 
         public Torneio(int id, string nome, string jogo)
+        
         {
             Id = id;
             Nome = nome;
