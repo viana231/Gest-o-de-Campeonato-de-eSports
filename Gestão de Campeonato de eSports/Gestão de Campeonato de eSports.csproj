@@ -83,6 +83,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CampeonatoMock.cs" />
+    <Compile Include="Classes\DadosGlobais.cs" />
     <Compile Include="Classes\GestorLogs.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>

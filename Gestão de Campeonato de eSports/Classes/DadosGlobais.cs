@@ -12,10 +12,7 @@ namespace Gestão_de_Campeonato_de_eSports
         public static List<Partida> Partidas { get; set; } = new List<Partida>();
         public static void CarregarDadosIniciaisJson()
         {
-            Equipas = GestorJson.ImportarEquipas();
-            Jogadores = GestorJson.ImportarJogadores();
-            Partidas = GestorJson.ImportarPartidas();
-            Campeonatos = GestorJson.ImportarDeJson<List<CampeonatoMock>>("campeonatos.json") ?? new List<CampeonatoMock>();
+          
         }
     }
 }

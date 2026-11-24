@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gestão_de_Campeonato_de_eSports.Modelo;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json; 
@@ -59,6 +60,21 @@ public static class GestorJson
         listaAtual.Add(novoItem);
 
         ExportarParaJson(listaAtual, caminhoFicheiro);
+    }
+
+    internal static List<EquipaMock> ImportarEquipas()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal static List<Jogador> ImportarJogadores()
+    {
+        throw new NotImplementedException();
+    }
+
+    internal static List<Partida> ImportarPartidas()
+    {
+        throw new NotImplementedException();
     }
 }
 

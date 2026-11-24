@@ -46,8 +46,8 @@ namespace Gestão_de_Campeonato_de_eSports
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ocorreu um erro ao importar:\n{ex.Message}",
-                                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    GestorLogs.RegistarErro(ex, this.Name);
+                    MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -77,8 +77,8 @@ namespace Gestão_de_Campeonato_de_eSports
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ocorreu um erro ao exportar:\n{ex.Message}",
-                                    "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    GestorLogs.RegistarErro(ex, this.Name);
+                    MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -95,6 +95,12 @@ namespace Gestão_de_Campeonato_de_eSports
         private void BtnHelpLogs_Click(object sender, EventArgs e)
         {
             GestorLogs.AbrirBotaoLogs();
+        }
+
+        private void btnAbrirEquipas_Click(object sender, EventArgs e)
+        {
+            FormEquipasJogadores formEquipas = new FormEquipasJogadores();
+            formEquipas.Show();
         }
     }
 }

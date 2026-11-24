@@ -449,6 +449,7 @@
             this.btnVoltar.TabIndex = 20;
             this.btnVoltar.Text = "Voltar Menu";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // dgvEquipas
             // 
