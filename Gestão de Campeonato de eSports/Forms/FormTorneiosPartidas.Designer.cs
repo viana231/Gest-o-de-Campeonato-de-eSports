@@ -47,14 +47,14 @@
             this.cmbTorneio = new System.Windows.Forms.ComboBox();
             this.lblTorneio = new System.Windows.Forms.Label();
             this.grpPartidas = new System.Windows.Forms.GroupBox();
+            this.lblVS = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblData = new System.Windows.Forms.Label();
             this.cmbEquipa = new System.Windows.Forms.ComboBox();
             this.txtIdPartida = new System.Windows.Forms.TextBox();
             this.lblResultadoA = new System.Windows.Forms.Label();
             this.lblEquipaA = new System.Windows.Forms.Label();
             this.lblIdPartida = new System.Windows.Forms.Label();
-            this.lblData = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lblVS = new System.Windows.Forms.Label();
             this.grpCriarTorneio.SuspendLayout();
             this.grpInscricoes.SuspendLayout();
             this.grpPartidas.SuspendLayout();
@@ -160,6 +160,7 @@
             this.btnVoltar.TabIndex = 21;
             this.btnVoltar.Text = "Voltar Menu";
             this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // grpInscricoes
             // 
@@ -245,6 +246,33 @@
             this.grpPartidas.TabStop = false;
             this.grpPartidas.Text = "Agendar Partidas e Registar Resultados";
             // 
+            // lblVS
+            // 
+            this.lblVS.AutoSize = true;
+            this.lblVS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblVS.Location = new System.Drawing.Point(297, 66);
+            this.lblVS.Name = "lblVS";
+            this.lblVS.Size = new System.Drawing.Size(31, 20);
+            this.lblVS.TabIndex = 12;
+            this.lblVS.Text = "VS";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(265, 41);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(110, 22);
+            this.dateTimePicker1.TabIndex = 11;
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(298, 18);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(39, 16);
+            this.lblData.TabIndex = 10;
+            this.lblData.Text = "Data:";
+            // 
             // cmbEquipa
             // 
             this.cmbEquipa.FormattingEnabled = true;
@@ -286,33 +314,6 @@
             this.lblIdPartida.Size = new System.Drawing.Size(69, 16);
             this.lblIdPartida.TabIndex = 0;
             this.lblIdPartida.Text = "ID Partida:";
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(298, 18);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(39, 16);
-            this.lblData.TabIndex = 10;
-            this.lblData.Text = "Data:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(265, 41);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(110, 22);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
-            // lblVS
-            // 
-            this.lblVS.AutoSize = true;
-            this.lblVS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblVS.Location = new System.Drawing.Point(297, 66);
-            this.lblVS.Name = "lblVS";
-            this.lblVS.Size = new System.Drawing.Size(31, 20);
-            this.lblVS.TabIndex = 12;
-            this.lblVS.Text = "VS";
             // 
             // FormTorneiosPartidas
             // 
