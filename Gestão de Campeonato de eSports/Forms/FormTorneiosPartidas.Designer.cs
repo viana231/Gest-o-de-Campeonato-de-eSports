@@ -396,6 +396,7 @@
             this.vencedor});
             this.dgvPartidas.Location = new System.Drawing.Point(13, 345);
             this.dgvPartidas.Name = "dgvPartidas";
+            this.dgvPartidas.RowHeadersVisible = false;
             this.dgvPartidas.RowHeadersWidth = 51;
             this.dgvPartidas.RowTemplate.Height = 24;
             this.dgvPartidas.Size = new System.Drawing.Size(707, 155);
@@ -427,7 +428,6 @@
             this.resultA.HeaderText = "Resultado";
             this.resultA.MinimumWidth = 6;
             this.resultA.Name = "resultA";
-            this.resultA.Width = 100;
             // 
             // equipaB
             // 
