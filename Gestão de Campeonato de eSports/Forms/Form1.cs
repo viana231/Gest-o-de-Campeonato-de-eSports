@@ -102,5 +102,11 @@ namespace Gestão_de_Campeonato_de_eSports
             FormEquipasJogadores formEquipas = new FormEquipasJogadores();
             formEquipas.Show();
         }
+
+        private void btnAbrirTorneio_Click(object sender, EventArgs e)
+        {
+            FormTorneiosPartidas formEquipas = new FormTorneiosPartidas();
+            formEquipas.Show();
+        }
     }
 }

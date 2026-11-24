@@ -220,6 +220,7 @@
             this.btnAbrirTorneio.TabIndex = 3;
             this.btnAbrirTorneio.Text = "Abrir Torneio";
             this.btnAbrirTorneio.UseVisualStyleBackColor = true;
+            this.btnAbrirTorneio.Click += new System.EventHandler(this.btnAbrirTorneio_Click);
             // 
             // btnAbrirEquipas
             // 

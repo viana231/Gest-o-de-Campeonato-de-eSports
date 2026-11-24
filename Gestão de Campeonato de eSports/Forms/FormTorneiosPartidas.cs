@@ -16,5 +16,10 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             InitializeComponent();
         }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
