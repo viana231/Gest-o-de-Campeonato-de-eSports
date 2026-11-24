@@ -119,7 +119,7 @@
             // 
             // txtJogo
             // 
-            this.txtJogo.Location = new System.Drawing.Point(54, 72);
+            this.txtJogo.Location = new System.Drawing.Point(60, 71);
             this.txtJogo.Name = "txtJogo";
             this.txtJogo.Size = new System.Drawing.Size(100, 22);
             this.txtJogo.TabIndex = 5;
@@ -133,7 +133,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(36, 18);
+            this.txtId.Location = new System.Drawing.Point(60, 17);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 22);
             this.txtId.TabIndex = 3;
@@ -212,7 +212,7 @@
             // cmbEquipasDisp
             // 
             this.cmbEquipasDisp.FormattingEnabled = true;
-            this.cmbEquipasDisp.Location = new System.Drawing.Point(66, 49);
+            this.cmbEquipasDisp.Location = new System.Drawing.Point(70, 49);
             this.cmbEquipasDisp.Name = "cmbEquipasDisp";
             this.cmbEquipasDisp.Size = new System.Drawing.Size(121, 24);
             this.cmbEquipasDisp.TabIndex = 3;
@@ -268,7 +268,7 @@
             // 
             // btnGuardarPartida
             // 
-            this.btnGuardarPartida.Location = new System.Drawing.Point(255, 115);
+            this.btnGuardarPartida.Location = new System.Drawing.Point(249, 89);
             this.btnGuardarPartida.Name = "btnGuardarPartida";
             this.btnGuardarPartida.Size = new System.Drawing.Size(130, 30);
             this.btnGuardarPartida.TabIndex = 18;
@@ -427,7 +427,6 @@
             this.resultA.HeaderText = "Resultado";
             this.resultA.MinimumWidth = 6;
             this.resultA.Name = "resultA";
-            this.resultA.Width = 100;
             // 
             // equipaB
             // 
