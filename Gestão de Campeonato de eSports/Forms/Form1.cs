@@ -182,5 +182,44 @@ namespace Gestão_de_Campeonato_de_eSports
                 }
             }
         }
+
+        private void btnExportarXML_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Filter = "Ficheiros XML (*.xml)|*.xml";
+            saveFileDialog.Title = "Guardar ficheiro XML";
+            saveFileDialog.FileName = "campeonatos.xml";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    XDocument documento = new XDocument(
+                        new XElement("Campeonatos",
+                            new XElement("Campeonato",
+                                new XElement("Id", 1),
+                                new XElement("Nome", "Liga Nacional eSports"),
+                                new XElement("Ano", 2026),
+                                new XElement("Torneios")
+                            )
+                        )
+                    );
+
+                    documento.Save(saveFileDialog.FileName);
+
+                    MessageBox.Show("Ficheiro XML exportado com sucesso!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao exportar XML: " + ex.Message);
+                }
+            }
+        }
+
+        private void grpJSON_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

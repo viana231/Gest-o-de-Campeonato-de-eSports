@@ -119,6 +119,7 @@
             this.btnExportarXML.TabIndex = 1;
             this.btnExportarXML.Text = "Exportar";
             this.btnExportarXML.UseVisualStyleBackColor = true;
+            this.btnExportarXML.Click += new System.EventHandler(this.btnExportarXML_Click);
             // 
             // btnImportarXML
             // 
@@ -136,7 +137,7 @@
             this.pnlJSON.Controls.Add(this.grpJSON);
             this.pnlJSON.Location = new System.Drawing.Point(254, 51);
             this.pnlJSON.Name = "pnlJSON";
-            this.pnlJSON.Size = new System.Drawing.Size(216, 154);
+            this.pnlJSON.Size = new System.Drawing.Size(203, 154);
             this.pnlJSON.TabIndex = 2;
             // 
             // grpJSON
@@ -147,10 +148,11 @@
             this.grpJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grpJSON.Location = new System.Drawing.Point(3, 8);
             this.grpJSON.Name = "grpJSON";
-            this.grpJSON.Size = new System.Drawing.Size(210, 147);
+            this.grpJSON.Size = new System.Drawing.Size(186, 147);
             this.grpJSON.TabIndex = 1;
             this.grpJSON.TabStop = false;
             this.grpJSON.Text = "Ficheiros JSON";
+            this.grpJSON.Enter += new System.EventHandler(this.grpJSON_Enter);
             // 
             // btnConverterJSONParaXML
             // 
