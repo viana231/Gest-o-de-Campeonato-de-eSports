@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using Gestão_de_Campeonato_de_eSports.Forms;
 using Gestão_de_Campeonato_de_eSports.Modelo;
+using System.Xml.Linq;
 
 namespace Gestão_de_Campeonato_de_eSports
 {
@@ -137,6 +138,48 @@ namespace Gestão_de_Campeonato_de_eSports
                 string caminhoFicheiro = openFileDialog.FileName;
 
                 MessageBox.Show("Ficheiro selecionado: " + caminhoFicheiro);
+            }
+        }
+
+        private void btnConverterXMLParaJSON_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Ficheiros XML (*.xml)|*.xml";
+            openFileDialog.Title = "Selecionar ficheiro XML para converter";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string caminhoXML = openFileDialog.FileName;
+
+                try
+                {
+                    XDocument documento = XDocument.Load(caminhoXML);
+
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.Filter = "Ficheiros JSON (*.json)|*.json";
+                    saveFileDialog.FileName = "campeonatos.json";
+
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        var dados = System.Xml.Linq.XDocument.Parse(documento.ToString());
+
+                        var json = System.Text.Json.JsonSerializer.Serialize(
+                            dados.Root.ToString(),
+                            new System.Text.Json.JsonSerializerOptions
+                            {
+                                WriteIndented = true
+                            });
+
+                        File.WriteAllText(saveFileDialog.FileName, json);
+
+                        MessageBox.Show("Conversão de XML para JSON concluída!");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro na conversão: " + ex.Message);
+                }
             }
         }
     }
