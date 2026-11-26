@@ -254,5 +254,37 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             this.Close();
         }
+
+        private void btnAddJogador_Click_1(object sender, EventArgs e)
+        {
+            // Limpa erros anteriores
+            errorProvider1.Clear();
+
+            if (string.IsNullOrWhiteSpace(txtbNomeJogador.Text))
+            {
+                errorProvider1.SetError(txtbNomeJogador, "O nome é obrigatório!");
+                txtbNomeJogador.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtNickNameJogador.Text))
+            {
+                errorProvider1.SetError(txtNickNameJogador, "O nickname é obrigatório!");
+                txtNickNameJogador.Focus();
+                return;
+            }
+        }
+
+        private void btnAddEquipa_Click_1(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+
+            if (string.IsNullOrWhiteSpace(txtNomeEquipa.Text))
+            {
+                errorProvider1.SetError(txtNomeEquipa, "O nome é obrigatório!");
+                txtNomeEquipa.Focus();
+                return;
+            }
+        }
     }
 }

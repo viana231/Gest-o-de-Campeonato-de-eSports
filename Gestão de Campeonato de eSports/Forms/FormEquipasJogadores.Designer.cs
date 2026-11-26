@@ -200,6 +200,7 @@
             this.btnAddEquipa.TabIndex = 5;
             this.btnAddEquipa.Text = "Adicionar Equipa";
             this.btnAddEquipa.UseVisualStyleBackColor = true;
+            this.btnAddEquipa.Click += new System.EventHandler(this.btnAddEquipa_Click_1);
             // 
             // txtPaisEquipa
             // 
@@ -436,6 +437,7 @@
             this.btnAddJogador.TabIndex = 8;
             this.btnAddJogador.Text = "Adicionar Jogador";
             this.btnAddJogador.UseVisualStyleBackColor = true;
+            this.btnAddJogador.Click += new System.EventHandler(this.btnAddJogador_Click_1);
             // 
             // btnEditJogador
             // 
