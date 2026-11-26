@@ -73,6 +73,7 @@
             this.idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.media = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnHelpLogs = new System.Windows.Forms.Button();
+            this.lblIdade = new System.Windows.Forms.Label();
             this.pnlCampeonato.SuspendLayout();
             this.pnlTorneio.SuspendLayout();
             this.pnlGestaoEquipas.SuspendLayout();
@@ -136,7 +137,7 @@
             // 
             this.cmbTorneios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTorneios.FormattingEnabled = true;
-            this.cmbTorneios.Location = new System.Drawing.Point(84, -1);
+            this.cmbTorneios.Location = new System.Drawing.Point(84, 0);
             this.cmbTorneios.Name = "cmbTorneios";
             this.cmbTorneios.Size = new System.Drawing.Size(121, 24);
             this.cmbTorneios.TabIndex = 4;
@@ -200,7 +201,7 @@
             // 
             // txtPaisEquipa
             // 
-            this.txtPaisEquipa.Location = new System.Drawing.Point(49, 101);
+            this.txtPaisEquipa.Location = new System.Drawing.Point(59, 101);
             this.txtPaisEquipa.Name = "txtPaisEquipa";
             this.txtPaisEquipa.Size = new System.Drawing.Size(100, 26);
             this.txtPaisEquipa.TabIndex = 5;
@@ -214,7 +215,7 @@
             // 
             // txtIdEquipa
             // 
-            this.txtIdEquipa.Location = new System.Drawing.Point(35, 26);
+            this.txtIdEquipa.Location = new System.Drawing.Point(59, 26);
             this.txtIdEquipa.Name = "txtIdEquipa";
             this.txtIdEquipa.Size = new System.Drawing.Size(100, 26);
             this.txtIdEquipa.TabIndex = 3;
@@ -259,6 +260,7 @@
             // 
             // grpJogador
             // 
+            this.grpJogador.Controls.Add(this.lblIdade);
             this.grpJogador.Controls.Add(this.btnAddPontos);
             this.grpJogador.Controls.Add(this.lstvPontuacoes);
             this.grpJogador.Controls.Add(this.label1);
@@ -332,7 +334,7 @@
             // numIdade
             // 
             this.numIdade.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.numIdade.Location = new System.Drawing.Point(58, 105);
+            this.numIdade.Location = new System.Drawing.Point(88, 105);
             this.numIdade.Maximum = new decimal(new int[] {
             45,
             0,
@@ -378,14 +380,14 @@
             // 
             // txtbNomeJogador
             // 
-            this.txtbNomeJogador.Location = new System.Drawing.Point(60, 63);
+            this.txtbNomeJogador.Location = new System.Drawing.Point(87, 63);
             this.txtbNomeJogador.Name = "txtbNomeJogador";
             this.txtbNomeJogador.Size = new System.Drawing.Size(100, 26);
             this.txtbNomeJogador.TabIndex = 14;
             // 
             // txtbIdJogador
             // 
-            this.txtbIdJogador.Location = new System.Drawing.Point(36, 26);
+            this.txtbIdJogador.Location = new System.Drawing.Point(87, 26);
             this.txtbIdJogador.Name = "txtbIdJogador";
             this.txtbIdJogador.Size = new System.Drawing.Size(100, 26);
             this.txtbIdJogador.TabIndex = 13;
@@ -548,6 +550,16 @@
             this.BtnHelpLogs.UseVisualStyleBackColor = true;
             this.BtnHelpLogs.Click += new System.EventHandler(this.BtnHelpLogs_Click);
             // 
+            // lblIdade
+            // 
+            this.lblIdade.AutoSize = true;
+            this.lblIdade.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.lblIdade.Location = new System.Drawing.Point(9, 105);
+            this.lblIdade.Name = "lblIdade";
+            this.lblIdade.Size = new System.Drawing.Size(45, 16);
+            this.lblIdade.TabIndex = 23;
+            this.lblIdade.Text = "Idade:";
+            // 
             // FormEquipasJogadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -628,5 +640,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idade;
         private System.Windows.Forms.DataGridViewTextBoxColumn media;
         private System.Windows.Forms.Button BtnHelpLogs;
+        private System.Windows.Forms.Label lblIdade;
     }
 }
