@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblTorneios = new System.Windows.Forms.Label();
             this.cmbFiltroTorneio = new System.Windows.Forms.ComboBox();
             this.lblPesquisarNick = new System.Windows.Forms.Label();
@@ -55,9 +56,11 @@
             this.equiparesultnickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mediaptsnickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVoltarMenu = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaClassificativa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTorneios
@@ -286,6 +289,10 @@
             this.btnVoltarMenu.Text = "Voltar Menu";
             this.btnVoltarMenu.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormEstatisticasLINQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -307,6 +314,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaClassificativa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,5 +349,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn equiparesultnickname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Mediaptsnickname;
         private System.Windows.Forms.Button btnVoltarMenu;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

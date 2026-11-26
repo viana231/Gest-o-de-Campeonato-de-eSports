@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlXML = new System.Windows.Forms.Panel();
@@ -48,6 +49,7 @@
             this.btnAbrirEquipas = new System.Windows.Forms.Button();
             this.ofdFicheiro = new System.Windows.Forms.OpenFileDialog();
             this.sfdFicheiro = new System.Windows.Forms.SaveFileDialog();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlTitulo.SuspendLayout();
             this.pnlXML.SuspendLayout();
             this.grpXML.SuspendLayout();
@@ -55,6 +57,7 @@
             this.grpJSON.SuspendLayout();
             this.panel1.SuspendLayout();
             this.grpModulos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -255,6 +258,10 @@
             // 
             this.sfdFicheiro.FileName = "SaveFileDialog";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -275,6 +282,7 @@
             this.grpJSON.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.grpModulos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,6 +309,7 @@
         private System.Windows.Forms.Button btnAbrirLinq;
         private System.Windows.Forms.Button btnAbrirTorneio;
         private System.Windows.Forms.Button BtnHelpLogs;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
