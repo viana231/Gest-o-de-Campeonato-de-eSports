@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using Gestão_de_Campeonato_de_eSports.Forms;
 using Gestão_de_Campeonato_de_eSports.Modelo;
+using System.Xml.Linq;
 
 namespace Gestão_de_Campeonato_de_eSports
 {
