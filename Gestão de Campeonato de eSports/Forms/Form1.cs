@@ -124,5 +124,20 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             GestorLogs.AbrirBotaoLogs();
         }
+
+        private void btnImportarXML_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Ficheiros XML (*.xml)|*.xml|Todos os ficheiros (*.*)|*.*";
+            openFileDialog.Title = "Selecionar ficheiro XML";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string caminhoFicheiro = openFileDialog.FileName;
+
+                MessageBox.Show("Ficheiro selecionado: " + caminhoFicheiro);
+            }
+        }
     }
 }

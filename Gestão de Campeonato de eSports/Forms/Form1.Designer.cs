@@ -125,6 +125,7 @@
             this.btnImportarXML.TabIndex = 0;
             this.btnImportarXML.Text = "Importar";
             this.btnImportarXML.UseVisualStyleBackColor = true;
+            this.btnImportarXML.Click += new System.EventHandler(this.btnImportarXML_Click);
             // 
             // pnlJSON
             // 
