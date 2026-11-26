@@ -204,5 +204,48 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             this.Close();
         }
+
+        private void btnCriarTorneio_Click_1(object sender, EventArgs e)
+        {
+            var torneioSelecionado = (Torneio)cmbTorneio.SelectedItem;
+
+            if (torneioSelecionado == null) return;
+
+            if (torneioSelecionado.Equipas.Count < 4)
+            {
+                MessageBox.Show("O torneio precisa de ter pelo menos 4 equipas inscritas para poder agendar partidas!",
+                                "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+        }
+
+        private void btnGuardarPartida_Click_1(object sender, EventArgs e)
+        {
+            var equipaA = (Equipa)cmbEquipaA.SelectedItem;
+            var equipaB = (Equipa)cmbEquipaB.SelectedItem;
+
+            if (equipaA != null && equipaB != null && equipaA.Id == equipaB.Id)
+            {
+                MessageBox.Show("Uma equipa não pode jogar contra si própria!",
+                                "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void cmbTorneio_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            var torneioSelecionado = (Torneio)cmbTorneio.SelectedItem;
+
+            if (torneioSelecionado != null)
+            {
+                cmbEquipaA.DataSource = null;
+                cmbEquipaA.DataSource = torneioSelecionado.Equipas;
+                cmbEquipaA.DisplayMember = "Nome";
+
+                cmbEquipaB.DataSource = null;
+                cmbEquipaB.DataSource = torneioSelecionado.Equipas.ToList();
+                cmbEquipaB.DisplayMember = "Nome";
+            }
+        }
     }
 }

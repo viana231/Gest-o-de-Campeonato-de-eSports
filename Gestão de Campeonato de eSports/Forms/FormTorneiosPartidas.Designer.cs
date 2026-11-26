@@ -118,6 +118,7 @@
             this.btnCriarTorneio.TabIndex = 3;
             this.btnCriarTorneio.Text = "Criar Torneio";
             this.btnCriarTorneio.UseVisualStyleBackColor = true;
+            this.btnCriarTorneio.Click += new System.EventHandler(this.btnCriarTorneio_Click_1);
             // 
             // txtJogo
             // 
@@ -225,6 +226,7 @@
             this.cmbTorneio.Name = "cmbTorneio";
             this.cmbTorneio.Size = new System.Drawing.Size(121, 24);
             this.cmbTorneio.TabIndex = 1;
+            this.cmbTorneio.SelectedIndexChanged += new System.EventHandler(this.cmbTorneio_SelectedIndexChanged_1);
             // 
             // lblTorneio
             // 
@@ -266,6 +268,7 @@
             this.btnGuardarPartida.TabIndex = 18;
             this.btnGuardarPartida.Text = "Guardar Partida";
             this.btnGuardarPartida.UseVisualStyleBackColor = true;
+            this.btnGuardarPartida.Click += new System.EventHandler(this.btnGuardarPartida_Click_1);
             // 
             // txtResultadoB
             // 
