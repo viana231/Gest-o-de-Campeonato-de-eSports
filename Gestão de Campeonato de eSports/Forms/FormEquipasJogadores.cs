@@ -301,9 +301,21 @@ namespace Gestão_de_Campeonato_de_eSports
            
         }
 
-        private void FormEquipasJogadores_Load_1(object sender, EventArgs e)
-        {
-            AtualizarComboEquipas();
+            if (string.IsNullOrWhiteSpace(txtNomeEquipa.Text))
+            {
+                errorProvider1.SetError(txtNomeEquipa, "O nome é obrigatório!");
+                txtNomeEquipa.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPaisEquipa.Text))
+            {
+                errorProvider1.SetError(txtPaisEquipa, "Escolher um país é obrigatório!");
+                txtPaisEquipa.Focus();
+                return;
+            }
+
+            
         }
     }
 }
