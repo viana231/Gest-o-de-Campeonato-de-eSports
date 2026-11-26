@@ -14,5 +14,20 @@ namespace Gestão_de_Campeonato_de_eSports.Modelo
         public int IdEquipaB { get; set; }
         public int ResultadoA { get; set; }
         public int ResultadoB { get; set; }
+
+        public Partida()
+        {
+        }
+
+        public Partida(int id, DateTime data, int idEquipaA, int idEquipaB,
+               int resultadoA, int resultadoB)
+        {
+            Id = id;
+            Data = data;
+            IdEquipaA = idEquipaA;
+            IdEquipaB = idEquipaB;
+            ResultadoA = resultadoA;
+            ResultadoB = resultadoB;
+        }
     }
 }
