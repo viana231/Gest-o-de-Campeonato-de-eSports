@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using Gestão_de_Campeonato_de_eSports.Forms;
 using Gestão_de_Campeonato_de_eSports.Modelo;
+using Gestão_de_Campeonato_de_eSports.XML;
 using System.Xml.Linq;
 
 namespace Gestão_de_Campeonato_de_eSports
@@ -130,14 +131,39 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
-            openFileDialog.Filter = "Ficheiros XML (*.xml)|*.xml|Todos os ficheiros (*.*)|*.*";
+            openFileDialog.Filter = "Ficheiros XML (*.xml)|*.xml";
             openFileDialog.Title = "Selecionar ficheiro XML";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string caminhoFicheiro = openFileDialog.FileName;
+                try
+                {
+                    XMLManager gestor = new XMLManager();
 
-                MessageBox.Show("Ficheiro selecionado: " + caminhoFicheiro);
+                    XDocument documento = gestor.LerXML(openFileDialog.FileName);
+
+                    if (gestor.ValidarXML(documento))
+                    {
+                        MessageBox.Show("Ficheiro XML importado e validado com sucesso!",
+                            "Importação XML",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("O ficheiro XML não tem uma estrutura válida.",
+                            "Erro de validação",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao importar XML: " + ex.Message,
+                        "Erro",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
         }
 
