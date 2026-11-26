@@ -12,7 +12,7 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             InitializeComponent();
 
-            // Liga os eventos que não estavam registados no Designer
+            // Liga os eventos caso não estejam registados no Designer
             this.Load += new EventHandler(this.FormEquipasJogadores_Load);
             this.btnAddEquipa.Click += new EventHandler(this.btnAddEquipa_Click);
             this.btnEditEquipa.Click += new EventHandler(this.btnEditEquipa_Click);
@@ -25,7 +25,10 @@ namespace Gestão_de_Campeonato_de_eSports
 
         private void FormEquipasJogadores_Load(object sender, EventArgs e)
         {
-            lstvPontuacoes.View = View.List;
+            if (lstvPontuacoes != null)
+            {
+                lstvPontuacoes.View = View.List;
+            }
             CarregarCombosTopo();
             AtualizarTabelaEquipas();
             AtualizarTabelaJogadores();
@@ -33,13 +36,19 @@ namespace Gestão_de_Campeonato_de_eSports
 
         private void CarregarCombosTopo()
         {
-            cmbCampeonatos.DataSource = null;
-            cmbCampeonatos.DataSource = DadosGlobais.Campeonatos;
-            cmbCampeonatos.DisplayMember = "Nome";
+            if (cmbCampeonatos != null)
+            {
+                cmbCampeonatos.DataSource = null;
+                cmbCampeonatos.DataSource = DadosGlobais.Campeonatos;
+                cmbCampeonatos.DisplayMember = "Nome";
+            }
 
-            cmbTorneios.DataSource = null;
-            cmbTorneios.DataSource = DadosGlobais.Torneios;
-            cmbTorneios.DisplayMember = "Nome";
+            if (cmbTorneios != null)
+            {
+                cmbTorneios.DataSource = null;
+                cmbTorneios.DataSource = DadosGlobais.Torneios;
+                cmbTorneios.DisplayMember = "Nome";
+            }
         }
 
         // ==================== GESTÃO DE EQUIPAS ====================
@@ -47,10 +56,31 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             try
             {
+                if (errorProvider1 != null)
+                {
+                    errorProvider1.Clear();
+                }
+
+                if (string.IsNullOrWhiteSpace(txtNomeEquipa.Text))
+                {
+                    if (errorProvider1 != null) errorProvider1.SetError(txtNomeEquipa, "O nome é obrigatório!");
+                    MessageBox.Show("O nome da equipa é obrigatório!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtNomeEquipa.Focus();
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtPaisEquipa.Text))
+                {
+                    if (errorProvider1 != null) errorProvider1.SetError(txtPaisEquipa, "Escolher um país é obrigatório!");
+                    MessageBox.Show("O país da equipa é obrigatório!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtPaisEquipa.Focus();
+                    return;
+                }
+
                 int idEquipa = int.Parse(txtIdEquipa.Text);
                 if (DadosGlobais.Equipas.Any(eq => eq.Id == idEquipa))
                 {
-                    MessageBox.Show("Já existe uma equipa com este ID!");
+                    MessageBox.Show("Já existe uma equipa com este ID!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -64,7 +94,13 @@ namespace Gestão_de_Campeonato_de_eSports
                 GestorJson.AdicionarEquipa(novaEquipa);
                 DadosGlobais.Equipas = GestorJson.ImportarEquipas();
                 AtualizarTabelaEquipas();
-                MessageBox.Show("Equipa guardada no JSON com sucesso!");
+                AtualizarComboEquipas();
+
+                MessageBox.Show("Equipa guardada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtIdEquipa.Clear();
+                txtNomeEquipa.Clear();
+                txtPaisEquipa.Clear();
             }
             catch (Exception ex)
             {
@@ -115,11 +151,18 @@ namespace Gestão_de_Campeonato_de_eSports
 
         private void AtualizarTabelaEquipas()
         {
+            if (dgvEquipas == null) return;
+
             dgvEquipas.Rows.Clear();
             foreach (var eq in DadosGlobais.Equipas)
             {
                 dgvEquipas.Rows.Add(eq.Id, eq.Nome, eq.Pais);
             }
+        }
+
+        private void AtualizarComboEquipas()
+        {
+            // Método auxiliar para atualizar comboboxes de equipas se existirem
         }
 
         // ==================== GESTÃO DE JOGADORES ====================
@@ -198,6 +241,75 @@ namespace Gestão_de_Campeonato_de_eSports
                 MessageBox.Show(ex.Message, "Erro ao Remover Jogador", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void btnAddEquipa_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int idEquipa = int.Parse(txtIdEquipa.Text);
+                if (DadosGlobais.Equipas.Any(eq => eq.Id == idEquipa))
+                {
+                    MessageBox.Show("Já existe uma equipa com este ID!");
+                    return;
+                }
+                EquipaMock novaEquipa = new EquipaMock
+                {
+                    Id = idEquipa,
+                    Nome = txtNomeEquipa.Text,
+                    Pais = txtPaisEquipa.Text
+                };
+                GestorJson.AdicionarEquipa(novaEquipa);
+                DadosGlobais.Equipas = GestorJson.ImportarEquipas();
+                AtualizarTabelaEquipas();
+                AtualizarComboEquipas();
+                MessageBox.Show("Equipa guardada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIdEquipa.Clear();
+                txtNomeEquipa.Clear();
+                txtPaisEquipa.Clear();
+            }
+            catch (Exception ex)
+            {
+                GestorLogs.RegistarErro(ex, this.Name);
+                MessageBox.Show("Erro ao adicionar equipa: verifica se o ID é numérico.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void btnAddJogador_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int idJog = int.Parse(txtbIdJogador.Text);
+                if (DadosGlobais.Jogadores.Any(j => j.Id == idJog))
+                {
+                    MessageBox.Show("Já existe um jogador com este ID!");
+                    return;
+                }
+                Jogador novo = new Jogador
+                {
+                    Id = idJog,
+                    Nome = txtbNomeJogador.Text,
+                    Idade = (int)numIdade.Value,
+                    Nickname = txtNickNameJogador.Text
+                };
+                GestorJson.AdicionarJogador(novo);
+                DadosGlobais.Jogadores = GestorJson.ImportarJogadores();
+                AtualizarTabelaJogadores();
+                MessageBox.Show("Jogador guardado no JSON com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                GestorLogs.RegistarErro(ex, this.Name);
+                MessageBox.Show("Erro ao adicionar jogador: verifica se o ID é numérico.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void FormEquipasJogadores_Load_1(object sender, EventArgs e)
+        {
+            if (lstvPontuacoes != null)
+            {
+                lstvPontuacoes.View = View.List;
+            }
+            CarregarCombosTopo();
+            AtualizarTabelaEquipas();
+            AtualizarTabelaJogadores();
+        }
 
         private void btnAddPontos_Click(object sender, EventArgs e)
         {
@@ -217,10 +329,13 @@ namespace Gestão_de_Campeonato_de_eSports
                 GestorJson.EditarJogador(jogador);
                 DadosGlobais.Jogadores = GestorJson.ImportarJogadores();
 
-                lstvPontuacoes.Items.Clear();
-                foreach (var p in jogador.Pontuacoes)
+                if (lstvPontuacoes != null)
                 {
-                    lstvPontuacoes.Items.Add($"Pontuação: {p}");
+                    lstvPontuacoes.Items.Clear();
+                    foreach (var p in jogador.Pontuacoes)
+                    {
+                        lstvPontuacoes.Items.Add($"Pontuação: {p}");
+                    }
                 }
 
                 AtualizarTabelaJogadores();
@@ -234,6 +349,8 @@ namespace Gestão_de_Campeonato_de_eSports
 
         private void AtualizarTabelaJogadores()
         {
+            if (dgvJogadores == null) return;
+
             dgvJogadores.Rows.Clear();
             foreach (var j in DadosGlobais.Jogadores)
             {
@@ -253,69 +370,6 @@ namespace Gestão_de_Campeonato_de_eSports
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-     
-
-        private void btnAddEquipa_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                // Valida se o ID introduzido é um número válido
-                int id = int.Parse(txtIdEquipa.Text);
-
-                // Verifica se já existe uma equipa com o mesmo ID na memória
-                if (DadosGlobais.Equipas.Any(eq => eq.Id == id))
-                {
-                    MessageBox.Show("Já existe uma equipa com este ID!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                EquipaMock novaEquipa = new EquipaMock
-                {
-                    Id = id,
-                    Nome = txtNomeEquipa.Text,
-                    Pais = txtPaisEquipa.Text
-                };
-
-                GestorJson.AdicionarEquipa(novaEquipa);
-
-                DadosGlobais.Equipas = GestorJson.ImportarEquipas();
-
-                AtualizarTabelaEquipas(); 
-                AtualizarComboEquipas();
-
-                MessageBox.Show("Equipa guardada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                txtIdEquipa.Clear();
-                txtNomeEquipa.Clear();
-                txtPaisEquipa.Clear();
-            }
-            catch (Exception ex)
-            {
-                GestorLogs.RegistarErro(ex, this.Name);
-                MessageBox.Show("Erro ao guardar equipa: verifica se o ID é numérico.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void AtualizarComboEquipas()
-        {
-           
-        }
-
-            if (string.IsNullOrWhiteSpace(txtNomeEquipa.Text))
-            {
-                errorProvider1.SetError(txtNomeEquipa, "O nome é obrigatório!");
-                txtNomeEquipa.Focus();
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtPaisEquipa.Text))
-            {
-                errorProvider1.SetError(txtPaisEquipa, "Escolher um país é obrigatório!");
-                txtPaisEquipa.Focus();
-                return;
-            }
-
-            
         }
     }
 }
