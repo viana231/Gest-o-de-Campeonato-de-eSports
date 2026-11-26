@@ -268,7 +268,7 @@
             // 
             // btnGuardarPartida
             // 
-            this.btnGuardarPartida.Location = new System.Drawing.Point(249, 89);
+            this.btnGuardarPartida.Location = new System.Drawing.Point(249, 103);
             this.btnGuardarPartida.Name = "btnGuardarPartida";
             this.btnGuardarPartida.Size = new System.Drawing.Size(130, 30);
             this.btnGuardarPartida.TabIndex = 18;
@@ -319,7 +319,7 @@
             // 
             this.lblVS.AutoSize = true;
             this.lblVS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblVS.Location = new System.Drawing.Point(297, 66);
+            this.lblVS.Location = new System.Drawing.Point(297, 78);
             this.lblVS.Name = "lblVS";
             this.lblVS.Size = new System.Drawing.Size(31, 20);
             this.lblVS.TabIndex = 12;
@@ -395,12 +395,12 @@
             this.resultA,
             this.equipaB,
             this.vencedor});
-            this.dgvPartidas.Location = new System.Drawing.Point(13, 345);
+            this.dgvPartidas.Location = new System.Drawing.Point(13, 336);
             this.dgvPartidas.Name = "dgvPartidas";
             this.dgvPartidas.RowHeadersVisible = false;
             this.dgvPartidas.RowHeadersWidth = 51;
             this.dgvPartidas.RowTemplate.Height = 24;
-            this.dgvPartidas.Size = new System.Drawing.Size(707, 155);
+            this.dgvPartidas.Size = new System.Drawing.Size(707, 164);
             this.dgvPartidas.TabIndex = 24;
             // 
             // id
@@ -452,7 +452,7 @@
             this.Controls.Add(this.cmbCampeonatos);
             this.Controls.Add(this.lblCampeonato);
             this.Name = "FormTorneiosPartidas";
-            this.Text = "FormTorneiosPartidas";
+            this.Text = "Torneios e Partidas";
             this.grpCriarTorneio.ResumeLayout(false);
             this.grpCriarTorneio.PerformLayout();
             this.grpInscricoes.ResumeLayout(false);

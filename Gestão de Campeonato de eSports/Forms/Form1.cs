@@ -1,114 +1,128 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
 using System.IO;
+using System.Windows.Forms;
+using System.Xml.Serialization;
+using Gestão_de_Campeonato_de_eSports.Forms;
+using Gestão_de_Campeonato_de_eSports.Modelo;
 
 namespace Gestão_de_Campeonato_de_eSports
 {
-
     public partial class FormPrincipal : Form
     {
         public FormPrincipal()
         {
             InitializeComponent();
+
+            // Liga o botão Abrir Linq que ainda não tinha evento no Designer
+            this.btnAbrirLinq.Click += new EventHandler(this.btnAbrirLinq_Click);
         }
 
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-            btnExportarXML.Enabled = false;
-            btnExportarJSON.Enabled = false;
+            try
+            {
+                DadosGlobais.CarregarDadosIniciaisJson();
+            }
+            catch (Exception ex)
+            {
+                GestorLogs.RegistarErro(ex, this.Name);
+            }
         }
+
         private void btnImportarJSON_Click(object sender, EventArgs e)
         {
-            
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Ficheiros JSON (*.json)|*.json|Todos os ficheiros (*.*)|*.*";
-            openFileDialog.Title = "Selecionar Ficheiro JSON para Importar";
+            ofdFicheiro.Filter = "Ficheiros JSON (*.json)|*.json";
+            ofdFicheiro.Title = "Importar e Sincronizar Jogadores (JSON)";
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (ofdFicheiro.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    string caminhoFicheiro = openFileDialog.FileName;
-                    var dadosImportados = GestorJson.ImportarDeJson<List<EquipaMock>>(caminhoFicheiro);
+                    int novos = GestorJson.SincronizarJogadores(DadosGlobais.Jogadores, ofdFicheiro.FileName);
+                    GestorJson.ExportarJogadores(DadosGlobais.Jogadores);
 
-                    if (dadosImportados != null)
-                    {
-                        MessageBox.Show($"Sucesso! Foram importadas {dadosImportados.Count} equipas do ficheiro JSON.",
-                                        "Importação JSON", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    }
+                    MessageBox.Show($"Sincronização concluída!\nAdicionados {novos} novos jogadores.\nTotal em memória: {DadosGlobais.Jogadores.Count}",
+                                    "Importar JSON", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
                     GestorLogs.RegistarErro(ex, this.Name);
-                    MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Erro ao Importar JSON", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
         private void btnExportarJSON_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Ficheiro JSON (*.json)|*.json";
-            saveFileDialog.Title = "Guardar Dados em JSON";
-            saveFileDialog.FileName = "meus_dados_esports.json"; 
+            sfdFicheiro.Filter = "Ficheiros JSON (*.json)|*.json";
+            sfdFicheiro.Title = "Exportar Jogadores para JSON";
+            sfdFicheiro.FileName = "jogadores_exportados.json";
 
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (sfdFicheiro.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    
-                    var listaParaGuardar = new List<EquipaMock>
-            {
-                new EquipaMock { NomeEquipa = "Equipa A" },
-                new EquipaMock { NomeEquipa = "Equipa B" }
-            };
-
-                    string caminhoFicheiro = saveFileDialog.FileName;
-                    GestorJson.ExportarParaJson(listaParaGuardar, caminhoFicheiro);
-
-                    MessageBox.Show("Ficheiro JSON guardado e exportado com sucesso!",
-                                    "Exportação JSON", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GestorJson.ExportarParaJson(DadosGlobais.Jogadores, sfdFicheiro.FileName);
+                    MessageBox.Show("Dados exportados com sucesso para JSON!", "Exportar JSON", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
                     GestorLogs.RegistarErro(ex, this.Name);
-                    MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Erro ao Exportar JSON", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
         private void btnConverterJSON_Click(object sender, EventArgs e)
         {
-            string mensagem = "Para converter dados:\n\n" +
-                              "1. Precisa de importar o ficheiro XML primeiro.\n" +
-                              "2. Quando os dados do XML estiverem na memória do programa, " +
-                              "o teu módulo JSON só tem de pegar nesses dados e usar a função 'Exportar'.\n\n" +
-                              "Fica a aguardar a sincronização com o Membro 2!";
+            ofdFicheiro.Filter = "Ficheiros JSON (*.json)|*.json";
+            ofdFicheiro.Title = "Escolher JSON para converter em XML";
 
-            MessageBox.Show(mensagem, "Módulo de Conversão", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        private void BtnHelpLogs_Click(object sender, EventArgs e)
-        {
-            GestorLogs.AbrirBotaoLogs();
+            if (ofdFicheiro.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    var lista = GestorJson.ImportarDeJson<List<Jogador>>(ofdFicheiro.FileName);
+                    string caminhoXml = Path.ChangeExtension(ofdFicheiro.FileName, ".xml");
+
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<Jogador>));
+                    using (StreamWriter writer = new StreamWriter(caminhoXml))
+                    {
+                        serializer.Serialize(writer, lista);
+                    }
+
+                    MessageBox.Show($"Ficheiro convertido para XML com sucesso:\n{caminhoXml}", "Conversão", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    GestorLogs.RegistarErro(ex, this.Name);
+                    MessageBox.Show(ex.Message, "Erro ao Converter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnAbrirEquipas_Click(object sender, EventArgs e)
         {
-            FormEquipasJogadores formEquipas = new FormEquipasJogadores();
-            formEquipas.Show();
+            FormEquipasJogadores frm = new FormEquipasJogadores();
+            frm.ShowDialog();
         }
 
         private void btnAbrirTorneio_Click(object sender, EventArgs e)
         {
-            FormTorneiosPartidas formEquipas = new FormTorneiosPartidas();
-            formEquipas.Show();
+            FormTorneiosPartidas frm = new FormTorneiosPartidas();
+            frm.ShowDialog();
+        }
+
+        private void btnAbrirLinq_Click(object sender, EventArgs e)
+        {
+            FormEstatisticasLINQ frm = new FormEstatisticasLINQ();
+            frm.ShowDialog();
+        }
+
+        private void BtnHelpLogs_Click(object sender, EventArgs e)
+        {
+            GestorLogs.AbrirBotaoLogs();
         }
 
         private void btnImportarXML_Click(object sender, EventArgs e)

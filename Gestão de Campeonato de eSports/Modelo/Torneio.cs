@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
+        
 namespace Gestão_de_Campeonato_de_eSports.Modelo
 {
     public class Torneio
@@ -14,16 +10,23 @@ namespace Gestão_de_Campeonato_de_eSports.Modelo
         public List<Equipa> Equipas { get; set; }
         public List<Partida> Partidas { get; set; }
 
-        // construtor vazio (o JSON precisa dele)
-        public Torneio(int id, string nome)
+        public Torneio()
         {
+            Nome = "";
+            Jogo = "";
             Equipas = new List<Equipa>();
             Partidas = new List<Partida>();
         }
-  
+
+        public Torneio(int id, string nome)
+        {
+            Id = id;
+            Nome = nome;
+            Equipas = new List<Equipa>();
+            Partidas = new List<Partida>();
+        }
 
         public Torneio(int id, string nome, string jogo)
-        
         {
             Id = id;
             Nome = nome;

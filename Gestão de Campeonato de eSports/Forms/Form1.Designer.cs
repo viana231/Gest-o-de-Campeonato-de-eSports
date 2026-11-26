@@ -80,7 +80,7 @@
             this.pnlXML.Controls.Add(this.grpXML);
             this.pnlXML.Location = new System.Drawing.Point(13, 51);
             this.pnlXML.Name = "pnlXML";
-            this.pnlXML.Size = new System.Drawing.Size(324, 154);
+            this.pnlXML.Size = new System.Drawing.Size(235, 154);
             this.pnlXML.TabIndex = 1;
             // 
             // grpXML
@@ -91,7 +91,7 @@
             this.grpXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grpXML.Location = new System.Drawing.Point(4, 4);
             this.grpXML.Name = "grpXML";
-            this.grpXML.Size = new System.Drawing.Size(317, 147);
+            this.grpXML.Size = new System.Drawing.Size(228, 147);
             this.grpXML.TabIndex = 0;
             this.grpXML.TabStop = false;
             this.grpXML.Text = "Ficheiros XML";
@@ -131,9 +131,9 @@
             // pnlJSON
             // 
             this.pnlJSON.Controls.Add(this.grpJSON);
-            this.pnlJSON.Location = new System.Drawing.Point(343, 51);
+            this.pnlJSON.Location = new System.Drawing.Point(254, 51);
             this.pnlJSON.Name = "pnlJSON";
-            this.pnlJSON.Size = new System.Drawing.Size(327, 154);
+            this.pnlJSON.Size = new System.Drawing.Size(216, 154);
             this.pnlJSON.TabIndex = 2;
             // 
             // grpJSON
@@ -142,9 +142,9 @@
             this.grpJSON.Controls.Add(this.btnImportarJSON);
             this.grpJSON.Controls.Add(this.btnExportarJSON);
             this.grpJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.grpJSON.Location = new System.Drawing.Point(7, 7);
+            this.grpJSON.Location = new System.Drawing.Point(3, 8);
             this.grpJSON.Name = "grpJSON";
-            this.grpJSON.Size = new System.Drawing.Size(317, 147);
+            this.grpJSON.Size = new System.Drawing.Size(210, 147);
             this.grpJSON.TabIndex = 1;
             this.grpJSON.TabStop = false;
             this.grpJSON.Text = "Ficheiros JSON";
@@ -187,18 +187,19 @@
             this.panel1.Controls.Add(this.grpModulos);
             this.panel1.Location = new System.Drawing.Point(13, 212);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(654, 74);
+            this.panel1.Size = new System.Drawing.Size(444, 104);
             this.panel1.TabIndex = 3;
             // 
             // grpModulos
             // 
+            this.grpModulos.Controls.Add(this.BtnHelpLogs);
             this.grpModulos.Controls.Add(this.btnAbrirLinq);
             this.grpModulos.Controls.Add(this.btnAbrirTorneio);
             this.grpModulos.Controls.Add(this.btnAbrirEquipas);
             this.grpModulos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grpModulos.Location = new System.Drawing.Point(4, 4);
             this.grpModulos.Name = "grpModulos";
-            this.grpModulos.Size = new System.Drawing.Size(647, 65);
+            this.grpModulos.Size = new System.Drawing.Size(426, 97);
             this.grpModulos.TabIndex = 0;
             this.grpModulos.TabStop = false;
             this.grpModulos.Text = "Módulos de Gestão e Análise";
@@ -206,32 +207,32 @@
             // btnAbrirLinq
             // 
             this.btnAbrirLinq.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAbrirLinq.Location = new System.Drawing.Point(299, 25);
+            this.btnAbrirLinq.Location = new System.Drawing.Point(246, 41);
             this.btnAbrirLinq.Name = "btnAbrirLinq";
-            this.btnAbrirLinq.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirLinq.Size = new System.Drawing.Size(100, 40);
             this.btnAbrirLinq.TabIndex = 4;
-            this.btnAbrirLinq.Text = "Abrir Linq";
+            this.btnAbrirLinq.Text = "Filtros e Pesquisas";
             this.btnAbrirLinq.UseVisualStyleBackColor = true;
             // 
             // btnAbrirTorneio
             // 
             this.btnAbrirTorneio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAbrirTorneio.Location = new System.Drawing.Point(156, 25);
+            this.btnAbrirTorneio.Location = new System.Drawing.Point(131, 41);
             this.btnAbrirTorneio.Name = "btnAbrirTorneio";
-            this.btnAbrirTorneio.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirTorneio.Size = new System.Drawing.Size(100, 40);
             this.btnAbrirTorneio.TabIndex = 3;
-            this.btnAbrirTorneio.Text = "Abrir Torneio";
+            this.btnAbrirTorneio.Text = "Torneio e Partidas";
             this.btnAbrirTorneio.UseVisualStyleBackColor = true;
             this.btnAbrirTorneio.Click += new System.EventHandler(this.btnAbrirTorneio_Click);
             // 
             // btnAbrirEquipas
             // 
             this.btnAbrirEquipas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAbrirEquipas.Location = new System.Drawing.Point(5, 25);
+            this.btnAbrirEquipas.Location = new System.Drawing.Point(7, 41);
             this.btnAbrirEquipas.Name = "btnAbrirEquipas";
-            this.btnAbrirEquipas.Size = new System.Drawing.Size(100, 30);
+            this.btnAbrirEquipas.Size = new System.Drawing.Size(100, 40);
             this.btnAbrirEquipas.TabIndex = 0;
-            this.btnAbrirEquipas.Text = "Abrir Equipa";
+            this.btnAbrirEquipas.Text = "Equipa e Jogadores";
             this.btnAbrirEquipas.UseVisualStyleBackColor = true;
             this.btnAbrirEquipas.Click += new System.EventHandler(this.btnAbrirEquipas_Click);
             // 
@@ -246,7 +247,7 @@
             // BtnHelpLogs
             // 
             this.BtnHelpLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnHelpLogs.Location = new System.Drawing.Point(13, 292);
+            this.BtnHelpLogs.Location = new System.Drawing.Point(368, 42);
             this.BtnHelpLogs.Name = "BtnHelpLogs";
             this.BtnHelpLogs.Size = new System.Drawing.Size(37, 33);
             this.BtnHelpLogs.TabIndex = 4;
@@ -258,8 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(682, 328);
-            this.Controls.Add(this.BtnHelpLogs);
+            this.ClientSize = new System.Drawing.Size(482, 328);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlJSON);
             this.Controls.Add(this.pnlXML);

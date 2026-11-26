@@ -16,6 +16,7 @@ namespace Gestão_de_Campeonato_de_eSports.Modelo
         // construtor vazio (o JSON precisa dele)
         public Campeonato()
         {
+            Nome = "";
             Torneios = new List<Torneio>();
         }
         public Campeonato(int id, string nome, int ano)
