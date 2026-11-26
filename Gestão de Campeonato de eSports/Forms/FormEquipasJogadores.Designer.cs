@@ -576,6 +576,7 @@
             this.Controls.Add(this.pnlCampeonato);
             this.Name = "FormEquipasJogadores";
             this.Text = "Equipas e Jogadores";
+            this.Load += new System.EventHandler(this.FormEquipasJogadores_Load_1);
             this.pnlCampeonato.ResumeLayout(false);
             this.pnlCampeonato.PerformLayout();
             this.pnlTorneio.ResumeLayout(false);
