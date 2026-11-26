@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblCampeonato = new System.Windows.Forms.Label();
             this.cmbCampeonatos = new System.Windows.Forms.ComboBox();
             this.grpCriarTorneio = new System.Windows.Forms.GroupBox();
@@ -67,10 +68,12 @@
             this.resultA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipaB = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vencedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.grpCriarTorneio.SuspendLayout();
             this.grpInscricoes.SuspendLayout();
             this.grpPartidas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCampeonato
@@ -428,6 +431,10 @@
             this.vencedor.MinimumWidth = 6;
             this.vencedor.Name = "vencedor";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormTorneiosPartidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -449,6 +456,7 @@
             this.grpPartidas.ResumeLayout(false);
             this.grpPartidas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,5 +503,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn resultA;
         private System.Windows.Forms.DataGridViewTextBoxColumn equipaB;
         private System.Windows.Forms.DataGridViewTextBoxColumn vencedor;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

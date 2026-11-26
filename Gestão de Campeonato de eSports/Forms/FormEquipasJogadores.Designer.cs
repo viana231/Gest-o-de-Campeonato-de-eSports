@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlCampeonato = new System.Windows.Forms.Panel();
             this.lblCampeonato = new System.Windows.Forms.Label();
             this.cmbCampeonatos = new System.Windows.Forms.ComboBox();
@@ -73,6 +74,7 @@
             this.idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.media = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnHelpLogs = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlCampeonato.SuspendLayout();
             this.pnlTorneio.SuspendLayout();
             this.pnlGestaoEquipas.SuspendLayout();
@@ -83,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numIdade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJogadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlCampeonato
@@ -434,6 +437,7 @@
             this.btnAddJogador.TabIndex = 8;
             this.btnAddJogador.Text = "Adicionar Jogador";
             this.btnAddJogador.UseVisualStyleBackColor = true;
+            this.btnAddJogador.Click += new System.EventHandler(this.btnAddJogador_Click_1);
             // 
             // btnEditJogador
             // 
@@ -448,7 +452,7 @@
             // btnVoltar
             // 
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnVoltar.Location = new System.Drawing.Point(56, 513);
+            this.btnVoltar.Location = new System.Drawing.Point(12, 515);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(95, 30);
             this.btnVoltar.TabIndex = 20;
@@ -545,13 +549,17 @@
             // BtnHelpLogs
             // 
             this.BtnHelpLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnHelpLogs.Location = new System.Drawing.Point(13, 510);
+            this.BtnHelpLogs.Location = new System.Drawing.Point(135, 515);
             this.BtnHelpLogs.Name = "BtnHelpLogs";
-            this.BtnHelpLogs.Size = new System.Drawing.Size(37, 33);
+            this.BtnHelpLogs.Size = new System.Drawing.Size(37, 30);
             this.BtnHelpLogs.TabIndex = 23;
             this.BtnHelpLogs.Text = "?";
             this.BtnHelpLogs.UseVisualStyleBackColor = true;
             this.BtnHelpLogs.Click += new System.EventHandler(this.BtnHelpLogs_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // FormEquipasJogadores
             // 
@@ -583,6 +591,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numIdade)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJogadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -634,5 +643,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn media;
         private System.Windows.Forms.Button BtnHelpLogs;
         private System.Windows.Forms.Label lblIdade;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
