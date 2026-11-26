@@ -85,7 +85,7 @@ namespace Gestão_de_Campeonato_de_eSports
         private void btnConverterJSON_Click(object sender, EventArgs e)
         {
             string mensagem = "Para converter dados:\n\n" +
-                              "1. A Victoria precisa de importar o ficheiro XML primeiro.\n" +
+                              "1. Precisa de importar o ficheiro XML primeiro.\n" +
                               "2. Quando os dados do XML estiverem na memória do programa, " +
                               "o teu módulo JSON só tem de pegar nesses dados e usar a função 'Exportar'.\n\n" +
                               "Fica a aguardar a sincronização com o Membro 2!";
@@ -107,6 +107,21 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             FormTorneiosPartidas formEquipas = new FormTorneiosPartidas();
             formEquipas.Show();
+        }
+
+        private void btnImportarXML_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            openFileDialog.Filter = "Ficheiros XML (*.xml)|*.xml|Todos os ficheiros (*.*)|*.*";
+            openFileDialog.Title = "Selecionar ficheiro XML";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string caminhoFicheiro = openFileDialog.FileName;
+
+                MessageBox.Show("Ficheiro selecionado: " + caminhoFicheiro);
+            }
         }
     }
 }
