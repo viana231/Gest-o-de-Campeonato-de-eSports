@@ -241,5 +241,21 @@ namespace Gestão_de_Campeonato_de_eSports
                 cmbEquipaB.DisplayMember = "Nome";
             }
         }
+
+        private void cmbCampeonatos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var torneioSelecionado = (Torneio)cmbTorneio.SelectedItem;
+
+            if (torneioSelecionado != null)
+            {
+                cmbEquipaA.DataSource = null;
+                cmbEquipaA.DataSource = torneioSelecionado.Equipas;
+                cmbEquipaA.DisplayMember = "Nome";
+
+                cmbEquipaB.DataSource = null;
+                cmbEquipaB.DataSource = torneioSelecionado.Equipas.ToList();
+                cmbEquipaB.DisplayMember = "Nome";
+            }
+        }
     }
 }
