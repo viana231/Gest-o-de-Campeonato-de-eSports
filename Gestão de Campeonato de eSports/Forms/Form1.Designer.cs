@@ -105,6 +105,7 @@
             this.btnConverterXMLParaJSON.TabIndex = 2;
             this.btnConverterXMLParaJSON.Text = "Converter";
             this.btnConverterXMLParaJSON.UseVisualStyleBackColor = true;
+            this.btnConverterXMLParaJSON.Click += new System.EventHandler(this.btnConverterXMLParaJSON_Click);
             // 
             // btnExportarXML
             // 
