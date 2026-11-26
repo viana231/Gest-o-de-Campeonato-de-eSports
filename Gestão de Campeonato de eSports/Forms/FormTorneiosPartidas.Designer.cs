@@ -40,7 +40,6 @@
             this.lblId = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.grpInscricoes = new System.Windows.Forms.GroupBox();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.btnInscreverEquipa = new System.Windows.Forms.Button();
             this.cmbEquipasDisp = new System.Windows.Forms.ComboBox();
             this.lblEquipa = new System.Windows.Forms.Label();
@@ -178,7 +177,6 @@
             // 
             // grpInscricoes
             // 
-            this.grpInscricoes.Controls.Add(this.lblEstado);
             this.grpInscricoes.Controls.Add(this.btnInscreverEquipa);
             this.grpInscricoes.Controls.Add(this.cmbEquipasDisp);
             this.grpInscricoes.Controls.Add(this.lblEquipa);
@@ -186,19 +184,10 @@
             this.grpInscricoes.Controls.Add(this.lblTorneio);
             this.grpInscricoes.Location = new System.Drawing.Point(328, 37);
             this.grpInscricoes.Name = "grpInscricoes";
-            this.grpInscricoes.Size = new System.Drawing.Size(392, 142);
+            this.grpInscricoes.Size = new System.Drawing.Size(292, 142);
             this.grpInscricoes.TabIndex = 22;
             this.grpInscricoes.TabStop = false;
             this.grpInscricoes.Text = "Inscrições";
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(251, 18);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(117, 16);
-            this.lblEstado.TabIndex = 7;
-            this.lblEstado.Text = "Estado: x/x () Min.4";
             // 
             // btnInscreverEquipa
             // 
@@ -261,14 +250,14 @@
             this.grpPartidas.Controls.Add(this.lblIdPartida);
             this.grpPartidas.Location = new System.Drawing.Point(13, 180);
             this.grpPartidas.Name = "grpPartidas";
-            this.grpPartidas.Size = new System.Drawing.Size(707, 155);
+            this.grpPartidas.Size = new System.Drawing.Size(607, 155);
             this.grpPartidas.TabIndex = 23;
             this.grpPartidas.TabStop = false;
             this.grpPartidas.Text = "Agendar Partidas e Registar Resultados";
             // 
             // btnGuardarPartida
             // 
-            this.btnGuardarPartida.Location = new System.Drawing.Point(249, 103);
+            this.btnGuardarPartida.Location = new System.Drawing.Point(9, 120);
             this.btnGuardarPartida.Name = "btnGuardarPartida";
             this.btnGuardarPartida.Size = new System.Drawing.Size(130, 30);
             this.btnGuardarPartida.TabIndex = 18;
@@ -277,7 +266,7 @@
             // 
             // txtResultadoB
             // 
-            this.txtResultadoB.Location = new System.Drawing.Point(515, 79);
+            this.txtResultadoB.Location = new System.Drawing.Point(444, 79);
             this.txtResultadoB.Name = "txtResultadoB";
             this.txtResultadoB.Size = new System.Drawing.Size(100, 22);
             this.txtResultadoB.TabIndex = 17;
@@ -292,7 +281,7 @@
             // cmbEquipaB
             // 
             this.cmbEquipaB.FormattingEnabled = true;
-            this.cmbEquipaB.Location = new System.Drawing.Point(515, 46);
+            this.cmbEquipaB.Location = new System.Drawing.Point(444, 46);
             this.cmbEquipaB.Name = "cmbEquipaB";
             this.cmbEquipaB.Size = new System.Drawing.Size(121, 24);
             this.cmbEquipaB.TabIndex = 15;
@@ -300,7 +289,7 @@
             // lblResultB
             // 
             this.lblResultB.AutoSize = true;
-            this.lblResultB.Location = new System.Drawing.Point(425, 82);
+            this.lblResultB.Location = new System.Drawing.Point(354, 82);
             this.lblResultB.Name = "lblResultB";
             this.lblResultB.Size = new System.Drawing.Size(84, 16);
             this.lblResultB.TabIndex = 14;
@@ -309,7 +298,7 @@
             // lblEquipaB
             // 
             this.lblEquipaB.AutoSize = true;
-            this.lblEquipaB.Location = new System.Drawing.Point(425, 49);
+            this.lblEquipaB.Location = new System.Drawing.Point(354, 49);
             this.lblEquipaB.Name = "lblEquipaB";
             this.lblEquipaB.Size = new System.Drawing.Size(65, 16);
             this.lblEquipaB.TabIndex = 13;
@@ -319,7 +308,7 @@
             // 
             this.lblVS.AutoSize = true;
             this.lblVS.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblVS.Location = new System.Drawing.Point(297, 78);
+            this.lblVS.Location = new System.Drawing.Point(254, 82);
             this.lblVS.Name = "lblVS";
             this.lblVS.Size = new System.Drawing.Size(31, 20);
             this.lblVS.TabIndex = 12;
@@ -328,7 +317,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(265, 41);
+            this.dateTimePicker1.Location = new System.Drawing.Point(222, 45);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(110, 22);
             this.dateTimePicker1.TabIndex = 11;
@@ -336,7 +325,7 @@
             // lblData
             // 
             this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(298, 18);
+            this.lblData.Location = new System.Drawing.Point(255, 22);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(39, 16);
             this.lblData.TabIndex = 10;
@@ -400,7 +389,7 @@
             this.dgvPartidas.RowHeadersVisible = false;
             this.dgvPartidas.RowHeadersWidth = 51;
             this.dgvPartidas.RowTemplate.Height = 24;
-            this.dgvPartidas.Size = new System.Drawing.Size(707, 164);
+            this.dgvPartidas.Size = new System.Drawing.Size(607, 164);
             this.dgvPartidas.TabIndex = 24;
             // 
             // id
@@ -443,7 +432,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 553);
+            this.ClientSize = new System.Drawing.Size(632, 553);
             this.Controls.Add(this.dgvPartidas);
             this.Controls.Add(this.grpPartidas);
             this.Controls.Add(this.grpInscricoes);
@@ -479,7 +468,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.GroupBox grpInscricoes;
-        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button btnInscreverEquipa;
         private System.Windows.Forms.ComboBox cmbEquipasDisp;
         private System.Windows.Forms.Label lblEquipa;
