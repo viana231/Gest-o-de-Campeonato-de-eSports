@@ -15,6 +15,8 @@ namespace Gestão_de_Campeonato_de_eSports.Modelo
 
         public Equipa()
         {
+            Nome = "";
+            Pais = "";
             Jogadores = new List<Jogador>();
         }
 

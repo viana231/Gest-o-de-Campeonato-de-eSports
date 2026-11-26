@@ -15,5 +15,21 @@ namespace Gestão_de_Campeonato_de_eSports.Modelo
             public string Nickname { get; set; } = "";
             public int Idade { get; set; }
             public List<int> Pontuacoes { get; set; } = new List<int>();
+
+        public Jogador()
+        {
+            Nome = "";
+            Nickname = "";
+            Pontuacoes = new List<int>();
+        }
+
+        public Jogador(int id, string nome, string nickname, int idade)
+        {
+            Id = id;
+            Nome = nome;
+            Nickname = nickname;
+            Idade = idade;
+            Pontuacoes = new List<int>();
+        }
     }
 }
