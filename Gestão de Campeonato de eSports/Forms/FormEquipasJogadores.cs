@@ -285,6 +285,15 @@ namespace Gestão_de_Campeonato_de_eSports
                 txtNomeEquipa.Focus();
                 return;
             }
+
+            if (string.IsNullOrWhiteSpace(txtPaisEquipa.Text))
+            {
+                errorProvider1.SetError(txtPaisEquipa, "Escolher um país é obrigatório!");
+                txtPaisEquipa.Focus();
+                return;
+            }
+
+            
         }
     }
 }
