@@ -220,9 +220,9 @@
             // btnAbrirLinq
             // 
             this.btnAbrirLinq.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAbrirLinq.Location = new System.Drawing.Point(246, 41);
+            this.btnAbrirLinq.Location = new System.Drawing.Point(246, 36);
             this.btnAbrirLinq.Name = "btnAbrirLinq";
-            this.btnAbrirLinq.Size = new System.Drawing.Size(100, 40);
+            this.btnAbrirLinq.Size = new System.Drawing.Size(100, 50);
             this.btnAbrirLinq.TabIndex = 4;
             this.btnAbrirLinq.Text = "Filtros e Pesquisas";
             this.btnAbrirLinq.UseVisualStyleBackColor = true;
@@ -230,9 +230,9 @@
             // btnAbrirTorneio
             // 
             this.btnAbrirTorneio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAbrirTorneio.Location = new System.Drawing.Point(131, 41);
+            this.btnAbrirTorneio.Location = new System.Drawing.Point(131, 36);
             this.btnAbrirTorneio.Name = "btnAbrirTorneio";
-            this.btnAbrirTorneio.Size = new System.Drawing.Size(100, 40);
+            this.btnAbrirTorneio.Size = new System.Drawing.Size(100, 50);
             this.btnAbrirTorneio.TabIndex = 3;
             this.btnAbrirTorneio.Text = "Torneio e Partidas";
             this.btnAbrirTorneio.UseVisualStyleBackColor = true;
@@ -241,9 +241,9 @@
             // btnAbrirEquipas
             // 
             this.btnAbrirEquipas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnAbrirEquipas.Location = new System.Drawing.Point(7, 41);
+            this.btnAbrirEquipas.Location = new System.Drawing.Point(7, 36);
             this.btnAbrirEquipas.Name = "btnAbrirEquipas";
-            this.btnAbrirEquipas.Size = new System.Drawing.Size(100, 40);
+            this.btnAbrirEquipas.Size = new System.Drawing.Size(100, 50);
             this.btnAbrirEquipas.TabIndex = 0;
             this.btnAbrirEquipas.Text = "Equipa e Jogadores";
             this.btnAbrirEquipas.UseVisualStyleBackColor = true;

@@ -48,13 +48,13 @@
             this.media = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnVoltarMenu = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equiparesultnickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mediaptsnickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVoltarMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaClassificativa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -232,23 +232,13 @@
             this.idade,
             this.equiparesultnickname,
             this.Mediaptsnickname});
-            this.dataGridView2.Location = new System.Drawing.Point(20, 271);
+            this.dataGridView2.Location = new System.Drawing.Point(16, 271);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(768, 189);
+            this.dataGridView2.Size = new System.Drawing.Size(772, 189);
             this.dataGridView2.TabIndex = 9;
-            // 
-            // btnVoltarMenu
-            // 
-            this.btnVoltarMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnVoltarMenu.Location = new System.Drawing.Point(20, 466);
-            this.btnVoltarMenu.Name = "btnVoltarMenu";
-            this.btnVoltarMenu.Size = new System.Drawing.Size(95, 30);
-            this.btnVoltarMenu.TabIndex = 22;
-            this.btnVoltarMenu.Text = "Voltar Menu";
-            this.btnVoltarMenu.UseVisualStyleBackColor = true;
             // 
             // id
             // 
@@ -285,6 +275,16 @@
             this.Mediaptsnickname.HeaderText = "Média";
             this.Mediaptsnickname.MinimumWidth = 6;
             this.Mediaptsnickname.Name = "Mediaptsnickname";
+            // 
+            // btnVoltarMenu
+            // 
+            this.btnVoltarMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnVoltarMenu.Location = new System.Drawing.Point(20, 466);
+            this.btnVoltarMenu.Name = "btnVoltarMenu";
+            this.btnVoltarMenu.Size = new System.Drawing.Size(95, 30);
+            this.btnVoltarMenu.TabIndex = 22;
+            this.btnVoltarMenu.Text = "Voltar Menu";
+            this.btnVoltarMenu.UseVisualStyleBackColor = true;
             // 
             // FormEstatisticasLINQ
             // 

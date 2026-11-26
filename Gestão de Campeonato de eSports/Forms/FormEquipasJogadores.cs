@@ -204,7 +204,7 @@ namespace Gestão_de_Campeonato_de_eSports
             try
             {
                 int idJog = int.Parse(txtbIdJogador.Text);
-                int pontos = (int)numericUpDown1.Value;
+                int pontos = (int)nmd_Pontuação.Value;
 
                 var jogador = DadosGlobais.Jogadores.FirstOrDefault(j => j.Id == idJog);
                 if (jogador == null)
