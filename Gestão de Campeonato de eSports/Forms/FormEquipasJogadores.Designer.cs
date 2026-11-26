@@ -197,6 +197,7 @@
             this.btnAddEquipa.TabIndex = 5;
             this.btnAddEquipa.Text = "Adicionar Equipa";
             this.btnAddEquipa.UseVisualStyleBackColor = true;
+            this.btnAddEquipa.Click += new System.EventHandler(this.btnAddEquipa_Click_1);
             // 
             // txtPaisEquipa
             // 
@@ -567,6 +568,7 @@
             this.Controls.Add(this.pnlCampeonato);
             this.Name = "FormEquipasJogadores";
             this.Text = "Equipas e Jogadores";
+            this.Load += new System.EventHandler(this.FormEquipasJogadores_Load_1);
             this.pnlCampeonato.ResumeLayout(false);
             this.pnlCampeonato.PerformLayout();
             this.pnlTorneio.ResumeLayout(false);

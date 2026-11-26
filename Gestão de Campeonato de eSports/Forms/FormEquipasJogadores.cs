@@ -254,5 +254,56 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             this.Close();
         }
+     
+
+        private void btnAddEquipa_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                // Valida se o ID introduzido é um número válido
+                int id = int.Parse(txtIdEquipa.Text);
+
+                // Verifica se já existe uma equipa com o mesmo ID na memória
+                if (DadosGlobais.Equipas.Any(eq => eq.Id == id))
+                {
+                    MessageBox.Show("Já existe uma equipa com este ID!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                EquipaMock novaEquipa = new EquipaMock
+                {
+                    Id = id,
+                    Nome = txtNomeEquipa.Text,
+                    Pais = txtPaisEquipa.Text
+                };
+
+                GestorJson.AdicionarEquipa(novaEquipa);
+
+                DadosGlobais.Equipas = GestorJson.ImportarEquipas();
+
+                AtualizarTabelaEquipas(); 
+                AtualizarComboEquipas();
+
+                MessageBox.Show("Equipa guardada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtIdEquipa.Clear();
+                txtNomeEquipa.Clear();
+                txtPaisEquipa.Clear();
+            }
+            catch (Exception ex)
+            {
+                GestorLogs.RegistarErro(ex, this.Name);
+                MessageBox.Show("Erro ao guardar equipa: verifica se o ID é numérico.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void AtualizarComboEquipas()
+        {
+           
+        }
+
+        private void FormEquipasJogadores_Load_1(object sender, EventArgs e)
+        {
+            AtualizarComboEquipas();
+        }
     }
 }

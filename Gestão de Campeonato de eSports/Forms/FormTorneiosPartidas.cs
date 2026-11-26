@@ -10,13 +10,6 @@ namespace Gestão_de_Campeonato_de_eSports
         public FormTorneiosPartidas()
         {
             InitializeComponent();
-
-            // Liga os eventos dos controlos que não estavam registados no Designer
-            this.Load += new EventHandler(this.FormTorneiosPartidas_Load);
-            this.btnCriarTorneio.Click += new EventHandler(this.btnCriarTorneio_Click);
-            this.btnInscreverEquipa.Click += new EventHandler(this.btnInscreverEquipa_Click);
-            this.btnGuardarPartida.Click += new EventHandler(this.btnGuardarPartida_Click);
-            this.cmbTorneio.SelectedIndexChanged += new EventHandler(this.cmbTorneio_SelectedIndexChanged);
         }
 
         private void FormTorneiosPartidas_Load(object sender, EventArgs e)
@@ -27,14 +20,17 @@ namespace Gestão_de_Campeonato_de_eSports
 
         private void AtualizarCombos()
         {
+            // Combobox do Campeonato no topo
             cmbCampeonatos.DataSource = null;
             cmbCampeonatos.DataSource = DadosGlobais.Campeonatos;
             cmbCampeonatos.DisplayMember = "Nome";
 
+            // Combobox do Torneio na secção de Inscrições
             cmbTorneio.DataSource = null;
             cmbTorneio.DataSource = DadosGlobais.Torneios.ToList();
             cmbTorneio.DisplayMember = "Nome";
 
+            // Combobox das Equipas disponíveis para Inscrição e Partidas
             cmbEquipasDisp.DataSource = null;
             cmbEquipasDisp.DataSource = DadosGlobais.Equipas.ToList();
             cmbEquipasDisp.DisplayMember = "Nome";
@@ -46,10 +42,9 @@ namespace Gestão_de_Campeonato_de_eSports
             cmbEquipaB.DataSource = null;
             cmbEquipaB.DataSource = DadosGlobais.Equipas.ToList();
             cmbEquipaB.DisplayMember = "Nome";
-
-            AtualizarLabelEstado();
         }
 
+        // ==================== CRIAR TORNEIO ====================
         private void btnCriarTorneio_Click(object sender, EventArgs e)
         {
             try
@@ -72,7 +67,7 @@ namespace Gestão_de_Campeonato_de_eSports
                 GestorJson.ExportarParaJson(DadosGlobais.Torneios, "torneios.json");
 
                 AtualizarCombos();
-                MessageBox.Show("Torneio criado e guardado em JSON!");
+                MessageBox.Show("Torneio criado e guardado em JSON com sucesso!");
             }
             catch (Exception ex)
             {
@@ -81,6 +76,7 @@ namespace Gestão_de_Campeonato_de_eSports
             }
         }
 
+        // ==================== INSCREVER EQUIPA ====================
         private void btnInscreverEquipa_Click(object sender, EventArgs e)
         {
             try
@@ -103,8 +99,7 @@ namespace Gestão_de_Campeonato_de_eSports
                 torneioSelecionado.Equipas.Add(equipaSelecionada);
                 GestorJson.ExportarParaJson(DadosGlobais.Torneios, "torneios.json");
 
-                AtualizarLabelEstado();
-                MessageBox.Show($"Equipa '{equipaSelecionada.Nome}' inscrita com sucesso!");
+                MessageBox.Show($"Equipa '{equipaSelecionada.Nome}' inscrita com sucesso no torneio '{torneioSelecionado.Nome}'!");
             }
             catch (Exception ex)
             {
@@ -115,24 +110,10 @@ namespace Gestão_de_Campeonato_de_eSports
 
         private void cmbTorneio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AtualizarLabelEstado();
+            // Opcional para atualizar dados ao mudar de torneio
         }
 
-        private void AtualizarLabelEstado()
-        {
-            var torneio = cmbTorneio.SelectedItem as TorneioMock;
-            if (torneio != null)
-            {
-                int inscritas = torneio.Equipas.Count;
-                string status = inscritas >= 4 ? "Pronto" : "Aguardar";
-                lblEstado.Text = $"Estado: {inscritas}/4 ({status}) Min.4";
-            }
-            else
-            {
-                lblEstado.Text = "Estado: 0/4 () Min.4";
-            }
-        }
-
+        // ==================== AGENDAR E GUARDAR PARTIDA ====================
         private void btnGuardarPartida_Click(object sender, EventArgs e)
         {
             try
@@ -199,10 +180,27 @@ namespace Gestão_de_Campeonato_de_eSports
                 );
             }
         }
+        private void AtualizarComboEquipas()
+        {
+            var listaEquipas = GestorJson.ImportarEquipas();
 
+            cmbEquipaA.DataSource = null;
+
+            cmbEquipaA.DataSource = listaEquipas;
+
+            cmbEquipaA.DisplayMember = "Nome";
+
+            cmbEquipaA.ValueMember = "Id";
+        }
+
+        // ==================== BOTÃO VOLTAR ====================
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+      
+
+       
     }
 }
