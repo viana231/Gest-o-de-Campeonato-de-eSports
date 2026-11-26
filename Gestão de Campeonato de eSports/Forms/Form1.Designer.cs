@@ -42,12 +42,12 @@
             this.btnExportarJSON = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grpModulos = new System.Windows.Forms.GroupBox();
+            this.BtnHelpLogs = new System.Windows.Forms.Button();
             this.btnAbrirLinq = new System.Windows.Forms.Button();
             this.btnAbrirTorneio = new System.Windows.Forms.Button();
             this.btnAbrirEquipas = new System.Windows.Forms.Button();
             this.ofdFicheiro = new System.Windows.Forms.OpenFileDialog();
             this.sfdFicheiro = new System.Windows.Forms.SaveFileDialog();
-            this.BtnHelpLogs = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.pnlXML.SuspendLayout();
             this.grpXML.SuspendLayout();
@@ -116,6 +116,7 @@
             this.btnExportarXML.TabIndex = 1;
             this.btnExportarXML.Text = "Exportar";
             this.btnExportarXML.UseVisualStyleBackColor = true;
+            this.btnExportarXML.Click += new System.EventHandler(this.btnExportarXML_Click);
             // 
             // btnImportarXML
             // 
@@ -133,7 +134,7 @@
             this.pnlJSON.Controls.Add(this.grpJSON);
             this.pnlJSON.Location = new System.Drawing.Point(254, 51);
             this.pnlJSON.Name = "pnlJSON";
-            this.pnlJSON.Size = new System.Drawing.Size(216, 154);
+            this.pnlJSON.Size = new System.Drawing.Size(203, 154);
             this.pnlJSON.TabIndex = 2;
             // 
             // grpJSON
@@ -144,10 +145,11 @@
             this.grpJSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.grpJSON.Location = new System.Drawing.Point(3, 8);
             this.grpJSON.Name = "grpJSON";
-            this.grpJSON.Size = new System.Drawing.Size(210, 147);
+            this.grpJSON.Size = new System.Drawing.Size(186, 147);
             this.grpJSON.TabIndex = 1;
             this.grpJSON.TabStop = false;
             this.grpJSON.Text = "Ficheiros JSON";
+            this.grpJSON.Enter += new System.EventHandler(this.grpJSON_Enter);
             // 
             // btnConverterJSONParaXML
             // 
@@ -204,6 +206,17 @@
             this.grpModulos.TabStop = false;
             this.grpModulos.Text = "Módulos de Gestão e Análise";
             // 
+            // BtnHelpLogs
+            // 
+            this.BtnHelpLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnHelpLogs.Location = new System.Drawing.Point(368, 42);
+            this.BtnHelpLogs.Name = "BtnHelpLogs";
+            this.BtnHelpLogs.Size = new System.Drawing.Size(37, 33);
+            this.BtnHelpLogs.TabIndex = 4;
+            this.BtnHelpLogs.Text = "?";
+            this.BtnHelpLogs.UseVisualStyleBackColor = true;
+            this.BtnHelpLogs.Click += new System.EventHandler(this.BtnHelpLogs_Click);
+            // 
             // btnAbrirLinq
             // 
             this.btnAbrirLinq.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
@@ -243,17 +256,6 @@
             // sfdFicheiro
             // 
             this.sfdFicheiro.FileName = "SaveFileDialog";
-            // 
-            // BtnHelpLogs
-            // 
-            this.BtnHelpLogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnHelpLogs.Location = new System.Drawing.Point(368, 42);
-            this.BtnHelpLogs.Name = "BtnHelpLogs";
-            this.BtnHelpLogs.Size = new System.Drawing.Size(37, 33);
-            this.BtnHelpLogs.TabIndex = 4;
-            this.BtnHelpLogs.Text = "?";
-            this.BtnHelpLogs.UseVisualStyleBackColor = true;
-            this.BtnHelpLogs.Click += new System.EventHandler(this.BtnHelpLogs_Click);
             // 
             // FormPrincipal
             // 
