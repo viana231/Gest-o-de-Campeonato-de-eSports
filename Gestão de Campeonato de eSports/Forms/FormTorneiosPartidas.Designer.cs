@@ -382,6 +382,7 @@
             // 
             // dgvPartidas
             // 
+            this.dgvPartidas.AllowUserToAddRows = false;
             this.dgvPartidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPartidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPartidas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
