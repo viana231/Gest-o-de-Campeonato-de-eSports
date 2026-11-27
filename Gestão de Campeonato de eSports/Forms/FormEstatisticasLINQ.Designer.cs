@@ -57,6 +57,7 @@
             this.Mediaptsnickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVoltarMenu = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnPesquisar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaClassificativa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTop3Jogadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultPesquisaNickname)).BeginInit();
@@ -80,6 +81,7 @@
             this.cmbFiltroTorneio.Name = "cmbFiltroTorneio";
             this.cmbFiltroTorneio.Size = new System.Drawing.Size(121, 24);
             this.cmbFiltroTorneio.TabIndex = 1;
+            this.cmbFiltroTorneio.SelectedIndexChanged += new System.EventHandler(this.cmbFiltroTorneio_SelectedIndexChanged_1);
             // 
             // lblPesquisarNick
             // 
@@ -299,11 +301,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnPesquisar.Location = new System.Drawing.Point(695, 13);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(95, 30);
+            this.btnPesquisar.TabIndex = 23;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // FormEstatisticasLINQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 503);
+            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnVoltarMenu);
             this.Controls.Add(this.dgvResultPesquisaNickname);
             this.Controls.Add(this.label1);
@@ -356,5 +370,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Mediaptsnickname;
         private System.Windows.Forms.Button btnVoltarMenu;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }
