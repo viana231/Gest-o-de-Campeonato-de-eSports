@@ -54,10 +54,13 @@ namespace Gestão_de_Campeonato_de_eSports
 
         private void FormEquipasJogadores_Load(object sender, EventArgs e)
         {
+            DadosGlobais.CarregarTudo();
+
             if (lstvPontuacoes != null)
             {
                 lstvPontuacoes.View = View.List;
             }
+
             CarregarCombosTopo();
             AtualizarTabelaEquipas();
             AtualizarTabelaJogadores();
@@ -68,27 +71,23 @@ namespace Gestão_de_Campeonato_de_eSports
             if (cmbCampeonatos != null)
             {
                 cmbCampeonatos.DataSource = null;
-                cmbCampeonatos.DataSource = DadosGlobais.Campeonatos;
+                cmbCampeonatos.DataSource = DadosGlobais.Campeonatos.ToList();
                 cmbCampeonatos.DisplayMember = "Nome";
             }
 
             if (cmbTorneios != null)
             {
                 cmbTorneios.DataSource = null;
-                cmbTorneios.DataSource = DadosGlobais.Torneios;
+                cmbTorneios.DataSource = DadosGlobais.Torneios.ToList();
                 cmbTorneios.DisplayMember = "Nome";
             }
         }
 
-        // ==================== GESTÃO DE EQUIPAS ====================
         private void btnAddEquipa_Click(object sender, EventArgs e)
         {
             try
             {
-                if (errorProvider1 != null)
-                {
-                    errorProvider1.Clear();
-                }
+                if (errorProvider1 != null) errorProvider1.Clear();
 
                 string nomeEquipa = txtNomeEquipa.Text.Trim();
                 string paisEquipa = txtPaisEquipa.Text.Trim();
@@ -265,12 +264,6 @@ namespace Gestão_de_Campeonato_de_eSports
             }
         }
 
-        private void AtualizarComboEquipas()
-        {
-            // Método auxiliar para atualizar comboboxes de equipas se existirem
-        }
-
-        // ==================== GESTÃO DE JOGADORES ====================
         private void btnAddJogador_Click(object sender, EventArgs e)
         {
             try
@@ -282,7 +275,7 @@ namespace Gestão_de_Campeonato_de_eSports
                     return;
                 }
 
-                Jogador novo = new Jogador
+                Jogares novo = new Jogares
                 {
                     Id = idJog,
                     Nome = txtbNomeJogador.Text,
@@ -309,7 +302,7 @@ namespace Gestão_de_Campeonato_de_eSports
                 int idJog = int.Parse(txtbIdJogador.Text);
                 var existente = DadosGlobais.Jogadores.FirstOrDefault(j => j.Id == idJog);
 
-                Jogador editado = new Jogador
+                Jogares editado = new Jogares
                 {
                     Id = idJog,
                     Nome = txtbNomeJogador.Text,

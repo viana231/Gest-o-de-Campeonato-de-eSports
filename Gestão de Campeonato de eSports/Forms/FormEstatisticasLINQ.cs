@@ -1,7 +1,9 @@
 ﻿using Gestão_de_Campeonato_de_eSports.Modelo;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Gestão_de_Campeonato_de_eSports.Modelo;
 
 namespace Gestão_de_Campeonato_de_eSports.Forms
 {
@@ -10,14 +12,33 @@ namespace Gestão_de_Campeonato_de_eSports.Forms
         public FormEstatisticasLINQ()
         {
             InitializeComponent();
-            this.Load += new EventHandler(this.FormEstatisticasLINQ_Load);
-            this.cmbFiltroTorneio.SelectedIndexChanged += new EventHandler(this.cmbFiltroTorneio_SelectedIndexChanged);
+
+            // Liga os eventos diretamente aos controlos do teu Designer
+            this.Load += FormEstatisticasLINQ_Load;
+            this.cmbFiltroTorneio.SelectedIndexChanged += cmbFiltroTorneio_SelectedIndexChanged;
+            this.txtPesquisarNick.TextChanged += txtPesquisarNick_TextChanged;
+            this.btnVoltarMenu.Click += btnVoltarMenu_Click;
         }
 
         private void FormEstatisticasLINQ_Load(object sender, EventArgs e)
         {
+            DadosGlobais.CarregarTudo();
+            CarregarComboTorneios();
+            AtualizarTabelaClassificativa();
+            AtualizarTop3Jogadores();
+            AtualizarPesquisaNickname();
+        }
+
+        private void CarregarComboTorneios()
+        {
+            var listaOpcoes = new List<TorneioMock>
+            {
+                new TorneioMock { Id = 0, Nome = "Todos os Torneios" }
+            };
+            listaOpcoes.AddRange(DadosGlobais.Torneios);
+
             cmbFiltroTorneio.DataSource = null;
-            cmbFiltroTorneio.DataSource = DadosGlobais.Torneios;
+            cmbFiltroTorneio.DataSource = listaOpcoes;
             cmbFiltroTorneio.DisplayMember = "Nome";
 
             CarregarEstatisticasTorneio();
