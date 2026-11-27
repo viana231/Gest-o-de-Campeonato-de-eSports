@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices; // NOVO
 using System.Threading;
 using System.Windows.Forms;
 
@@ -6,9 +7,20 @@ namespace Gestão_de_Campeonato_de_eSports
 {
     internal static class Program
     {
+        #region DPI
+        // NOVO - para o form nao ficar desfocado
+        [DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
+        #endregion
+
+        #region Main
         [STAThread]
         static void Main()
         {
+
+            if (Environment.OSVersion.Version.Major >= 6)
+                SetProcessDPIAware();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -18,7 +30,9 @@ namespace Gestão_de_Campeonato_de_eSports
 
             Application.Run(new FormPrincipal());
         }
+        #endregion
 
+        #region Erros
         private static void CapturarErroDeForm(object sender, ThreadExceptionEventArgs e)
         {
             GestorLogs.RegistarErro(e.Exception);
@@ -33,5 +47,6 @@ namespace Gestão_de_Campeonato_de_eSports
                 GestorLogs.RegistarErro(ex, "Erro Fatal");
             }
         }
+        #endregion
     }
 }

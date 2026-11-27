@@ -64,5 +64,15 @@ namespace Gestão_de_Campeonato_de_eSports.Forms
                 dgvTabelaClassificativa.Rows.Add(pos++, item.Equipa, item.Jogos, item.Vitorias, item.Derrotas, item.Pontos);
             }
         }
+
+        private void txtPesquisarNick_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVoltarMenu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

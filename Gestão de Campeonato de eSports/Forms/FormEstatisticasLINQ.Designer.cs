@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTorneios = new System.Windows.Forms.Label();
             this.cmbFiltroTorneio = new System.Windows.Forms.ComboBox();
             this.lblPesquisarNick = new System.Windows.Forms.Label();
@@ -57,61 +66,98 @@
             this.Mediaptsnickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVoltarMenu = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaClassificativa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTop3Jogadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultPesquisaNickname)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTorneios
             // 
             this.lblTorneios.AutoSize = true;
+            this.lblTorneios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
             this.lblTorneios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTorneios.Location = new System.Drawing.Point(13, 13);
+            this.lblTorneios.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTorneios.Location = new System.Drawing.Point(21, 81);
             this.lblTorneios.Name = "lblTorneios";
-            this.lblTorneios.Size = new System.Drawing.Size(79, 20);
+            this.lblTorneios.Size = new System.Drawing.Size(95, 25);
             this.lblTorneios.TabIndex = 0;
             this.lblTorneios.Text = "Torneios:";
             // 
             // cmbFiltroTorneio
             // 
+            this.cmbFiltroTorneio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.cmbFiltroTorneio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbFiltroTorneio.ForeColor = System.Drawing.Color.Gainsboro;
             this.cmbFiltroTorneio.FormattingEnabled = true;
-            this.cmbFiltroTorneio.Location = new System.Drawing.Point(98, 13);
+            this.cmbFiltroTorneio.Location = new System.Drawing.Point(116, 80);
+            this.cmbFiltroTorneio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbFiltroTorneio.Name = "cmbFiltroTorneio";
-            this.cmbFiltroTorneio.Size = new System.Drawing.Size(121, 24);
+            this.cmbFiltroTorneio.Size = new System.Drawing.Size(136, 28);
             this.cmbFiltroTorneio.TabIndex = 1;
             // 
             // lblPesquisarNick
             // 
             this.lblPesquisarNick.AutoSize = true;
+            this.lblPesquisarNick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
             this.lblPesquisarNick.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPesquisarNick.Location = new System.Drawing.Point(442, 13);
+            this.lblPesquisarNick.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblPesquisarNick.Location = new System.Drawing.Point(497, 79);
             this.lblPesquisarNick.Name = "lblPesquisarNick";
-            this.lblPesquisarNick.Size = new System.Drawing.Size(127, 20);
+            this.lblPesquisarNick.Size = new System.Drawing.Size(148, 25);
             this.lblPesquisarNick.TabIndex = 2;
             this.lblPesquisarNick.Text = "Pesquisar Nick:";
             // 
             // txtPesquisarNick
             // 
-            this.txtPesquisarNick.Location = new System.Drawing.Point(575, 13);
+            this.txtPesquisarNick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.txtPesquisarNick.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPesquisarNick.ForeColor = System.Drawing.Color.Gainsboro;
+            this.txtPesquisarNick.Location = new System.Drawing.Point(651, 79);
+            this.txtPesquisarNick.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPesquisarNick.Name = "txtPesquisarNick";
-            this.txtPesquisarNick.Size = new System.Drawing.Size(100, 22);
+            this.txtPesquisarNick.Size = new System.Drawing.Size(112, 26);
             this.txtPesquisarNick.TabIndex = 3;
+            this.txtPesquisarNick.TextChanged += new System.EventHandler(this.txtPesquisarNick_TextChanged);
             // 
             // lblTabelaClassificativa
             // 
             this.lblTabelaClassificativa.AutoSize = true;
-            this.lblTabelaClassificativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTabelaClassificativa.Location = new System.Drawing.Point(16, 44);
+            this.lblTabelaClassificativa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.lblTabelaClassificativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTabelaClassificativa.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblTabelaClassificativa.Location = new System.Drawing.Point(23, 130);
             this.lblTabelaClassificativa.Name = "lblTabelaClassificativa";
-            this.lblTabelaClassificativa.Size = new System.Drawing.Size(169, 20);
+            this.lblTabelaClassificativa.Size = new System.Drawing.Size(203, 22);
             this.lblTabelaClassificativa.TabIndex = 4;
             this.lblTabelaClassificativa.Text = "Tabela Classificativa:";
             // 
             // dgvTabelaClassificativa
             // 
             this.dgvTabelaClassificativa.AllowUserToAddRows = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(44)))), ((int)(((byte)(56)))));
+            this.dgvTabelaClassificativa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvTabelaClassificativa.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTabelaClassificativa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.dgvTabelaClassificativa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(52)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTabelaClassificativa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvTabelaClassificativa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTabelaClassificativa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.posicao,
@@ -120,13 +166,24 @@
             this.vitoria,
             this.derrota,
             this.pontos});
-            this.dgvTabelaClassificativa.Location = new System.Drawing.Point(16, 67);
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTabelaClassificativa.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvTabelaClassificativa.EnableHeadersVisualStyles = false;
+            this.dgvTabelaClassificativa.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(67)))), ((int)(((byte)(82)))));
+            this.dgvTabelaClassificativa.Location = new System.Drawing.Point(20, 157);
+            this.dgvTabelaClassificativa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvTabelaClassificativa.Name = "dgvTabelaClassificativa";
             this.dgvTabelaClassificativa.RowHeadersVisible = false;
             this.dgvTabelaClassificativa.RowHeadersWidth = 51;
             this.dgvTabelaClassificativa.RowTemplate.Height = 24;
             this.dgvTabelaClassificativa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTabelaClassificativa.Size = new System.Drawing.Size(381, 178);
+            this.dgvTabelaClassificativa.Size = new System.Drawing.Size(439, 222);
             this.dgvTabelaClassificativa.TabIndex = 5;
             // 
             // posicao
@@ -168,30 +225,55 @@
             // lblTop3Jogadores
             // 
             this.lblTop3Jogadores.AutoSize = true;
-            this.lblTop3Jogadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTop3Jogadores.Location = new System.Drawing.Point(407, 44);
+            this.lblTop3Jogadores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.lblTop3Jogadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTop3Jogadores.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblTop3Jogadores.Location = new System.Drawing.Point(488, 129);
             this.lblTop3Jogadores.Name = "lblTop3Jogadores";
-            this.lblTop3Jogadores.Size = new System.Drawing.Size(139, 20);
+            this.lblTop3Jogadores.Size = new System.Drawing.Size(167, 22);
             this.lblTop3Jogadores.TabIndex = 6;
             this.lblTop3Jogadores.Text = "Top 3 Jogadores:";
             // 
             // dgvTop3Jogadores
             // 
             this.dgvTop3Jogadores.AllowUserToAddRows = false;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(44)))), ((int)(((byte)(56)))));
+            this.dgvTop3Jogadores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvTop3Jogadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTop3Jogadores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.dgvTop3Jogadores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(52)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTop3Jogadores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvTop3Jogadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTop3Jogadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.posicaotop3,
             this.nick,
             this._equipa,
             this.media});
-            this.dgvTop3Jogadores.Location = new System.Drawing.Point(410, 67);
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTop3Jogadores.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvTop3Jogadores.EnableHeadersVisualStyles = false;
+            this.dgvTop3Jogadores.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(67)))), ((int)(((byte)(82)))));
+            this.dgvTop3Jogadores.Location = new System.Drawing.Point(489, 156);
+            this.dgvTop3Jogadores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvTop3Jogadores.Name = "dgvTop3Jogadores";
             this.dgvTop3Jogadores.RowHeadersVisible = false;
             this.dgvTop3Jogadores.RowHeadersWidth = 51;
             this.dgvTop3Jogadores.RowTemplate.Height = 24;
             this.dgvTop3Jogadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTop3Jogadores.Size = new System.Drawing.Size(378, 178);
+            this.dgvTop3Jogadores.Size = new System.Drawing.Size(442, 222);
             this.dgvTop3Jogadores.TabIndex = 7;
             // 
             // posicaotop3
@@ -221,17 +303,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(16, 248);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(18, 408);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(303, 20);
+            this.label1.Size = new System.Drawing.Size(360, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "Resultados da Pesquisa por Nickname:";
             // 
             // dgvResultPesquisaNickname
             // 
             this.dgvResultPesquisaNickname.AllowUserToAddRows = false;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(44)))), ((int)(((byte)(56)))));
+            this.dgvResultPesquisaNickname.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvResultPesquisaNickname.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResultPesquisaNickname.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.dgvResultPesquisaNickname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(52)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvResultPesquisaNickname.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvResultPesquisaNickname.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResultPesquisaNickname.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -240,13 +336,24 @@
             this.idade,
             this.equiparesultnickname,
             this.Mediaptsnickname});
-            this.dgvResultPesquisaNickname.Location = new System.Drawing.Point(16, 271);
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvResultPesquisaNickname.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvResultPesquisaNickname.EnableHeadersVisualStyles = false;
+            this.dgvResultPesquisaNickname.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(67)))), ((int)(((byte)(82)))));
+            this.dgvResultPesquisaNickname.Location = new System.Drawing.Point(15, 30);
+            this.dgvResultPesquisaNickname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvResultPesquisaNickname.Name = "dgvResultPesquisaNickname";
             this.dgvResultPesquisaNickname.RowHeadersVisible = false;
             this.dgvResultPesquisaNickname.RowHeadersWidth = 51;
             this.dgvResultPesquisaNickname.RowTemplate.Height = 24;
             this.dgvResultPesquisaNickname.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvResultPesquisaNickname.Size = new System.Drawing.Size(772, 189);
+            this.dgvResultPesquisaNickname.Size = new System.Drawing.Size(895, 236);
             this.dgvResultPesquisaNickname.TabIndex = 9;
             // 
             // id
@@ -287,25 +394,103 @@
             // 
             // btnVoltarMenu
             // 
+            this.btnVoltarMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.btnVoltarMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltarMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnVoltarMenu.Location = new System.Drawing.Point(20, 466);
+            this.btnVoltarMenu.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnVoltarMenu.Location = new System.Drawing.Point(22, 691);
+            this.btnVoltarMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnVoltarMenu.Name = "btnVoltarMenu";
-            this.btnVoltarMenu.Size = new System.Drawing.Size(95, 30);
+            this.btnVoltarMenu.Size = new System.Drawing.Size(123, 30);
             this.btnVoltarMenu.TabIndex = 22;
             this.btnVoltarMenu.Text = "Voltar Menu";
-            this.btnVoltarMenu.UseVisualStyleBackColor = true;
+            this.btnVoltarMenu.UseVisualStyleBackColor = false;
+            this.btnVoltarMenu.Click += new System.EventHandler(this.btnVoltarMenu_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(948, 52);
+            this.panel1.TabIndex = 23;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitle.Location = new System.Drawing.Point(32, 13);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(350, 31);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Estatísticas do Campeonato";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel2.Location = new System.Drawing.Point(22, 17);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(11, 24);
+            this.panel2.TabIndex = 24;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.panel3.Location = new System.Drawing.Point(12, 67);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(924, 52);
+            this.panel3.TabIndex = 24;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.panel4.Location = new System.Drawing.Point(12, 126);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(452, 262);
+            this.panel4.TabIndex = 25;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.panel5.Location = new System.Drawing.Point(483, 127);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(453, 262);
+            this.panel5.TabIndex = 26;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(38)))), ((int)(((byte)(48)))));
+            this.panel6.Controls.Add(this.dgvResultPesquisaNickname);
+            this.panel6.Location = new System.Drawing.Point(12, 405);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(924, 278);
+            this.panel6.TabIndex = 27;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Location = new System.Drawing.Point(0, 52);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(948, 8);
+            this.panel7.TabIndex = 28;
+            // 
             // FormEstatisticasLINQ
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 503);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(27)))), ((int)(((byte)(34)))));
+            this.ClientSize = new System.Drawing.Size(948, 729);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.btnVoltarMenu);
-            this.Controls.Add(this.dgvResultPesquisaNickname);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvTop3Jogadores);
             this.Controls.Add(this.lblTop3Jogadores);
@@ -315,12 +500,21 @@
             this.Controls.Add(this.lblPesquisarNick);
             this.Controls.Add(this.cmbFiltroTorneio);
             this.Controls.Add(this.lblTorneios);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel6);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormEstatisticasLINQ";
             this.Text = "Filtros e Pesquisas ";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaClassificativa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTop3Jogadores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultPesquisaNickname)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,5 +550,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Mediaptsnickname;
         private System.Windows.Forms.Button btnVoltarMenu;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
     }
 }
