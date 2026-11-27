@@ -81,7 +81,7 @@
             this.cmbFiltroTorneio.Name = "cmbFiltroTorneio";
             this.cmbFiltroTorneio.Size = new System.Drawing.Size(121, 24);
             this.cmbFiltroTorneio.TabIndex = 1;
-            this.cmbFiltroTorneio.SelectedIndexChanged += new System.EventHandler(this.cmbFiltroTorneio_SelectedIndexChanged_1);
+            this.cmbFiltroTorneio.SelectedIndexChanged += new System.EventHandler(this.cmbFiltroTorneio_SelectedIndexChanged);
             // 
             // lblPesquisarNick
             // 

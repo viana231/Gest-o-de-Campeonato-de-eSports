@@ -180,7 +180,7 @@
             this.btnDelEquipa.TabIndex = 7;
             this.btnDelEquipa.Text = "Deletar Equipa";
             this.btnDelEquipa.UseVisualStyleBackColor = true;
-            this.btnDelEquipa.Click += new System.EventHandler(this.btnDelEquipa_Click_1);
+            this.btnDelEquipa.Click += new System.EventHandler(this.btnDelEquipa_Click);
             // 
             // btnEditEquipa
             // 
@@ -201,7 +201,7 @@
             this.btnAddEquipa.TabIndex = 5;
             this.btnAddEquipa.Text = "Adicionar Equipa";
             this.btnAddEquipa.UseVisualStyleBackColor = true;
-            this.btnAddEquipa.Click += new System.EventHandler(this.btnAddEquipa_Click_1);
+            this.btnAddEquipa.Click += new System.EventHandler(this.btnAddEquipa_Click);
             // 
             // txtPaisEquipa
             // 
@@ -438,7 +438,7 @@
             this.btnAddJogador.TabIndex = 8;
             this.btnAddJogador.Text = "Adicionar Jogador";
             this.btnAddJogador.UseVisualStyleBackColor = true;
-            this.btnAddJogador.Click += new System.EventHandler(this.btnAddJogador_Click_1);
+            this.btnAddJogador.Click += new System.EventHandler(this.btnAddJogador_Click);
             // 
             // btnEditJogador
             // 
@@ -579,7 +579,7 @@
             this.Controls.Add(this.pnlCampeonato);
             this.Name = "FormEquipasJogadores";
             this.Text = "Equipas e Jogadores";
-            this.Load += new System.EventHandler(this.FormEquipasJogadores_Load_1);
+            this.Load += new System.EventHandler(this.FormEquipasJogadores_Load);
             this.pnlCampeonato.ResumeLayout(false);
             this.pnlCampeonato.PerformLayout();
             this.pnlTorneio.ResumeLayout(false);
