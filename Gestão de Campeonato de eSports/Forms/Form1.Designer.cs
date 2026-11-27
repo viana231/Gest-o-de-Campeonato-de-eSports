@@ -1,6 +1,6 @@
 ﻿namespace Gestão_de_Campeonato_de_eSports
 {
-    partial class FormPrincipal
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 using Gestão_de_Campeonato_de_eSports.Modelo;
 
@@ -8,176 +9,120 @@ namespace Gestão_de_Campeonato_de_eSports
 {
     public static class GestorJson
     {
-        private static readonly JsonSerializerOptions OpcoesJson = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            PropertyNameCaseInsensitive = true
-        };
+        private static readonly JsonSerializerOptions Opcoes = new JsonSerializerOptions { WriteIndented = true };
 
-        // --- MÉTODOS GENÉRICOS ---
-        public static void ExportarParaJson<T>(T dados, string caminhoFicheiro)
+        public static void ExportarParaJson<T>(List<T> dados, string caminhoFicheiro)
         {
-            try
-            {
-                string jsonString = JsonSerializer.Serialize(dados, OpcoesJson);
-                File.WriteAllText(caminhoFicheiro, jsonString);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Erro ao guardar ficheiro JSON ({caminhoFicheiro}): {ex.Message}");
-            }
+            string json = JsonSerializer.Serialize(dados, Opcoes);
+            File.WriteAllText(caminhoFicheiro, json);
         }
 
-        public static T ImportarDeJson<T>(string caminhoFicheiro)
+        public static List<T> ImportarDeJson<T>(string caminhoFicheiro)
         {
             if (!File.Exists(caminhoFicheiro))
-            {
-                return default(T);
-            }
+                return new List<T>();
 
-            try
+            string json = File.ReadAllText(caminhoFicheiro);
+            return string.IsNullOrWhiteSpace(json)
+                ? new List<T>()
+                : JsonSerializer.Deserialize<List<T>>(json) ?? new List<T>();
+        }
+
+        public static List<CampeonatoMock> ImportarCampeonatos() => ImportarDeJson<CampeonatoMock>("campeonatos.json");
+        public static List<TorneioMock> ImportarTorneios() => ImportarDeJson<TorneioMock>("torneios.json");
+        public static List<EquipaMock> ImportarEquipas() => ImportarDeJson<EquipaMock>("equipas.json");
+
+        public static void AdicionarEquipa(EquipaMock nova)
+        {
+            var lista = ImportarEquipas();
+            lista.Add(nova);
+            ExportarParaJson(lista, "equipas.json");
+        }
+
+        public static void EditarEquipa(EquipaMock editada)
+        {
+            var lista = ImportarEquipas();
+            var eq = lista.FirstOrDefault(x => x.Id == editada.Id);
+            if (eq == null) throw new Exception("Equipa com esse ID não encontrada!");
+
+            eq.Nome = editada.Nome;
+            eq.Pais = editada.Pais;
+            ExportarParaJson(lista, "equipas.json");
+        }
+
+        public static void RemoverEquipa(int id)
+        {
+            var lista = ImportarEquipas();
+            var eq = lista.FirstOrDefault(x => x.Id == id);
+            if (eq == null) throw new Exception("Equipa com esse ID não encontrada!");
+
+            lista.Remove(eq);
+            ExportarParaJson(lista, "equipas.json");
+        }
+
+        public static List<Jogares> ImportarJogadores() => ImportarDeJson<Jogares>("jogadores.json");
+
+        public static void ExportarJogadores(List<Jogares> lista = null)
+        {
+            ExportarParaJson(lista ?? DadosGlobais.Jogadores, "jogadores.json");
+        }
+
+        public static List<Jogares> SincronizarJogadores(List<Jogares> listaMemoria = null)
+        {
+            var doFicheiro = ImportarJogadores();
+            if (listaMemoria != null)
             {
-                string jsonString = File.ReadAllText(caminhoFicheiro);
-                if (string.IsNullOrWhiteSpace(jsonString))
+                foreach (var j in listaMemoria)
                 {
-                    return default(T);
-                }
-
-                return JsonSerializer.Deserialize<T>(jsonString, OpcoesJson);
-            }
-            catch (JsonException)
-            {
-                throw new Exception($"O ficheiro '{caminhoFicheiro}' está corrompido ou contém formato JSON inválido.");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Erro ao ler ficheiro JSON ({caminhoFicheiro}): {ex.Message}");
-            }
-        }
-
-        public static void AdicionarItemAListaJson<T>(T novoItem, string caminhoFicheiro)
-        {
-            List<T> listaAtual = new List<T>();
-
-            if (File.Exists(caminhoFicheiro))
-            {
-                listaAtual = ImportarDeJson<List<T>>(caminhoFicheiro) ?? new List<T>();
-            }
-
-            listaAtual.Add(novoItem);
-            ExportarParaJson(listaAtual, caminhoFicheiro);
-        }
-
-        // --- PARTIDAS ---
-        public static List<Partida> ImportarPartidas(string caminho = "partidas.json")
-        {
-            return ImportarDeJson<List<Partida>>(caminho) ?? new List<Partida>();
-        }
-
-        public static void ExportarPartidas(List<Partida> partidas, string caminho = "partidas.json")
-        {
-            ExportarParaJson(partidas, caminho);
-        }
-
-        public static void AdicionarPartida(Partida novaPartida, string caminho = "partidas.json")
-        {
-            AdicionarItemAListaJson(novaPartida, caminho);
-        }
-
-        // --- JOGADORES ---
-        public static List<Jogador> ImportarJogadores(string caminho = "jogadores.json")
-        {
-            return ImportarDeJson<List<Jogador>>(caminho) ?? new List<Jogador>();
-        }
-
-        public static void ExportarJogadores(List<Jogador> jogadores, string caminho = "jogadores.json")
-        {
-            ExportarParaJson(jogadores, caminho);
-        }
-
-        public static void AdicionarJogador(Jogador novoJogador, string caminho = "jogadores.json")
-        {
-            AdicionarItemAListaJson(novoJogador, caminho);
-        }
-
-        public static void EditarJogador(Jogador jogadorEditado, string caminho = "jogadores.json")
-        {
-            var lista = ImportarJogadores(caminho);
-            int index = lista.FindIndex(j => j.Id == jogadorEditado.Id);
-
-            if (index != -1)
-            {
-                lista[index] = jogadorEditado;
-                ExportarJogadores(lista, caminho);
-            }
-        }
-
-        public static void RemoverJogador(int idJogador, string caminho = "jogadores.json")
-        {
-            var lista = ImportarJogadores(caminho);
-            lista.RemoveAll(j => j.Id == idJogador);
-            ExportarJogadores(lista, caminho);
-        }
-
-        public static int SincronizarJogadores(List<Jogador> listaEmMemoria, string caminhoFicheiro)
-        {
-            var jogadoresDoJson = ImportarDeJson<List<Jogador>>(caminhoFicheiro);
-            if (jogadoresDoJson == null) return 0;
-
-            int adicionados = 0;
-
-            foreach (var j in jogadoresDoJson)
-            {
-                bool dadosValidos = j.Id > 0 &&
-                                    !string.IsNullOrWhiteSpace(j.Nome) &&
-                                    !string.IsNullOrWhiteSpace(j.Nickname) &&
-                                    j.Idade >= 15;
-
-                bool jaExiste = listaEmMemoria.Exists(existente => existente.Id == j.Id);
-
-                if (dadosValidos && !jaExiste)
-                {
-                    listaEmMemoria.Add(j);
-                    adicionados++;
+                    if (!doFicheiro.Any(x => x.Id == j.Id))
+                        doFicheiro.Add(j);
                 }
             }
-
-            return adicionados;
+            DadosGlobais.Jogadores = doFicheiro;
+            ExportarParaJson(doFicheiro, "jogadores.json");
+            return doFicheiro;
         }
 
-        // --- EQUIPAS ---
-        public static List<EquipaMock> ImportarEquipas(string caminho = "equipas.json")
+        public static void AdicionarJogador(Jogares novo)
         {
-            return ImportarDeJson<List<EquipaMock>>(caminho) ?? new List<EquipaMock>();
+            var lista = ImportarJogadores();
+            lista.Add(novo);
+            ExportarParaJson(lista, "jogadores.json");
         }
 
-        public static void ExportarEquipas(List<EquipaMock> equipas, string caminho = "equipas.json")
+        public static void EditarJogador(Jogares editado)
         {
-            ExportarParaJson(equipas, caminho);
+            var lista = ImportarJogadores();
+            var jog = lista.FirstOrDefault(x => x.Id == editado.Id);
+            if (jog == null) throw new Exception("Jogador com esse ID não encontrado!");
+
+            jog.Nome = editado.Nome;
+            jog.Nickname = editado.Nickname;
+            jog.Idade = editado.Idade;
+            jog.Pontuacoes = editado.Pontuacoes ?? new List<int>();
+            ExportarParaJson(lista, "jogadores.json");
         }
 
-        public static void AdicionarEquipa(EquipaMock novaEquipa, string caminho = "equipas.json")
+        public static void RemoverJogador(int id)
         {
-            AdicionarItemAListaJson(novaEquipa, caminho);
+            var lista = ImportarJogadores();
+            var jog = lista.FirstOrDefault(x => x.Id == id);
+            if (jog == null) throw new Exception("Jogador com esse ID não encontrado!");
+
+            lista.Remove(jog);
+            ExportarParaJson(lista, "jogadores.json");
         }
 
-        public static void EditarEquipa(EquipaMock equipaEditada, string caminho = "equipas.json")
-        {
-            var lista = ImportarEquipas(caminho);
-            int index = lista.FindIndex(eq => eq.Id == equipaEditada.Id);
+        public static List<Partidas> ImportarPartidas() => ImportarDeJson<Partidas>("partidas.json");
 
-            if (index != -1)
-            {
-                lista[index] = equipaEditada;
-                ExportarEquipas(lista, caminho);
-            }
-        }
-
-        public static void RemoverEquipa(int idEquipa, string caminho = "equipas.json")
+        public static void AdicionarPartida(Partidas nova)
         {
-            var lista = ImportarEquipas(caminho);
-            lista.RemoveAll(eq => eq.Id == idEquipa);
-            ExportarEquipas(lista, caminho);
+            var lista = ImportarPartidas();
+            if (lista.Any(p => p.Id == nova.Id))
+                throw new Exception("Já existe uma partida com este ID!");
+
+            lista.Add(nova);
+            ExportarParaJson(lista, "partidas.json");
         }
     }
 }

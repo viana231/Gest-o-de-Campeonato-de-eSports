@@ -1,4 +1,6 @@
-﻿namespace Gestão_de_Campeonato_de_eSports
+﻿using System;
+
+namespace Gestão_de_Campeonato_de_eSports
 {
     partial class FormEquipasJogadores
     {
@@ -594,6 +596,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
+        }
+
+        private void FormEquipasJogadores_Load_1(object sender, EventArgs e)
+        {
+            FormEquipasJogadores_Load(sender, e);
+        }
+
+        private void btnAddJogador_Click_1(object sender, EventArgs e)
+        {
+            btnAddJogador_Click(sender, e);
+        }
+
+        private void btnAddEquipa_Click_1(object sender, EventArgs e)
+        {
+            btnAddEquipa_Click(sender, e);
         }
 
         #endregion
