@@ -77,16 +77,26 @@ namespace Gestão_de_Campeonato_de_eSports
                     return;
                 }
 
-                int idEquipa = int.Parse(txtIdEquipa.Text);
-                if (DadosGlobais.Equipas.Any(eq => eq.Id == idEquipa))
+                if (!int.TryParse(txtIdEquipa.Text, out int idInserido))
                 {
+                    if (errorProvider1 != null) errorProvider1.SetError(txtIdEquipa, "Insira um ID numérico válido!");
+                    MessageBox.Show("Insira um ID numérico válido!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtIdEquipa.Focus();
+                    return;
+                }
+
+                // Validação correta de ID único usando DadosGlobais.Equipas
+                if (DadosGlobais.Equipas.Any(eq => eq.Id == idInserido))
+                {
+                    if (errorProvider1 != null) errorProvider1.SetError(txtIdEquipa, "Este ID já está a ser utilizado!");
                     MessageBox.Show("Já existe uma equipa com este ID!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtIdEquipa.Focus();
                     return;
                 }
 
                 EquipaMock novaEquipa = new EquipaMock
                 {
-                    Id = idEquipa,
+                    Id = idInserido,
                     Nome = txtNomeEquipa.Text,
                     Pais = txtPaisEquipa.Text
                 };
@@ -135,11 +145,29 @@ namespace Gestão_de_Campeonato_de_eSports
         {
             try
             {
-                int idEquipa = int.Parse(txtIdEquipa.Text);
+                if (string.IsNullOrWhiteSpace(txtIdEquipa.Text) || !int.TryParse(txtIdEquipa.Text, out int idEquipa))
+                {
+                    MessageBox.Show("Insira ou selecione um ID de equipa válido para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Validação correta impedindo apagar equipas com partidas registadas
+                bool temPartidas = DadosGlobais.Partidas.Any(p => p.IdEquipaA == idEquipa || p.IdEquipaB == idEquipa);
+                if (temPartidas)
+                {
+                    MessageBox.Show("Não pode apagar esta equipa pois já tem partidas registadas!",
+                                    "Ação Bloqueada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 GestorJson.RemoverEquipa(idEquipa);
                 DadosGlobais.Equipas = GestorJson.ImportarEquipas();
                 AtualizarTabelaEquipas();
                 MessageBox.Show("Equipa removida do JSON!");
+
+                txtIdEquipa.Clear();
+                txtNomeEquipa.Clear();
+                txtPaisEquipa.Clear();
             }
             catch (Exception ex)
             {

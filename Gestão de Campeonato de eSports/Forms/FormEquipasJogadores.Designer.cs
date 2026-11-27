@@ -182,6 +182,7 @@ namespace Gestão_de_Campeonato_de_eSports
             this.btnDelEquipa.TabIndex = 7;
             this.btnDelEquipa.Text = "Deletar Equipa";
             this.btnDelEquipa.UseVisualStyleBackColor = true;
+            this.btnDelEquipa.Click += new System.EventHandler(this.btnDelEquipa_Click);
             // 
             // btnEditEquipa
             // 
@@ -202,7 +203,7 @@ namespace Gestão_de_Campeonato_de_eSports
             this.btnAddEquipa.TabIndex = 5;
             this.btnAddEquipa.Text = "Adicionar Equipa";
             this.btnAddEquipa.UseVisualStyleBackColor = true;
-            this.btnAddEquipa.Click += new System.EventHandler(this.btnAddEquipa_Click_1);
+            this.btnAddEquipa.Click += new System.EventHandler(this.btnAddEquipa_Click);
             // 
             // txtPaisEquipa
             // 
@@ -341,7 +342,7 @@ namespace Gestão_de_Campeonato_de_eSports
             this.nmd_Pontuação.Size = new System.Drawing.Size(60, 22);
             this.nmd_Pontuação.TabIndex = 18;
             this.nmd_Pontuação.Value = new decimal(new int[] {
-            100,
+            1,
             0,
             0,
             0});
@@ -439,7 +440,7 @@ namespace Gestão_de_Campeonato_de_eSports
             this.btnAddJogador.TabIndex = 8;
             this.btnAddJogador.Text = "Adicionar Jogador";
             this.btnAddJogador.UseVisualStyleBackColor = true;
-            this.btnAddJogador.Click += new System.EventHandler(this.btnAddJogador_Click_1);
+            this.btnAddJogador.Click += new System.EventHandler(this.btnAddJogador_Click);
             // 
             // btnEditJogador
             // 
@@ -479,6 +480,7 @@ namespace Gestão_de_Campeonato_de_eSports
             this.dgvEquipas.RowHeadersVisible = false;
             this.dgvEquipas.RowHeadersWidth = 51;
             this.dgvEquipas.RowTemplate.Height = 24;
+            this.dgvEquipas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEquipas.Size = new System.Drawing.Size(372, 302);
             this.dgvEquipas.TabIndex = 21;
             // 
@@ -520,6 +522,7 @@ namespace Gestão_de_Campeonato_de_eSports
             this.dgvJogadores.RowHeadersVisible = false;
             this.dgvJogadores.RowHeadersWidth = 51;
             this.dgvJogadores.RowTemplate.Height = 24;
+            this.dgvJogadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvJogadores.Size = new System.Drawing.Size(376, 196);
             this.dgvJogadores.TabIndex = 22;
             // 
@@ -578,7 +581,7 @@ namespace Gestão_de_Campeonato_de_eSports
             this.Controls.Add(this.pnlCampeonato);
             this.Name = "FormEquipasJogadores";
             this.Text = "Equipas e Jogadores";
-            this.Load += new System.EventHandler(this.FormEquipasJogadores_Load_1);
+            this.Load += new System.EventHandler(this.FormEquipasJogadores_Load);
             this.pnlCampeonato.ResumeLayout(false);
             this.pnlCampeonato.PerformLayout();
             this.pnlTorneio.ResumeLayout(false);

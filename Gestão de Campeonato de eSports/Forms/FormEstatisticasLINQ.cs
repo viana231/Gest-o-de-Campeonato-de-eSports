@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gestão_de_Campeonato_de_eSports.Modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -39,149 +40,77 @@ namespace Gestão_de_Campeonato_de_eSports.Forms
             cmbFiltroTorneio.DataSource = null;
             cmbFiltroTorneio.DataSource = listaOpcoes;
             cmbFiltroTorneio.DisplayMember = "Nome";
+
+            CarregarEstatisticasTorneio();
         }
 
         private void cmbFiltroTorneio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AtualizarTabelaClassificativa();
+            CarregarEstatisticasTorneio();
         }
 
-        private void txtPesquisarNick_TextChanged(object sender, EventArgs e)
+        private void CarregarEstatisticasTorneio()
         {
-            AtualizarPesquisaNickname();
-        }
+            var torneioSelecionado = (Torneio)cmbFiltroTorneio.SelectedItem;
+            if (torneioSelecionado == null) return;
 
-        // 1. Tabela Classificativa (dgvTabelaClassificativa: Posição, Equipa, Jogos, Vitória, Derrota, Pontos)
-        private void AtualizarTabelaClassificativa()
-        {
-            dgvTabelaClassificativa.Rows.Clear();
-
-            var torneioSel = cmbFiltroTorneio.SelectedItem as TorneioMock;
-            List<EquipaMock> equipasFiltradas = DadosGlobais.Equipas;
-
-            // Se escolher um torneio específico que tenha equipas inscritas, filtra por essas equipas
-            if (torneioSel != null && torneioSel.Id != 0 && torneioSel.Equipas != null && torneioSel.Equipas.Count > 0)
-            {
-                var idsInscritos = torneioSel.Equipas.Select(eq => eq.Id).ToHashSet();
-                equipasFiltradas = DadosGlobais.Equipas.Where(eq => idsInscritos.Contains(eq.Id)).ToList();
-            }
-
-            var classificacao = equipasFiltradas.Select(eq =>
-            {
-                var partidasEquipa = DadosGlobais.Partidas
-                    .Where(p => p.IdEquipaA == eq.Id || p.IdEquipaB == eq.Id)
-                    .ToList();
-
-                int vitorias = partidasEquipa.Count(p =>
+            // 1. Tabela Classificativa
+            var classificacao = torneioSelecionado.Equipas.Select(eq => {
+                int vitorias = torneioSelecionado.Partidas.Count(p =>
                     (p.IdEquipaA == eq.Id && p.ResultadoA > p.ResultadoB) ||
                     (p.IdEquipaB == eq.Id && p.ResultadoB > p.ResultadoA));
 
-                int empates = partidasEquipa.Count(p => p.ResultadoA == p.ResultadoB);
-                int derrotas = partidasEquipa.Count - vitorias - empates;
-                int pontos = (vitorias * 3) + empates;
+                int derrotas = torneioSelecionado.Partidas.Count(p =>
+                    (p.IdEquipaA == eq.Id && p.ResultadoA < p.ResultadoB) ||
+                    (p.IdEquipaB == eq.Id && p.ResultadoB < p.ResultadoA));
+
+                int pontos = vitorias * 3;
 
                 return new
                 {
                     Equipa = eq.Nome,
-                    Jogos = partidasEquipa.Count,
+                    Jogos = vitorias + derrotas,
                     Vitorias = vitorias,
                     Derrotas = derrotas,
                     Pontos = pontos
                 };
-            })
-            .OrderByDescending(c => c.Pontos)
-            .ThenByDescending(c => c.Vitorias)
-            .ToList();
+            }).OrderByDescending(c => c.Pontos).ThenByDescending(c => c.Vitorias).ToList();
 
-            int pos = 1;
-            foreach (var item in classificacao)
-            {
-                dgvTabelaClassificativa.Rows.Add(
-                    pos++,
-                    item.Equipa,
-                    item.Jogos,
-                    item.Vitorias,
-                    item.Derrotas,
-                    item.Pontos
-                );
-            }
-        }
+            dgvTabelaClassificativa.DataSource = classificacao;
 
-        // 2. Top 3 Jogadores por Média (dataGridView1: Posição, Nick, Equipa, Média)
-        private void AtualizarTop3Jogadores()
-        {
-            dataGridView1.Rows.Clear();
-
-            var top3 = DadosGlobais.Jogadores
-                .Select(j => new
-                {
-                    Nick = j.Nickname,
-                    Equipa = ObterNomeEquipaDoJogador(j.Id),
-                    Media = (j.Pontuacoes != null && j.Pontuacoes.Count > 0)
-                        ? Math.Round(j.Pontuacoes.Average(), 1)
-                        : 0
-                })
-                .OrderByDescending(j => j.Media)
+            // 2. Top 3 Jogadores
+            var top3 = torneioSelecionado.Equipas
+                .SelectMany(eq => eq.Jogadores.Select(j => new {
+                    Nickname = j.Nickname,
+                    Equipa = eq.Nome,
+                    MediaPontos = j.Pontuacoes != null && j.Pontuacoes.Any() ? j.Pontuacoes.Average() : 0
+                }))
+                .OrderByDescending(j => j.MediaPontos)
                 .Take(3)
                 .ToList();
 
-            int pos = 1;
-            foreach (var j in top3)
-            {
-                dataGridView1.Rows.Add(pos++, j.Nick, j.Equipa, j.Media);
-            }
+            dgvTop3Jogadores.DataSource = top3;
         }
 
-        // 3. Pesquisa por Nickname com LINQ (dataGridView2: ID, NomeCompleto, Nickname, Idade, Equipa, Média)
-        private void AtualizarPesquisaNickname()
+        private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.Clear();
-            if (errorProvider1 != null) errorProvider1.Clear();
+            var torneioSelecionado = (Torneio)cmbFiltroTorneio.SelectedItem;
+            if (torneioSelecionado == null) return;
 
             string termo = txtPesquisarNick.Text.Trim().ToLower();
 
-            var resultados = DadosGlobais.Jogadores
-                .Where(j => string.IsNullOrEmpty(termo) ||
-                            (j.Nickname != null && j.Nickname.ToLower().Contains(termo)) ||
-                            (j.Nome != null && j.Nome.ToLower().Contains(termo)))
-                .Select(j => new
-                {
-                    Id = j.Id,
-                    NomeCompleto = j.Nome,
-                    Nickname = j.Nickname,
-                    Idade = j.Idade,
-                    Equipa = ObterNomeEquipaDoJogador(j.Id),
-                    Media = (j.Pontuacoes != null && j.Pontuacoes.Count > 0)
-                        ? Math.Round(j.Pontuacoes.Average(), 1)
-                        : 0
-                })
-                .OrderByDescending(j => j.Media)
-                .ToList();
+            var resultado = torneioSelecionado.Equipas
+                .SelectMany(eq => eq.Jogadores)
+                .Where(j => j.Nickname != null && j.Nickname.ToLower().Contains(termo))
+                .Select(j => new {
+                    j.Id,
+                    j.Nome,
+                    j.Nickname,
+                    j.Idade,
+                    Media = j.Pontuacoes != null && j.Pontuacoes.Any() ? j.Pontuacoes.Average() : 0
+                }).ToList();
 
-            if (resultados.Count == 0 && !string.IsNullOrEmpty(termo))
-            {
-                if (errorProvider1 != null)
-                    errorProvider1.SetError(txtPesquisarNick, "Nenhum jogador encontrado com esse Nickname.");
-                return;
-            }
-
-            foreach (var r in resultados)
-            {
-                dataGridView2.Rows.Add(r.Id, r.NomeCompleto, r.Nickname, r.Idade, r.Equipa, r.Media);
-            }
-        }
-
-        private string ObterNomeEquipaDoJogador(int idJogador)
-        {
-            var equipa = DadosGlobais.Equipas
-                .FirstOrDefault(eq => eq.Jogadores != null && eq.Jogadores.Any(jog => jog.Id == idJogador));
-
-            return equipa != null ? equipa.Nome : "Sem Equipa";
-        }
-
-        private void btnVoltarMenu_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            dgvResultPesquisaNickname.DataSource = resultado;
         }
     }
 }
