@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pnlCampeonato = new System.Windows.Forms.Panel();
             this.lblCampeonato = new System.Windows.Forms.Label();
             this.cmbCampeonatos = new System.Windows.Forms.ComboBox();
             this.lblTorneio = new System.Windows.Forms.Label();
-            this.pnlTorneio = new System.Windows.Forms.Panel();
             this.cmbTorneios = new System.Windows.Forms.ComboBox();
             this.pnlGestaoEquipas = new System.Windows.Forms.Panel();
             this.grpEquipa = new System.Windows.Forms.GroupBox();
@@ -75,8 +73,6 @@
             this.media = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnHelpLogs = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pnlCampeonato.SuspendLayout();
-            this.pnlTorneio.SuspendLayout();
             this.pnlGestaoEquipas.SuspendLayout();
             this.grpEquipa.SuspendLayout();
             this.pnlGestaoJogadores.SuspendLayout();
@@ -88,20 +84,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlCampeonato
-            // 
-            this.pnlCampeonato.Controls.Add(this.lblCampeonato);
-            this.pnlCampeonato.Controls.Add(this.cmbCampeonatos);
-            this.pnlCampeonato.Location = new System.Drawing.Point(13, 13);
-            this.pnlCampeonato.Name = "pnlCampeonato";
-            this.pnlCampeonato.Size = new System.Drawing.Size(374, 23);
-            this.pnlCampeonato.TabIndex = 0;
-            // 
             // lblCampeonato
             // 
             this.lblCampeonato.AutoSize = true;
             this.lblCampeonato.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblCampeonato.Location = new System.Drawing.Point(3, 0);
+            this.lblCampeonato.Location = new System.Drawing.Point(12, 13);
             this.lblCampeonato.Name = "lblCampeonato";
             this.lblCampeonato.Size = new System.Drawing.Size(113, 20);
             this.lblCampeonato.TabIndex = 0;
@@ -111,37 +98,28 @@
             // 
             this.cmbCampeonatos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCampeonatos.FormattingEnabled = true;
-            this.cmbCampeonatos.Location = new System.Drawing.Point(122, 0);
+            this.cmbCampeonatos.Location = new System.Drawing.Point(135, 13);
             this.cmbCampeonatos.Name = "cmbCampeonatos";
-            this.cmbCampeonatos.Size = new System.Drawing.Size(121, 24);
+            this.cmbCampeonatos.Size = new System.Drawing.Size(245, 24);
             this.cmbCampeonatos.TabIndex = 3;
             // 
             // lblTorneio
             // 
             this.lblTorneio.AutoSize = true;
             this.lblTorneio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTorneio.Location = new System.Drawing.Point(3, 0);
+            this.lblTorneio.Location = new System.Drawing.Point(466, 13);
             this.lblTorneio.Name = "lblTorneio";
             this.lblTorneio.Size = new System.Drawing.Size(75, 20);
             this.lblTorneio.TabIndex = 1;
             this.lblTorneio.Text = "Torneio: ";
             // 
-            // pnlTorneio
-            // 
-            this.pnlTorneio.Controls.Add(this.cmbTorneios);
-            this.pnlTorneio.Controls.Add(this.lblTorneio);
-            this.pnlTorneio.Location = new System.Drawing.Point(394, 13);
-            this.pnlTorneio.Name = "pnlTorneio";
-            this.pnlTorneio.Size = new System.Drawing.Size(376, 24);
-            this.pnlTorneio.TabIndex = 2;
-            // 
             // cmbTorneios
             // 
             this.cmbTorneios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTorneios.FormattingEnabled = true;
-            this.cmbTorneios.Location = new System.Drawing.Point(84, 0);
+            this.cmbTorneios.Location = new System.Drawing.Point(547, 9);
             this.cmbTorneios.Name = "cmbTorneios";
-            this.cmbTorneios.Size = new System.Drawing.Size(121, 24);
+            this.cmbTorneios.Size = new System.Drawing.Size(217, 24);
             this.cmbTorneios.TabIndex = 4;
             // 
             // pnlGestaoEquipas
@@ -569,21 +547,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.cmbTorneios);
+            this.Controls.Add(this.lblCampeonato);
+            this.Controls.Add(this.lblTorneio);
+            this.Controls.Add(this.cmbCampeonatos);
             this.Controls.Add(this.BtnHelpLogs);
             this.Controls.Add(this.dgvJogadores);
             this.Controls.Add(this.dgvEquipas);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.pnlGestaoJogadores);
             this.Controls.Add(this.pnlGestaoEquipas);
-            this.Controls.Add(this.pnlTorneio);
-            this.Controls.Add(this.pnlCampeonato);
             this.Name = "FormEquipasJogadores";
             this.Text = "Equipas e Jogadores";
             this.Load += new System.EventHandler(this.FormEquipasJogadores_Load);
-            this.pnlCampeonato.ResumeLayout(false);
-            this.pnlCampeonato.PerformLayout();
-            this.pnlTorneio.ResumeLayout(false);
-            this.pnlTorneio.PerformLayout();
             this.pnlGestaoEquipas.ResumeLayout(false);
             this.grpEquipa.ResumeLayout(false);
             this.grpEquipa.PerformLayout();
@@ -596,15 +572,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvJogadores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlCampeonato;
         private System.Windows.Forms.Label lblCampeonato;
         private System.Windows.Forms.Label lblTorneio;
-        private System.Windows.Forms.Panel pnlTorneio;
         private System.Windows.Forms.ComboBox cmbCampeonatos;
         private System.Windows.Forms.ComboBox cmbTorneios;
         private System.Windows.Forms.Panel pnlGestaoEquipas;
