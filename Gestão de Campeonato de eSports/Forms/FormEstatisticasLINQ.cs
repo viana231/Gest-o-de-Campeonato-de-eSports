@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Gestão_de_Campeonato_de_eSports.Modelo;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Gestão_de_Campeonato_de_eSports.Modelo;
 
 namespace Gestão_de_Campeonato_de_eSports.Forms
 {
@@ -9,60 +12,105 @@ namespace Gestão_de_Campeonato_de_eSports.Forms
         public FormEstatisticasLINQ()
         {
             InitializeComponent();
-            this.Load += new EventHandler(this.FormEstatisticasLINQ_Load);
-            this.cmbFiltroTorneio.SelectedIndexChanged += new EventHandler(this.cmbFiltroTorneio_SelectedIndexChanged);
+
+            // Liga os eventos diretamente aos controlos do teu Designer
+            this.Load += FormEstatisticasLINQ_Load;
+            this.cmbFiltroTorneio.SelectedIndexChanged += cmbFiltroTorneio_SelectedIndexChanged;
+            this.txtPesquisarNick.TextChanged += txtPesquisarNick_TextChanged;
+            this.btnVoltarMenu.Click += btnVoltarMenu_Click;
         }
 
         private void FormEstatisticasLINQ_Load(object sender, EventArgs e)
         {
+            DadosGlobais.CarregarTudo();
+            CarregarComboTorneios();
+            AtualizarTabelaClassificativa();
+            AtualizarTop3Jogadores();
+            AtualizarPesquisaNickname();
+        }
+
+        private void CarregarComboTorneios()
+        {
+            var listaOpcoes = new List<TorneioMock>
+            {
+                new TorneioMock { Id = 0, Nome = "Todos os Torneios" }
+            };
+            listaOpcoes.AddRange(DadosGlobais.Torneios);
+
             cmbFiltroTorneio.DataSource = null;
-            cmbFiltroTorneio.DataSource = DadosGlobais.Torneios;
+            cmbFiltroTorneio.DataSource = listaOpcoes;
             cmbFiltroTorneio.DisplayMember = "Nome";
 
-            CarregarTabelaClassificativa();
+            CarregarEstatisticasTorneio();
         }
 
         private void cmbFiltroTorneio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CarregarTabelaClassificativa();
+            CarregarEstatisticasTorneio();
         }
 
-        private void CarregarTabelaClassificativa()
+        private void CarregarEstatisticasTorneio()
         {
-            dgvTabelaClassificativa.Rows.Clear();
+            var torneioSelecionado = (Torneio)cmbFiltroTorneio.SelectedItem;
+            if (torneioSelecionado == null) return;
 
-            var classificacao = DadosGlobais.Equipas.Select(eq =>
-            {
-                var partidasEquipa = DadosGlobais.Partidas
-                    .Where(p => p.IdEquipaA == eq.Id || p.IdEquipaB == eq.Id)
-                    .ToList();
-
-                int vitorias = partidasEquipa.Count(p =>
+            // 1. Tabela Classificativa
+            var classificacao = torneioSelecionado.Equipas.Select(eq => {
+                int vitorias = torneioSelecionado.Partidas.Count(p =>
                     (p.IdEquipaA == eq.Id && p.ResultadoA > p.ResultadoB) ||
                     (p.IdEquipaB == eq.Id && p.ResultadoB > p.ResultadoA));
 
-                int derrotas = partidasEquipa.Count(p =>
+                int derrotas = torneioSelecionado.Partidas.Count(p =>
                     (p.IdEquipaA == eq.Id && p.ResultadoA < p.ResultadoB) ||
                     (p.IdEquipaB == eq.Id && p.ResultadoB < p.ResultadoA));
+
+                int pontos = vitorias * 3;
 
                 return new
                 {
                     Equipa = eq.Nome,
-                    Jogos = partidasEquipa.Count,
+                    Jogos = vitorias + derrotas,
                     Vitorias = vitorias,
                     Derrotas = derrotas,
-                    Pontos = vitorias * 3
+                    Pontos = pontos
                 };
-            })
-            .OrderByDescending(c => c.Pontos)
-            .ThenByDescending(c => c.Vitorias)
-            .ToList();
+            }).OrderByDescending(c => c.Pontos).ThenByDescending(c => c.Vitorias).ToList();
 
-            int pos = 1;
-            foreach (var item in classificacao)
-            {
-                dgvTabelaClassificativa.Rows.Add(pos++, item.Equipa, item.Jogos, item.Vitorias, item.Derrotas, item.Pontos);
-            }
+            dgvTabelaClassificativa.DataSource = classificacao;
+
+            // 2. Top 3 Jogadores
+            var top3 = torneioSelecionado.Equipas
+                .SelectMany(eq => eq.Jogadores.Select(j => new {
+                    Nickname = j.Nickname,
+                    Equipa = eq.Nome,
+                    MediaPontos = j.Pontuacoes != null && j.Pontuacoes.Any() ? j.Pontuacoes.Average() : 0
+                }))
+                .OrderByDescending(j => j.MediaPontos)
+                .Take(3)
+                .ToList();
+
+            dgvTop3Jogadores.DataSource = top3;
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            var torneioSelecionado = (Torneio)cmbFiltroTorneio.SelectedItem;
+            if (torneioSelecionado == null) return;
+
+            string termo = txtPesquisarNick.Text.Trim().ToLower();
+
+            var resultado = torneioSelecionado.Equipas
+                .SelectMany(eq => eq.Jogadores)
+                .Where(j => j.Nickname != null && j.Nickname.ToLower().Contains(termo))
+                .Select(j => new {
+                    j.Id,
+                    j.Nome,
+                    j.Nickname,
+                    j.Idade,
+                    Media = j.Pontuacoes != null && j.Pontuacoes.Any() ? j.Pontuacoes.Average() : 0
+                }).ToList();
+
+            dgvResultPesquisaNickname.DataSource = resultado;
         }
 
         private void txtPesquisarNick_TextChanged(object sender, EventArgs e)
