@@ -224,6 +224,14 @@ namespace Gestão_de_Campeonato_de_eSports
                                 "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            var torneio = (Torneio)cmbTorneio.SelectedItem;
+            if (torneio != null && torneio.Equipas.Count < 4)
+            {
+                MessageBox.Show("O torneio necessita de ter pelo menos 4 equipas inscritas para agendar partidas!",
+                                "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
         }
 
         private void cmbTorneio_SelectedIndexChanged_1(object sender, EventArgs e)
