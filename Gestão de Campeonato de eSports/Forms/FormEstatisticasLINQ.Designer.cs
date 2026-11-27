@@ -42,13 +42,13 @@
             this.derrota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTop3Jogadores = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTop3Jogadores = new System.Windows.Forms.DataGridView();
             this.posicaotop3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nick = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._equipa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.media = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvResultPesquisaNickname = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,8 +58,8 @@
             this.btnVoltarMenu = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaClassificativa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTop3Jogadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultPesquisaNickname)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,46 +67,44 @@
             // 
             this.lblTorneios.AutoSize = true;
             this.lblTorneios.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTorneios.Location = new System.Drawing.Point(15, 16);
+            this.lblTorneios.Location = new System.Drawing.Point(13, 13);
             this.lblTorneios.Name = "lblTorneios";
-            this.lblTorneios.Size = new System.Drawing.Size(95, 25);
+            this.lblTorneios.Size = new System.Drawing.Size(79, 20);
             this.lblTorneios.TabIndex = 0;
             this.lblTorneios.Text = "Torneios:";
             // 
             // cmbFiltroTorneio
             // 
             this.cmbFiltroTorneio.FormattingEnabled = true;
-            this.cmbFiltroTorneio.Location = new System.Drawing.Point(110, 16);
-            this.cmbFiltroTorneio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbFiltroTorneio.Location = new System.Drawing.Point(98, 13);
             this.cmbFiltroTorneio.Name = "cmbFiltroTorneio";
-            this.cmbFiltroTorneio.Size = new System.Drawing.Size(136, 28);
+            this.cmbFiltroTorneio.Size = new System.Drawing.Size(121, 24);
             this.cmbFiltroTorneio.TabIndex = 1;
             // 
             // lblPesquisarNick
             // 
             this.lblPesquisarNick.AutoSize = true;
             this.lblPesquisarNick.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblPesquisarNick.Location = new System.Drawing.Point(497, 16);
+            this.lblPesquisarNick.Location = new System.Drawing.Point(442, 13);
             this.lblPesquisarNick.Name = "lblPesquisarNick";
-            this.lblPesquisarNick.Size = new System.Drawing.Size(148, 25);
+            this.lblPesquisarNick.Size = new System.Drawing.Size(127, 20);
             this.lblPesquisarNick.TabIndex = 2;
             this.lblPesquisarNick.Text = "Pesquisar Nick:";
             // 
             // txtPesquisarNick
             // 
-            this.txtPesquisarNick.Location = new System.Drawing.Point(647, 16);
-            this.txtPesquisarNick.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtPesquisarNick.Location = new System.Drawing.Point(575, 13);
             this.txtPesquisarNick.Name = "txtPesquisarNick";
-            this.txtPesquisarNick.Size = new System.Drawing.Size(112, 26);
+            this.txtPesquisarNick.Size = new System.Drawing.Size(100, 22);
             this.txtPesquisarNick.TabIndex = 3;
             // 
             // lblTabelaClassificativa
             // 
             this.lblTabelaClassificativa.AutoSize = true;
             this.lblTabelaClassificativa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTabelaClassificativa.Location = new System.Drawing.Point(18, 55);
+            this.lblTabelaClassificativa.Location = new System.Drawing.Point(16, 44);
             this.lblTabelaClassificativa.Name = "lblTabelaClassificativa";
-            this.lblTabelaClassificativa.Size = new System.Drawing.Size(198, 25);
+            this.lblTabelaClassificativa.Size = new System.Drawing.Size(169, 20);
             this.lblTabelaClassificativa.TabIndex = 4;
             this.lblTabelaClassificativa.Text = "Tabela Classificativa:";
             // 
@@ -122,14 +120,13 @@
             this.vitoria,
             this.derrota,
             this.pontos});
-            this.dgvTabelaClassificativa.Location = new System.Drawing.Point(18, 84);
-            this.dgvTabelaClassificativa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvTabelaClassificativa.Location = new System.Drawing.Point(16, 67);
             this.dgvTabelaClassificativa.Name = "dgvTabelaClassificativa";
             this.dgvTabelaClassificativa.RowHeadersVisible = false;
             this.dgvTabelaClassificativa.RowHeadersWidth = 51;
             this.dgvTabelaClassificativa.RowTemplate.Height = 24;
             this.dgvTabelaClassificativa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTabelaClassificativa.Size = new System.Drawing.Size(429, 222);
+            this.dgvTabelaClassificativa.Size = new System.Drawing.Size(381, 178);
             this.dgvTabelaClassificativa.TabIndex = 5;
             // 
             // posicao
@@ -172,31 +169,30 @@
             // 
             this.lblTop3Jogadores.AutoSize = true;
             this.lblTop3Jogadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblTop3Jogadores.Location = new System.Drawing.Point(458, 55);
+            this.lblTop3Jogadores.Location = new System.Drawing.Point(407, 44);
             this.lblTop3Jogadores.Name = "lblTop3Jogadores";
-            this.lblTop3Jogadores.Size = new System.Drawing.Size(167, 25);
+            this.lblTop3Jogadores.Size = new System.Drawing.Size(139, 20);
             this.lblTop3Jogadores.TabIndex = 6;
             this.lblTop3Jogadores.Text = "Top 3 Jogadores:";
             // 
-            // dataGridView1
+            // dgvTop3Jogadores
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTop3Jogadores.AllowUserToAddRows = false;
+            this.dgvTop3Jogadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTop3Jogadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTop3Jogadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.posicaotop3,
             this.nick,
             this._equipa,
             this.media});
-            this.dataGridView1.Location = new System.Drawing.Point(461, 84);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(425, 222);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvTop3Jogadores.Location = new System.Drawing.Point(410, 67);
+            this.dgvTop3Jogadores.Name = "dgvTop3Jogadores";
+            this.dgvTop3Jogadores.RowHeadersVisible = false;
+            this.dgvTop3Jogadores.RowHeadersWidth = 51;
+            this.dgvTop3Jogadores.RowTemplate.Height = 24;
+            this.dgvTop3Jogadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTop3Jogadores.Size = new System.Drawing.Size(378, 178);
+            this.dgvTop3Jogadores.TabIndex = 7;
             // 
             // posicaotop3
             // 
@@ -226,33 +222,32 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(18, 310);
+            this.label1.Location = new System.Drawing.Point(16, 248);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(353, 25);
+            this.label1.Size = new System.Drawing.Size(303, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Resultados da Pesquisa por Nickname:";
             // 
-            // dataGridView2
+            // dgvResultPesquisaNickname
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvResultPesquisaNickname.AllowUserToAddRows = false;
+            this.dgvResultPesquisaNickname.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvResultPesquisaNickname.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResultPesquisaNickname.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.NomeCompleto,
             this.nickname,
             this.idade,
             this.equiparesultnickname,
             this.Mediaptsnickname});
-            this.dataGridView2.Location = new System.Drawing.Point(18, 339);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(868, 236);
-            this.dataGridView2.TabIndex = 9;
+            this.dgvResultPesquisaNickname.Location = new System.Drawing.Point(16, 271);
+            this.dgvResultPesquisaNickname.Name = "dgvResultPesquisaNickname";
+            this.dgvResultPesquisaNickname.RowHeadersVisible = false;
+            this.dgvResultPesquisaNickname.RowHeadersWidth = 51;
+            this.dgvResultPesquisaNickname.RowTemplate.Height = 24;
+            this.dgvResultPesquisaNickname.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvResultPesquisaNickname.Size = new System.Drawing.Size(772, 189);
+            this.dgvResultPesquisaNickname.TabIndex = 9;
             // 
             // id
             // 
@@ -293,10 +288,9 @@
             // btnVoltarMenu
             // 
             this.btnVoltarMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnVoltarMenu.Location = new System.Drawing.Point(22, 582);
-            this.btnVoltarMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnVoltarMenu.Location = new System.Drawing.Point(20, 466);
             this.btnVoltarMenu.Name = "btnVoltarMenu";
-            this.btnVoltarMenu.Size = new System.Drawing.Size(107, 38);
+            this.btnVoltarMenu.Size = new System.Drawing.Size(95, 30);
             this.btnVoltarMenu.TabIndex = 22;
             this.btnVoltarMenu.Text = "Voltar Menu";
             this.btnVoltarMenu.UseVisualStyleBackColor = true;
@@ -307,13 +301,13 @@
             // 
             // FormEstatisticasLINQ
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 629);
+            this.ClientSize = new System.Drawing.Size(802, 503);
             this.Controls.Add(this.btnVoltarMenu);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dgvResultPesquisaNickname);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTop3Jogadores);
             this.Controls.Add(this.lblTop3Jogadores);
             this.Controls.Add(this.dgvTabelaClassificativa);
             this.Controls.Add(this.lblTabelaClassificativa);
@@ -321,12 +315,11 @@
             this.Controls.Add(this.lblPesquisarNick);
             this.Controls.Add(this.cmbFiltroTorneio);
             this.Controls.Add(this.lblTorneios);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormEstatisticasLINQ";
             this.Text = "Filtros e Pesquisas ";
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabelaClassificativa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTop3Jogadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResultPesquisaNickname)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -348,13 +341,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn derrota;
         private System.Windows.Forms.DataGridViewTextBoxColumn pontos;
         private System.Windows.Forms.Label lblTop3Jogadores;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTop3Jogadores;
         private System.Windows.Forms.DataGridViewTextBoxColumn posicaotop3;
         private System.Windows.Forms.DataGridViewTextBoxColumn nick;
         private System.Windows.Forms.DataGridViewTextBoxColumn _equipa;
         private System.Windows.Forms.DataGridViewTextBoxColumn media;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvResultPesquisaNickname;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeCompleto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nickname;
