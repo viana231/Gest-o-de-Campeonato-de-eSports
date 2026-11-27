@@ -358,7 +358,7 @@
             this.nmd_Pontuação.Size = new System.Drawing.Size(68, 25);
             this.nmd_Pontuação.TabIndex = 18;
             this.nmd_Pontuação.Value = new decimal(new int[] {
-            100,
+            1,
             0,
             0,
             0});

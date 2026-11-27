@@ -94,6 +94,7 @@
             this.cmbCampeonatos.Name = "cmbCampeonatos";
             this.cmbCampeonatos.Size = new System.Drawing.Size(136, 28);
             this.cmbCampeonatos.TabIndex = 1;
+            this.cmbCampeonatos.SelectedIndexChanged += new System.EventHandler(this.cmbCampeonatos_SelectedIndexChanged);
             // 
             // grpCriarTorneio
             // 
